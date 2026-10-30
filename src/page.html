@@ -1,0 +1,661 @@
+<title>A.M. Ward</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A.M. Ward: strategic marketing, communications and brand leader. Brand, product marketing, internal and executive communications, leadership and operations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: ledger of evidence. Sticky lane nav; each lane is an ink-colored band with a sticky brief on the left and outcome entries on the right. */
+:root{
+  --paper:#f5f6f3; --surface:#ffffff; --ink:#18221f; --muted:#56615d; --rule:#d9ddd7;
+  --brand:#0f6b5c; --pmm:#2f4fb5; --comms:#7a3b6e; --ops:#9a5b12;
+  --lane:var(--ink);
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --nav-h:52px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#121816; --surface:#1a2220; --ink:#e7ece9; --muted:#a2aeaa; --rule:#2c3633;
+  --brand:#4fc2ad; --pmm:#8ea6ff; --comms:#d995c9; --ops:#e0a25a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#121816; --surface:#1a2220; --ink:#e7ece9; --muted:#a2aeaa; --rule:#2c3633;
+  --brand:#4fc2ad; --pmm:#8ea6ff; --comms:#d995c9; --ops:#e0a25a; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 12px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--lane);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0}
+p{margin:0}
+.label{font:500 11.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Hero */
+.hero{padding-block:56px 40px}
+.hero .wrap{display:grid;gap:28px}
+.hero-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:baseline}
+.name{font:500 clamp(52px,9vw,112px)/.92 var(--display);letter-spacing:-.02em}
+.name em{font-style:italic;font-weight:400;color:var(--muted)}
+.thesis{font:400 clamp(22px,2.6vw,32px)/1.3 var(--display);max-width:30ch}
+.thesis em{font-style:italic}
+.hero-sub{max-width:62ch;color:var(--muted);font-size:17px}
+.lane-key{display:flex;flex-wrap:wrap;gap:8px 20px;padding:0;margin:0;list-style:none}
+.lane-key a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500}
+.lane-key a:hover span:last-child{text-decoration:underline}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--c);flex:none}
+.clients{font-size:14px;color:var(--muted)}
+.clients strong{color:var(--ink);font-weight:600}
+
+/* Proof bar */
+.proof{border-block:1px solid var(--rule)}
+.proof ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.proof li{padding:22px 18px 22px 0;display:grid;gap:6px;align-content:start}
+.proof li+li{padding-left:18px;border-left:1px solid var(--rule)}
+.proof b{font:500 clamp(30px,3.6vw,44px)/1 var(--display);font-variant-numeric:lining-nums tabular-nums;color:var(--c,var(--ink))}
+.proof span{font-size:13.5px;line-height:1.4;color:var(--muted)}
+
+/* Nav */
+nav.lanes{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+nav.lanes .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;height:var(--nav-h);align-items:center}
+nav.lanes .wrap::-webkit-scrollbar{display:none}
+nav.lanes a{flex:none;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap}
+nav.lanes a:hover{color:var(--ink)}
+nav.lanes a[aria-current="true"]{color:var(--ink);background:color-mix(in srgb,var(--c,var(--ink)) 14%,transparent)}
+nav.lanes .home{font-family:var(--display);font-size:17px;color:var(--ink);padding-left:0;margin-right:8px}
+
+/* Lane sections */
+.lane{padding-block:72px;border-bottom:1px solid var(--rule)}
+.lane .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px}
+.brief{position:sticky;top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 28px);align-self:start;display:grid;gap:18px}
+.brief .label{color:var(--lane)}
+.brief h2{font-size:clamp(34px,4vw,48px);line-height:1.02;letter-spacing:-.01em}
+.brief p{color:var(--muted)}
+.caps{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--rule)}
+.caps li{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px}
+.note{font-size:13px;color:var(--muted);font-style:italic}
+.entries{display:grid;gap:0;min-width:0}
+
+.entry{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:28px;padding-block:32px;border-top:1px solid var(--rule)}
+.entry:first-child{border-top:2px solid var(--lane);padding-top:28px}
+.fig{display:grid;gap:8px;align-content:start}
+.fig b{font:500 clamp(40px,4.4vw,56px)/.95 var(--display);color:var(--lane);font-variant-numeric:lining-nums;letter-spacing:-.02em}
+.fig b.word{font-size:clamp(28px,3vw,36px);line-height:1.05;font-style:italic;font-weight:400}
+.fig span{font-size:13.5px;line-height:1.4;color:var(--muted)}
+.body{display:grid;gap:12px;min-width:0}
+.body h3{font-size:24px;line-height:1.2}
+.meta{font:500 12px/1.4 var(--mono);letter-spacing:.04em;color:var(--muted)}
+.body p{max-width:64ch}
+.results{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.results li{position:relative;padding-left:18px;font-size:15px}
+.results li::before{content:"";position:absolute;left:0;top:.68em;width:8px;height:2px;background:var(--lane)}
+.results strong{font-weight:600;font-variant-numeric:lining-nums}
+.links{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px}
+.links a{color:var(--lane);font-weight:500}
+figure{margin:4px 0 0}
+figure img{display:block;width:100%;height:auto;border-radius:4px;border:1px solid var(--rule)}
+.video{position:relative;display:block}
+.play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:color-mix(in srgb,var(--ink) 72%,transparent);transition:transform .15s}
+.play::after{content:"";position:absolute;left:26px;top:20px;border-style:solid;border-width:12px 0 12px 19px;border-color:transparent transparent transparent var(--paper)}
+.video:hover .play{transform:scale(1.08)}
+@media (prefers-reduced-motion:reduce){.play{transition:none}}
+.phone{max-width:240px}
+.square{max-width:360px}
+.ad{max-width:420px}
+.logo img{background:#fff;padding:18px}
+.phone img{aspect-ratio:9/13;object-fit:cover;object-position:top;border-radius:14px}
+figcaption{font-size:12.5px;color:var(--muted);margin-top:8px}
+.caveat{font-size:13px;color:var(--muted)}
+
+/* Experience */
+.exp{padding-block:72px;border-bottom:1px solid var(--rule)}
+.exp .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px}
+.exp h2,.creds h2,.contact h2{font-size:clamp(34px,4vw,48px);line-height:1.02}
+.roles{list-style:none;margin:0;padding:0;min-width:0}
+.roles li{display:grid;grid-template-columns:118px minmax(0,1fr);gap:20px;padding-block:18px;border-top:1px solid var(--rule)}
+.roles li:last-child{border-bottom:1px solid var(--rule)}
+.when{font:500 13px/1.5 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;padding-top:3px}
+.role b{font-weight:600}
+.role .t{display:block;color:var(--muted);font-size:14.5px}
+.role p{font-size:14.5px;margin-top:4px;max-width:64ch}
+.lanepills{display:inline-flex;gap:5px;margin-left:8px;vertical-align:middle}
+.lanepills i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+
+/* Credentials */
+.creds{padding-block:72px;border-bottom:1px solid var(--rule)}
+.creds .wrap{display:grid;gap:36px}
+.cred-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.cred-grid h3{font:500 11.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-bottom:10px;border-bottom:1px solid var(--rule);margin-bottom:6px}
+.cred-grid ul{list-style:none;margin:0;padding:0}
+.cred-grid li{padding:10px 0;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.45}
+.cred-grid li span{display:block;color:var(--muted);font-size:13px}
+.yr{font:500 12px var(--mono);color:var(--muted);margin-right:6px;font-variant-numeric:tabular-nums}
+
+/* Contact */
+.contact{padding-block:80px 96px}
+.contact .wrap{display:grid;gap:22px}
+.contact p{max-width:58ch;color:var(--muted);font-size:17px}
+.reach{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.addr{font:500 15px var(--mono);user-select:all;padding:11px 14px;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+.btn{font:600 14px var(--body);padding:11px 16px;border-radius:6px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink)}
+.copied{font-size:13px;color:var(--muted);min-width:5em}
+footer{padding-block:24px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted)}
+
+/* Lane color scoping */
+[data-lane="brand"]{--lane:var(--brand)} [data-lane="pmm"]{--lane:var(--pmm)}
+[data-lane="comms"]{--lane:var(--comms)} [data-lane="ops"]{--lane:var(--ops)}
+
+@media (max-width:900px){
+  .lane .wrap,.exp .wrap{grid-template-columns:minmax(0,1fr);gap:28px}
+  .brief{position:static}
+  .proof ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .proof li,.proof li+li{padding:18px 14px 18px 0;border-left:0;border-top:1px solid var(--rule)}
+  .proof li:nth-child(even){padding-left:14px;border-left:1px solid var(--rule)}
+  .proof li:first-child,.proof li:nth-child(2){border-top:0}
+  .proof li:last-child{grid-column:1/-1;border-left:0;padding-left:0}
+  .cred-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+}
+@media (max-width:600px){
+  .hero{padding-block:36px 28px}
+  .lane,.exp,.creds{padding-block:52px}
+  .entry{grid-template-columns:minmax(0,1fr);gap:14px;padding-block:26px}
+  .fig{grid-template-columns:auto minmax(0,1fr);align-items:end;gap:12px}
+  .roles li{grid-template-columns:minmax(0,1fr);gap:4px}
+}
+</style>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="label">Strategic marketing, communications &amp; brand leader</span>
+      <span class="label">Atlanta · Remote, USA</span>
+    </div>
+    <h1 class="name">A.M. Ward<em>, MBA</em></h1>
+    <p class="thesis">I help organizations bring complex products, ideas and initiatives to market, and move people to <em>act</em> on them.</p>
+    <p class="hero-sub">I connect customer and employee insight to brand, product marketing and communications strategies that drive measurable adoption, growth and loyalty. My work spans climate, technology and AI, with Director- and Head-level scope across Fortune 500 companies, government and mission-driven organizations.</p>
+    <p class="clients">Recent work for <strong>Google</strong> · <strong>Microsoft</strong> · <strong>Delta Air Lines</strong> · <strong>Southern Company</strong></p>
+    <ul class="lane-key" aria-label="Areas of focus">
+      <li><a href="#brand" style="--c:var(--brand)"><span class="dot"></span><span>Brand</span></a></li>
+      <li><a href="#product-marketing" style="--c:var(--pmm)"><span class="dot"></span><span>Product Marketing</span></a></li>
+      <li><a href="#internal-exec-comms" style="--c:var(--comms)"><span class="dot"></span><span>Internal &amp; Executive Communications</span></a></li>
+      <li><a href="#leadership-ops" style="--c:var(--ops)"><span class="dot"></span><span>Leadership &amp; Operations</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="proof" aria-label="Selected outcomes">
+  <div class="wrap">
+    <ul>
+      <li style="--c:var(--brand)"><b>#1</b><span>Delta Air Lines ad for brand difference and affinity</span></li>
+      <li style="--c:var(--pmm)"><b>+11%</b><span>subscribers to a Southern Company subscription product in about three months; $1.7M projected lifetime value</span></li>
+      <li style="--c:var(--pmm)"><b>+495%</b><span>YoY monthly active users for a San Francisco civic app</span></li>
+      <li style="--c:var(--comms)"><b>+88%</b><span>YoY employee understanding of mission and values</span></li>
+      <li style="--c:var(--ops)"><b>20+</b><span>products and services led across brand, marketing and community</span></li>
+    </ul>
+  </div>
+</section>
+
+<nav class="lanes" aria-label="Sections">
+  <div class="wrap">
+    <a class="home" href="#top">A.M. Ward</a>
+    <a href="#brand" style="--c:var(--brand)"><span class="dot"></span>Brand</a>
+    <a href="#product-marketing" style="--c:var(--pmm)"><span class="dot"></span>Product Marketing</a>
+    <a href="#internal-exec-comms" style="--c:var(--comms)"><span class="dot"></span>Internal &amp; Exec Comms</a>
+    <a href="#leadership-ops" style="--c:var(--ops)"><span class="dot"></span>Leadership &amp; Ops</a>
+    <a href="#experience">Experience</a>
+    <a href="#credentials">Recognition</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+<!-- BRAND -->
+<section class="lane" id="brand" data-lane="brand">
+  <div class="wrap">
+    <aside class="brief">
+      <span class="label">01 · Brand</span>
+      <h2>Brands people recognize, trust and act on</h2>
+      <p>I ground brand strategy in research, then build the identity, governance and campaigns that let it scale across products, channels, languages and partners.</p>
+      <ul class="caps">
+        <li>Brand strategy, architecture &amp; governance</li>
+        <li>Consumer research &amp; insight-to-brief</li>
+        <li>Creative strategy &amp; agency direction</li>
+        <li>Integrated, multilingual campaigns</li>
+        <li>Naming, messaging &amp; identity systems</li>
+      </ul>
+    </aside>
+    <div class="entries">
+      <article class="entry">
+        <div class="fig"><b>#1</b><span>Delta ad for consumer brand difference and affinity</span></div>
+        <div class="body">
+          <span class="meta">Delta Air Lines · 2023–2024</span>
+          <h3>National brand campaign</h3>
+          <p>Led strategy and execution for a national omnichannel campaign, including agency coordination, paid-media investment, measurement and reporting. Translated consumer research into creative briefs and agency direction.</p>
+          <ul class="results">
+            <li>Co-led multi-phase consumer research that shaped positioning, campaign decisions and content roadmaps</li>
+          </ul>
+          <div class="links"><a href="https://www.facebook.com/watch/?v=248379818072591" target="_blank" rel="noopener">Watch the ad on Facebook ↗</a></div>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b>+51%</b><span>intent to reuse, reported by the agency partner</span></div>
+        <div class="body">
+          <span class="meta">City &amp; County of San Francisco · 2022</span>
+          <h3>REUSE SF</h3>
+          <p>A fashion-inspired integrated campaign that combined advertising, professional photo pop-ups, reusable giveaways, a pledge website and geotargeted digital promotion. Culturally relevant creative reached Spanish- and Chinese-speaking, lower-income and older residents.</p>
+          <ul class="results">
+            <li>Video engagement <strong>7× benchmark</strong> with user-generated-style creative</li>
+            <li>Thousands of pledges and <strong>4,000+ participant photos</strong> shared on social media</li>
+            <li>2022 ADDY Award, Public Service Campaign</li>
+          </ul>
+          <figure>
+            <img src="{{REUSE}}" alt="REUSE SF campaign creative: a model in yellow reclining with a reusable tote of produce" loading="lazy" width="1100" height="558">
+          </figure>
+          <div class="links"><a href="https://www.reuse-sf.org/" target="_blank" rel="noopener">reuse-sf.org ↗</a></div>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b>240K+</b><span>residents reached through Climate Action Plan engagement</span></div>
+        <div class="body">
+          <span class="meta">City &amp; County of San Francisco · 2018–2022</span>
+          <h3>SF Climate Action brand system</h3>
+          <p>Expanded San Francisco’s “0/80/100/Roots” climate identity into an operating brand system. It organizes the city’s environmental services under four strategic pillars and aligns program identities, digital experiences, community outreach and executive communications.</p>
+          <ul class="results">
+            <li>Web visits <strong>up 51% YoY</strong> during the fourth annual SF Climate Action Month, built on an ongoing integrated partner strategy</li>
+            <li>TEDxSanFrancisco “Hope in a Heated Planet” launch of the 2021 Climate Action Plan, with Mayor London Breed, 10+ local leaders and <strong>600+ virtual attendees</strong></li>
+            <li>Set naming and messaging governance for new products and citywide initiatives</li>
+          </ul>
+          <figure class="square logo">
+            <img src="{{CAP}}" alt="San Francisco Climate Action 0 80 100 Roots logo" loading="lazy" width="600" height="555">
+            <figcaption>San Francisco Climate Action “0/80/100/Roots” identity</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b>+75%</b><span>YoY composting participation among target customers</span></div>
+        <div class="body">
+          <span class="meta">City &amp; County of San Francisco</span>
+          <h3>“Feeling Gassy” Campaign</h3>
+          <p>An award-winning digital video campaign to grow participation in San Francisco’s composting program among target customers.</p>
+          <ul class="results"><li>2020 ADDY Award, Corporate Social Responsibility Film, Video &amp; Sound</li></ul>
+          <figure>
+            <a class="video" href="https://www.youtube.com/watch?v=JEzcQLYcnho" target="_blank" rel="noopener" aria-label="Watch the Feeling Gassy campaign video on YouTube">
+              <img src="{{GASSY}}" alt="Still from the Feeling Gassy video: a pedestrian walks past a public waste bin with a speech bubble" loading="lazy" width="1100" height="619">
+              <span class="play" aria-hidden="true"></span>
+            </a>
+          </figure>
+          <div class="links"><a href="https://www.youtube.com/watch?v=JEzcQLYcnho" target="_blank" rel="noopener">Watch the campaign video on YouTube ↗</a></div>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b>+650%</b><span>YoY service usage after the rebrand</span></div>
+        <div class="body">
+          <span class="meta">City &amp; County of San Francisco</span>
+          <h3>SF Emergency Ride Home rebrand</h3>
+          <p>Redefined the target audience toward lower-income workers, oversaw the rebrand and directed full-funnel marketing across employer partnerships, community outreach and digital advertising. Led strategy and writing for the new landing page.</p>
+          <figure class="ad">
+            <img src="{{ERH}}" alt="SF Environment Emergency Ride Home ad: Your free ride in unexpected times" loading="lazy" width="840" height="703">
+          </figure>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT MARKETING -->
+<section class="lane" id="product-marketing" data-lane="pmm">
+  <div class="wrap">
+    <aside class="brief">
+      <span class="label">02 · Product Marketing</span>
+      <h2>Complex products, clearly positioned</h2>
+      <p>I connect customer evidence to positioning, journeys and launches, then test and tune until adoption moves.</p>
+      <ul class="caps">
+        <li>Positioning &amp; value proposition</li>
+        <li>Go-to-market &amp; launch planning</li>
+        <li>Segmentation &amp; audience targeting</li>
+        <li>Lifecycle, retention &amp; journey optimization</li>
+        <li>Personalization &amp; A/B testing</li>
+        <li>Voice of customer &amp; sales enablement</li>
+      </ul>
+    </aside>
+    <div class="entries">
+      <article class="entry">
+        <div class="fig"><b>+495%</b><span>YoY monthly active users</span></div>
+        <div class="body">
+          <span class="meta">City &amp; County of San Francisco · Product owner</span>
+          <h3>SF Recycles App</h3>
+          <p>As in-house product owner, directed customer research and digital agency delivery to turn static recycling guidance into a first-in-kind trilingual web application for a city of 850,000. Led go-to-market with product managers, engineers and UX.</p>
+          <ul class="results">
+            <li>App and companion campaign contributed to <strong>27% YoY growth</strong> in compliant use of an affiliated waste service</li>
+            <li>2018 Data &amp; Innovation Awards, first place, “Users First.” The concept was adopted for a tool in Belarus.</li>
+          </ul>
+          <figure class="phone">
+            <img src="{{SFR}}" alt="SF Recycles mobile web app: search box, popular searches, and recycle, compost and landfill bin guides" loading="lazy" width="420" height="607">
+            <figcaption>SF Recycles mobile web experience</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b>+11%</b><span>subscribers in about three months</span></div>
+        <div class="body">
+          <span class="meta">Southern Company · Georgia Natural Gas · 2024</span>
+          <h3>Greener Life® subscription growth</h3>
+          <p>Set vision, strategy and goals for a subscription carbon-offset product and its parent sustainability brand. Co-developed an integrated acquisition campaign tied to a new product feature and milestone.</p>
+          <ul class="results">
+            <li><strong>$1.7M</strong> in projected customer lifetime value from the subscriber gain</li>
+            <li>Launched web personalization, weekly optimization sprints and A/B and format tests</li>
+            <li>Recommendations adopted for homepage placement and landing-page social proof</li>
+            <li>Authored sales and customer-service enablement materials</li>
+          </ul>
+          <figure>
+            <img src="{{GREENER}}" alt="Georgia Natural Gas Greener Life banner: A greener Georgia is on our minds" loading="lazy" width="1100" height="363">
+            <figcaption>Greener Life® campaign creative</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b>+1,050%</b><span>adoption among multifamily property managers</span></div>
+        <div class="body">
+          <span class="meta">City &amp; County of San Francisco</span>
+          <h3>Household battery recycling</h3>
+          <p>An eight-week integrated campaign that gave apartment residents and homeowners two distinct pathways: “Don’t chuck it, bucket” and “Don’t drop it, top it,” in English, Chinese and Spanish. A separate plan engaged multifamily property managers.</p>
+          <p>Six lively activations, drumming performances starring buckets and bins, were held throughout San Francisco, with multilingual ambassadors educating onlookers.</p>
+          <ul class="results">
+            <li>Utilization <strong>up 62% YoY</strong></li>
+            <li><strong>43.8M impressions</strong> and 30,000+ unique landing-page views averaging three minutes</li>
+          </ul>
+          <figure>
+            <a class="video" href="https://youtu.be/werghyHiGWk" target="_blank" rel="noopener" aria-label="Watch the battery recycling activation video on YouTube">
+              <img src="{{BATTERY}}" alt="Drummers in orange shirts play buckets and bins in front of a 'Help SF beat battery waste' sign" loading="lazy" width="480" height="270">
+              <span class="play" aria-hidden="true"></span>
+            </a>
+          </figure>
+          <div class="links"><a href="https://youtu.be/werghyHiGWk" target="_blank" rel="noopener">Watch the activation video on YouTube ↗</a></div>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b>154%</b><span>of business-enrollment goal, with 42% fewer visits</span></div>
+        <div class="body">
+          <span class="meta">ReThink Disposable · partner program</span>
+          <h3>B2B enrollment by better targeting</h3>
+          <p>Used research covering 3,700 businesses to prioritize better-fit prospects, then combined field marketing, webinars and content with a multilingual team.</p>
+          <ul class="results"><li><strong>77 businesses</strong> enrolled against a target of 50, at <strong>11% lead conversion</strong></li></ul>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b>73%</b><span>of resident conversations converted to program referrals</span></div>
+        <div class="body">
+          <span class="meta">EnergyAccess SF · with PG&amp;E</span>
+          <h3>Data-driven energy program activation</h3>
+          <p>Led marketing for a $2.5M ratepayer-funded program. Used smart-meter, permit, census and propensity data to segment residents and small businesses, then reached them through targeted mailers, in-language calls and trusted community messengers.</p>
+          <ul class="results">
+            <li><strong>681 referrals</strong> from 927 resident conversations, 30% in Chinese or Spanish</li>
+            <li><strong>356 no-cost audits</strong> and a 41% referral rate among 420 small businesses</li>
+          </ul>
+          <figure class="square">
+            <img src="{{EASF}}" alt="EnergyAccess SF program graphic over a San Francisco neighborhood" loading="lazy" width="720" height="720">
+          </figure>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNAL & EXEC COMMS -->
+<section class="lane" id="internal-exec-comms" data-lane="comms">
+  <div class="wrap">
+    <aside class="brief">
+      <span class="label">03 · Internal &amp; Executive Communications</span>
+      <h2>Leaders heard clearly; employees ready to act</h2>
+      <p>I help executives say what matters in their own voice, and help employees understand what is changing, why, and what to do next.</p>
+      <ul class="caps">
+        <li>Executive communications &amp; ghostwriting</li>
+        <li>Change &amp; AI-adoption communications</li>
+        <li>Employee engagement &amp; culture</li>
+        <li>Editorial strategy &amp; channel governance</li>
+        <li>Crisis &amp; sensitive communications</li>
+      </ul>
+      <p class="note">Some of the most important work in this lane can’t be measured in a metric, so these entries show scope as well as numbers.</p>
+    </aside>
+    <div class="entries">
+      <article class="entry">
+        <div class="fig"><b>4,500+</b><span>employees in a global Customer Success organization</span></div>
+        <div class="body">
+          <span class="meta">Microsoft · 2025</span>
+          <h3>Executive voice and leadership cadence</h3>
+          <p>Developed and coordinated the monthly video series from the Corporate Vice President of Customer Success, covering scripting, editorial development, planning and distribution across email and internal social. Authored and ghostwrote executive emails, scripts, presentations and posts.</p>
+          <ul class="results">
+            <li>Partnered with senior leaders to clarify strategic intent during organizational transformation</li>
+            <li>Lead editor of executive LinkedIn customer success stories on Microsoft Cloud and AI adoption</li>
+          </ul>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b class="word">AI readiness</b><span>tools, workflows and new ways of working</span></div>
+        <div class="body">
+          <span class="meta">Microsoft · 2025</span>
+          <h3>Making AI change understandable</h3>
+          <p>Translated complex AI capabilities and leadership priorities into practical communications across newsletters, presentations, video, email and Viva Engage, so non-technical teams knew what to use and why.</p>
+          <ul class="results">
+            <li>Built AI agents and workflow automations for drafting, editing and summarization that keep executive voice and tone intact</li>
+          </ul>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b>+42%</b><span>YoY engagement during the annual holiday campaign</span></div>
+        <div class="body">
+          <span class="meta">Microsoft · 2025</span>
+          <h3>Holiday Gratitude Campaign and editorial program</h3>
+          <p>Owned integrated strategy, editorial planning, channel governance and performance for an annual digital campaign that combined executive messaging, a dedicated SharePoint experience and interactive internal social content encouraging recognition.</p>
+          <ul class="results">
+            <li>Average internal content views per post <strong>up 61%</strong> within Customer Success, through editorial planning, channel optimization and measurement</li>
+            <li>Established communications KPIs, operating plans and editorial processes across internal channels</li>
+          </ul>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b>+88%</b><span>YoY employee understanding of mission and values</span></div>
+        <div class="body">
+          <span class="meta">City &amp; County of San Francisco · Environment Department</span>
+          <h3>Internal communications, built from zero</h3>
+          <p>Created the department’s first internal communications function: onboarding, an internal newsletter, dedicated Teams channels and a recurring cadence for leadership updates. Originated an executive-sponsored mission-and-values strategy carried through onboarding, workplaces and digital channels.</p>
+          <ul class="results">
+            <li>Understanding of how their own work aligns to the mission <strong>up 85% YoY</strong></li>
+          </ul>
+          <p class="caveat">Relative year-over-year increases from the annual employee experience survey.</p>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b class="word">Change &amp; crisis</b><span>when clarity matters most</span></div>
+        <div class="body">
+          <span class="meta">Microsoft · San Francisco · Columbia University</span>
+          <h3>Sensitive, rapid-response and change communications</h3>
+          <p>Advised leaders on framing sensitive and crisis messages and made the editorial calls that kept them clear and responsive to employee concerns.</p>
+          <ul class="results">
+            <li>Led change communications for COVID-19 procedures, the move to remote work, team restructuring and a multi-phase office relocation</li>
+            <li>Managed rapid response during COVID-19 operations, civic unrest and policy developments</li>
+            <li>Principal communications strategist for five Columbia University departments, including press and crisis communications</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP & OPS -->
+<section class="lane" id="leadership-ops" data-lane="ops">
+  <div class="wrap">
+    <aside class="brief">
+      <span class="label">04 · Leadership &amp; Operations</span>
+      <h2>The operating system behind the work</h2>
+      <p>I build the teams, plans, budgets, tools and rhythms that let leaders make decisions and teams deliver. Much of this is Chief-of-Staff scope.</p>
+      <ul class="caps">
+        <li>Executive operating partnership</li>
+        <li>Strategic planning &amp; KPI design</li>
+        <li>Budget forecasting &amp; resource allocation</li>
+        <li>Org design &amp; team leadership</li>
+        <li>Marketing operations &amp; martech</li>
+        <li>Workflow design &amp; enablement</li>
+      </ul>
+    </aside>
+    <div class="entries">
+      <article class="entry">
+        <div class="fig"><b>7 + 24</b><span>direct reports and indirect contributors</span></div>
+        <div class="body">
+          <span class="meta">City &amp; County of San Francisco · 2017–2022</span>
+          <h3>A multidisciplinary center of excellence</h3>
+          <p>Restructured the communications team spanning marketing, content, community engagement, UX, web development, design and data. Clarified ownership, standardized workflows, rewrote job descriptions and hired specialized talent, then ran distributed operations through more than two years of the pandemic.</p>
+          <ul class="results">
+            <li>Faster production, more team capacity and better service to business units</li>
+            <li>Managed budgets, contracts and <strong>10+ agency relationships</strong></li>
+          </ul>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b>2021–23</b><span>Strategic Plan, led end to end</span></div>
+        <div class="body">
+          <span class="meta">City &amp; County of San Francisco · Executive leadership team</span>
+          <h3>Executive operating partner</h3>
+          <p>Served as senior operating partner to the department Director, translating citywide priorities into strategy, operating plans and executive communications. Led the 2021–2023 Strategic Plan and aligned organizational and board leaders on scope, priorities and KPIs.</p>
+          <ul class="results">
+            <li>Aligned a multi-source budget to strategy through annual and quarterly forecasting and resource allocation</li>
+            <li>Ran quarterly reviews, leadership forums and annual reporting that tracked milestones and prompted follow-up</li>
+            <li>Presented strategy and progress to the Commission on the Environment, and made funding cases at public meetings</li>
+          </ul>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b class="word">Org-wide</b><span>Salesforce implementation and adoption</span></div>
+        <div class="body">
+          <span class="meta">City &amp; County of San Francisco</span>
+          <h3>Salesforce and the marketing technology stack</h3>
+          <p>Held accountability for an organization-wide Salesforce rollout and managed the project manager who delivered it. Oversaw needs assessment, onboarding, training, change communications and workflow redesign.</p>
+          <ul class="results">
+            <li>Improved prospecting, contact and data management, cross-team information sharing and analytics reporting</li>
+            <li>Evaluated the martech ecosystem, including social management and Salesforce Marketing Cloud capabilities</li>
+            <li>Assessed staff data and reporting needs, then scoped and hired a dedicated data manager</li>
+          </ul>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="fig"><b class="word">Enablement</b><span>for sales, customer success and frontline teams</span></div>
+        <div class="body">
+          <span class="meta">San Francisco · Microsoft</span>
+          <h3>Workflows, intake and enablement</h3>
+          <p>Gave frontline teams training, fact sheets, landing pages, scripts and technology. Standardized editorial workflows, design and communications intake, stakeholder engagement and lead-generation practices.</p>
+          <ul class="results">
+            <li>Systematized disability-support and language-access requests and annual compliance under San Francisco’s Language Access Ordinance</li>
+            <li>At Microsoft, set communications KPIs, operating plans and AI-assisted editorial workflows</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp" id="experience">
+  <div class="wrap">
+    <div class="brief" style="position:static">
+      <span class="label">Experience</span>
+      <h2>Experience across industries and borders</h2>
+      <p style="color:var(--muted)">Global companies, public service and mission-driven organizations, in the US and abroad.</p>
+    </div>
+    <ol class="roles">
+      <li><span class="when">2026–now</span><div class="role"><b>Google</b><span class="t">Strategic Marketing Consultant, AI</span><p>Partner with engineering teams to turn expert marketing judgment into guidance that improves reasoning in enterprise AI systems.</p></div></li>
+      <li><span class="when">2025</span><div class="role"><b>Microsoft</b><span class="lanepills"><i style="--c:var(--comms)"></i><i style="--c:var(--ops)"></i></span><span class="t">Senior Communications Consultant</span><p>Internal and executive communications for a 4,500+ person Customer Success organization adopting AI.</p></div></li>
+      <li><span class="when">2024</span><div class="role"><b>Southern Company</b><span class="lanepills"><i style="--c:var(--pmm)"></i><i style="--c:var(--brand)"></i></span><span class="t">Senior Consultant, Brand &amp; Product Marketing</span><p>Brand and product strategy for Georgia Natural Gas and its Greener Life® subscription product.</p></div></li>
+      <li><span class="when">2023–24</span><div class="role"><b>Delta Air Lines</b><span class="lanepills"><i style="--c:var(--brand)"></i><i style="--c:var(--pmm)"></i></span><span class="t">Senior Consultant, Brand &amp; Product Marketing</span><p>National brand campaign, consumer research and go-to-market planning for a first-of-its-kind upcycled suitcase made from retired aircraft skin.</p></div></li>
+      <li><span class="when">2017–22</span><div class="role"><b>City &amp; County of San Francisco, Environment Department</b><span class="lanepills"><i style="--c:var(--brand)"></i><i style="--c:var(--pmm)"></i><i style="--c:var(--comms)"></i><i style="--c:var(--ops)"></i></span><span class="t">Head of Marketing, Product &amp; Community</span><p>Brand, marketing, communications and community engagement for 20+ consumer and business services and technology products. Six industry awards.</p></div></li>
+      <li><span class="when">2017</span><div class="role"><b>New Resource Bank</b> (acquired by Amalgamated Bank)<span class="t">Interim Marketing Director</span><p>Product positioning, customer communications through a core-system transition, and the annual Impact Report for a B Corp “Best for the World” bank.</p></div></li>
+      <li><span class="when">2012–16</span><div class="role"><b>Columbia University · Malaysia Ministry of Finance · World Wildlife Fund</b><span class="t">Strategic communications, consulting and product roles</span><p>Launched Columbia Housing and Transportation websites and the “Make It Your Home” brand; proposed a scalable microfinance model to the Ministry; co-launched a WWF practitioner learning platform.</p></div></li>
+      <li><span class="when">2006–11</span><div class="role"><b>Putumayo World Music</b><span class="t">Marketing Director (promoted from Coordinator and Manager)</span><p>Brought on brand partners including South African Airways, Amnesty International, National Geographic and Intrepid Travel. A South African Airways sweepstakes generated 17K marketing-qualified leads, and Facebook followers grew from 3K to 55K in 15 months.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds" id="credentials">
+  <div class="wrap">
+    <h2>Recognition &amp; credentials</h2>
+    <div class="cred-grid">
+      <div>
+        <h3>Awards</h3>
+        <ul>
+          <li><span class="yr">2022</span>ADDY Award, Public Service Campaign<span>REUSE SF</span></li>
+          <li><span class="yr">2022</span>California Transportation Foundation, Operational Efficiency Award<span>Essential Worker Ride Home</span></li>
+          <li><span class="yr">2020</span>ADDY Award, Corporate Social Responsibility Film, Video &amp; Sound<span>“Feeling Gassy”</span></li>
+          <li><span class="yr">2019</span>Carbon Neutral Cities Alliance, Spotlight Award<span>Refuse/Reuse campaign media leadership</span></li>
+          <li><span class="yr">2018</span>Carbon Neutral Cities Alliance, Bullhorn Award<span>Social media leadership</span></li>
+          <li><span class="yr">2018</span>SF Data &amp; Innovation Awards, first place, “Users First”<span>SF Recycles</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Education &amp; certification</h3>
+        <ul>
+          <li>MBA, ISC Paris<span>Sustainable Performance Management</span></li>
+          <li>BA, Literature &amp; French, cum laude, New York University<span>Minor in Communications · New York and Paris</span></li>
+          <li>Pragmatic Institute, PMC Level I<span>Foundations · 2023</span></li>
+          <li>IBM Product Management Certificate<span>In progress</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Languages &amp; communities</h3>
+        <ul>
+          <li>English, native · French, fluent · Spanish, elementary</li>
+          <li>Lived, studied and worked in three countries; traveled to 36</li>
+          <li>Women Defining AI · Women in Product</li>
+          <li>Marketing AI Pulse · ProductCamp Atlanta</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="label">Contact</span>
+    <h2>Let’s talk</h2>
+    <p>I’m open to full-time and consulting work in product and platform growth, brand and storytelling, organizational change, and climate and environmental impact.</p>
+    <div class="reach">
+      <button class="btn" type="button" id="reveal">Email me</button>
+      <span class="addr" id="email" hidden></span>
+      <button class="btn ghost" type="button" id="copy" hidden>Copy</button>
+      <a class="btn ghost" href="https://www.linkedin.com/in/am-ward" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <span class="copied" id="copied" aria-live="polite"></span>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">A.M. Ward · Atlanta, Georgia</div></footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('copy'),out=document.getElementById('copied'),addr=document.getElementById('email'),rev=document.getElementById('reveal');
+  rev.addEventListener('click',function(){
+    var t=[109,111,99,46,108,105,97,109,103,64,107,99,97,104,115,101,109,46,97,105,115,97].reverse().map(function(c){return String.fromCharCode(c);}).join('');
+    addr.textContent=t;addr.hidden=false;btn.hidden=false;rev.hidden=true;
+    out.textContent='Opening your email app. If nothing opens, copy the address.';
+    try{var a=document.createElement('a');a.href='mai'+'lto:'+t;a.click();}catch(e){}
+  });
+  btn.addEventListener('click',function(){
+    var t=addr.textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(addr);var s=getSelection();s.removeAllRanges();s.addRange(r);out.textContent='Selected';}
+    try{navigator.clipboard.writeText(t).then(function(){out.textContent='Copied';},sel);}catch(e){sel();}
+  });
+  var links=[].slice.call(document.querySelectorAll('nav.lanes a[href^="#"]:not(.home)'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var secs=Object.keys(map).map(function(id){return document.getElementById(id);}).filter(Boolean);
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.removeAttribute('aria-current');});
+      var a=map[e.target.id];a.setAttribute('aria-current','true');
+      if(a.scrollIntoView&&a.parentNode.scrollWidth>a.parentNode.clientWidth){a.parentNode.scrollTo({left:a.offsetLeft-40,behavior:'smooth'});}}});
+  },{rootMargin:'-30% 0px -65% 0px'});
+  secs.forEach(function(s){io.observe(s);});
+})();
+</script>
