@@ -13,9 +13,11 @@ import re
 
 ROOT = pathlib.Path(__file__).parent
 IMAGES = {
+    "{{DELTAAD}}": "delta-ad.jpg",
     "{{REUSE}}": "reuse.jpg",
-    "{{CAP}}": "climate-action.jpg",
+    "{{CAM}}": "climate-action-month.jpg",
     "{{GREENER}}": "greener-life.jpg",
+    "{{SUITCASE}}": "delta-suitcase.jpg",
     "{{SFR}}": "sfrecycles.jpg",
 }
 RESUME = "AM_Ward_Resume.pdf"
