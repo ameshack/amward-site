@@ -1,24 +1,26 @@
 # A.M. Ward — personal site
 
-Portfolio site covering four focus areas: Brand, Product Marketing, Internal & Executive Communications, and Leadership & Operations.
+Portfolio site for A.M. Ward: a homepage plus one page per specialty (Brand, Product Marketing, Internal & Executive Communications, Leadership & Operations) and an About page.
 
 ## Structure
 
-- `src/page.html` — page source (HTML, CSS and JS in one file). Images are referenced by placeholders such as `{{REUSE}}`.
-- `src/img/` — campaign images, inlined at build time.
-- `build.py` — fills the placeholders and writes the published files.
-- `index.html` — the published page served by GitHub Pages, with owner-review notes removed. Don't edit it by hand.
-- `review.html` — the same page with owner-review notes visible (notes are wrapped in `<!--REVIEW-->` … `<!--/REVIEW-->` in the source).
-- `AM_Ward_Resume.pdf` — the resume behind the **Download resume** button. Until it is added, the build hides that button on the published page.
+- `src/content.py` — specialties, projects and shared copy. Each project is defined once and listed by id on the specialty pages that use it.
+- `src/site.css`, `src/site.js` — shared styles and behavior (menus, email reveal, links from the old single-page site, opening a project from a link).
+- `src/img/` — project images.
+- `build.py` — generates the pages. Don't edit the generated HTML by hand.
+- Generated output: `index.html`, `brand/`, `product-marketing/`, `communications/`, `leadership/`, `about/`, `assets/`.
+- `AM_Ward_Resume.pdf` — the resume behind the **Download resume** button. Until it is added, the build leaves the button out.
 
 ## Editing
 
-1. Edit `src/page.html` (or add an image to `src/img/` and register it in `build.py`).
-2. Run `python3 build.py`.
-3. Commit the source and the rebuilt `index.html` and `review.html`.
+1. Edit `src/content.py`, `src/site.css`, `src/site.js` or the templates in `build.py`.
+2. Run `python3 build.py` for the published site, or `python3 build.py --preview` for a review copy in `dist/preview/` with owner-review notes.
+3. Commit the source and the regenerated pages.
+
+Text wrapped in `<!--REVIEW-->` … `<!--/REVIEW-->` appears only in the review copy.
 
 ## Publishing
 
-GitHub Pages: **Settings → Pages → Build and deployment → Deploy from a branch → `main` / `(root)`**.
+GitHub Pages: **Settings → Pages → Deploy from a branch → `main` / `(root)`**. Pages link to each other with relative URLs, so they work under `/amward-site/`.
 
 The contact email is not stored as plain text; the page assembles it only when a visitor clicks **Email me**.

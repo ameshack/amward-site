@@ -1,66 +1,352 @@
-"""Build the site from src/page.html.
+"""Build the A.M. Ward site.
 
-Writes:
-  index.html          published page (owner-review notes removed)
-  review.html         review version with owner-review notes visible
-  dist/artifact.html  review version with images inlined, for the Claude artifact
+    python3 build.py            published site, written to the repository root
+    python3 build.py --preview  review copy in dist/preview/ (owner notes visible,
+                                links end in index.html so pages open as files)
 
-Owner-review notes are wrapped in <!--REVIEW--> ... <!--/REVIEW--> in the source.
+Sources: src/content.py (specialties and projects), src/site.css, src/site.js,
+src/img/. Text wrapped in <!--REVIEW--> ... <!--/REVIEW--> appears only in the
+preview. The Download resume button appears only when AM_Ward_Resume.pdf exists.
 """
-import base64
 import pathlib
 import re
+import shutil
+import sys
 
 ROOT = pathlib.Path(__file__).parent
-IMAGES = {
-    "{{DELTAAD}}": "delta-ad.jpg",
-    "{{REUSE}}": "reuse.jpg",
-    "{{CAM}}": "climate-action-month.jpg",
-    "{{GREENER}}": "greener-life.jpg",
-    "{{SUITCASE}}": "delta-suitcase.jpg",
-    "{{SFR}}": "sfrecycles.jpg",
-}
+sys.path.insert(0, str(ROOT / "src"))
+import content as C  # noqa: E402
+
+PREVIEW = "--preview" in sys.argv
+OUT = ROOT / "dist" / "preview" if PREVIEW else ROOT
 RESUME = "AM_Ward_Resume.pdf"
+BUILT = ["brand"]  # specialty pages with full content; the rest get a placeholder
 REVIEW_BLOCK = re.compile(r"\s*<!--REVIEW-->.*?<!--/REVIEW-->", re.S)
-RESUME_BUTTON = re.compile(r"\s*<!--RESUME-->.*?<!--/RESUME-->", re.S)
+FONTS = ("https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800"
+         "&family=Source+Sans+3:wght@400;600;700&display=swap")
 
 
-def fill_images(page, inline):
-    for token, name in IMAGES.items():
-        path = ROOT / "src" / "img" / name
-        if inline:
-            src = "data:image/jpeg;base64," + base64.b64encode(path.read_bytes()).decode()
+def href(root, path):
+    """Link to a page directory ("" for home, "brand/") from a page at depth root."""
+    if PREVIEW:
+        return f"{root}{path}index.html"
+    return f"{root}{path}" if path else (root or "./")
+
+
+def review(html):
+    return f"<!--REVIEW-->{html}<!--/REVIEW-->"
+
+
+def header(root, current):
+    work_items = "".join(
+        f'<li><a href="{href(root, s["slug"] + "/")}"><strong>{s["name"]}</strong><span>{s["card"]}</span></a></li>'
+        for s in C.SPECIALTIES.values())
+    mobile_work = "".join(
+        f'<a class="sub" href="{href(root, s["slug"] + "/")}">{s["name"]}</a>' for s in C.SPECIALTIES.values())
+    about_current = ' aria-current="page"' if current == "about" else ""
+    return f"""<a class="skip" href="#main">Skip to content</a>
+{review('<div class="review-bar"><div class="wrap">Design review: the homepage and the Brand page are built. The other pages follow once you approve the look.</div></div>')}
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="{href(root, '')}">A.M. Ward</a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav-work">
+        <button class="nav-work-btn" type="button" aria-expanded="false" aria-controls="work-menu">Work</button>
+        <ul class="work-menu" id="work-menu" hidden>{work_items}</ul>
+      </div>
+      <a href="{href(root, 'about/')}"{about_current}>About</a>
+      <a class="ext" href="{C.LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-primary" href="#contact">Let’s talk</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-panel">Menu</button>
+    <nav class="mobile-panel" id="mobile-panel" aria-label="Main">
+      <span class="group">Work</span>{mobile_work}
+      <a href="{href(root, 'about/')}">About &amp; experience</a>
+      <a class="ext" href="{C.LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-primary" href="#contact">Let’s talk</a>
+    </nav>
+  </div>
+</header>"""
+
+
+def contact(root, heading="Interested in working together? Let’s talk."):
+    resume = ""
+    if (ROOT / RESUME).exists():
+        resume = f'<a class="btn btn-secondary" href="{root}{RESUME}" download aria-label="Download A.M. Ward’s resume (PDF)">Download resume</a>'
+    return f"""<section class="section contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <h2 id="contact-h">{heading}</h2>
+    <p>I’m open to full-time and consulting work in brand, product marketing, communications and organizational leadership.</p>
+    <div class="btn-row">
+      <button class="btn btn-primary" type="button" id="reveal">Email me</button>
+      <span class="addr" id="email" hidden></span>
+      <button class="btn btn-secondary" type="button" id="copy" hidden>Copy</button>
+      <a class="btn btn-secondary ext" href="{C.LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>
+      {resume}
+    </div>
+    <p class="status" id="status" aria-live="polite"></p>
+  </div>
+</section>"""
+
+
+def footer(root):
+    links = "".join(f'<li><a href="{href(root, s["slug"] + "/")}">{s["name"]}</a></li>' for s in C.SPECIALTIES.values())
+    return f"""<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="wordmark" href="{href(root, '')}">A.M. Ward</a>
+      <nav aria-label="Footer"><ul>{links}<li><a href="{href(root, 'about/')}">About</a></li><li><a class="ext" href="{C.LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="#contact">Let’s talk</a></li></ul></nav>
+    </div>
+    <small>A.M. Ward · Atlanta, Georgia · Remote, USA</small>
+  </div>
+</footer>"""
+
+
+def head(title, description, path):
+    url = C.SITE_URL + path
+    image = C.SITE_URL + "src/img/reuse.jpg"
+    return f"""<title>{title}</title>
+<meta name="description" content="{description}">
+<link rel="canonical" href="{url}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="A.M. Ward">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{description}">
+<meta property="og:url" content="{url}">
+<meta property="og:image" content="{image}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="{FONTS}">"""
+
+
+def document(root, page_id, title, description, path, main, fragment=False):
+    css = f'<link rel="stylesheet" href="{root}assets/site.css">'
+    ext = "index.html" if PREVIEW else ""
+    body = f"""{header(root, page_id)}
+<main id="main">
+{main}
+{contact(root)}
+</main>
+{footer(root)}
+<script src="{root}assets/site.js"></script>"""
+    meta = head(title, description, path) + "\n" + css
+    if fragment:
+        # Artifact pages are wrapped in their own document skeleton.
+        return (f'{meta}\n<meta name="claude:viewport-fit-sides" content="cover">\n'
+                f'<div data-shell></div>\n{body}').replace(
+                    '<div data-shell></div>',
+                    f'<script>document.body.dataset.root="{root}";document.body.dataset.ext="{ext}";document.body.dataset.page="{page_id}";</script>')
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+{meta}
+</head>
+<body data-root="{root}" data-ext="{ext}" data-page="{page_id}">
+{body}
+</body>
+</html>
+"""
+
+
+def img(root, image, eager=False):
+    loading = "eager" if eager else "lazy"
+    cls = f' class="focus-{image["focus"]}"' if image.get("focus") else ""
+    return (f'<img{cls} src="{root}src/img/{image["src"]}" alt="{image["alt"]}" '
+            f'width="{image["w"]}" height="{image["h"]}" loading="{loading}" decoding="async">')
+
+
+def meta_line(p):
+    return " · ".join(x for x in (p["org"], p["period"]) if x)
+
+
+def project(root, pid, featured):
+    p = C.PROJECTS[pid]
+    figure, label = p["outcome"]
+    details = "".join(f"<div><h4>{h}</h4>{body}</div>" for h, body in p["details"])
+    links = "".join(f'<a class="ext" href="{u}" target="_blank" rel="noopener">{t}</a>' for t, u in p["links"])
+    links = f'<div class="links">{links}</div>' if links else ""
+    more_label = "Explore the project" if featured else "See how I approached it"
+    kind = "project-featured" if featured else "project-compact"
+    return f"""<article class="project {kind}" id="{pid}">
+  <div class="project-media">{img(root, p["image"])}</div>
+  <div class="project-body">
+    <p class="meta">{meta_line(p)}</p>
+    <h3>{p["title"]}</h3>
+    <p class="outcome"><b>{figure}</b><span>{label}</span></p>
+    <dl class="summary">
+      <div><dt>The challenge</dt><dd>{p["challenge"]}</dd></div>
+      <div><dt>My role</dt><dd>{p["role"]}</dd></div>
+    </dl>
+    <details class="more">
+      <summary>{more_label}<span class="sr-only">: {p["title"]}</span></summary>
+      <div class="detail">{details}{links}</div>
+    </details>
+  </div>
+</article>"""
+
+
+def home(root):
+    s = C.SPECIALTIES
+    proofs = "".join(f"<li><b>{f}</b><span>{l}</span><small>{w}</small></li>" for f, l, w in C.PROOF_POINTS)
+    orgs = "".join(f"<li>{o}</li>" for o in C.ORGANIZATIONS)
+    cards = []
+    for sp in s.values():
+        v = sp["card_visual"]
+        if "img" in v:
+            cls = "card-visual phone" if v.get("phone") else "card-visual"
+            visual = f'<div class="{cls}"><img src="{root}src/img/{v["img"]}" alt="" loading="lazy" decoding="async"></div>'
         else:
-            src = "src/img/" + name
-        page = page.replace(token, src)
-    assert "{{" not in page, "unreplaced image placeholder"
-    return page
+            visual = f'<div class="card-visual stat" aria-hidden="true"><b>{v["figure"]}</b><span>{v["label"]}</span></div>'
+        cards.append(f"""<a class="card" href="{href(root, sp['slug'] + '/')}">
+  {visual}
+  <div class="card-body"><h3>{sp['name']}</h3><p>{sp['card']}</p><span class="arrow-link">Explore {sp.get('short', sp['name'])}</span></div>
+</a>""")
+    return f"""<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">A.M. Ward, MBA · Marketing, communications &amp; organizational leader</p>
+      <h1 id="hero-h">I connect strategy, people and ideas to make things happen.</h1>
+      <p class="lede">I’m a marketing and communications leader who turns customer and employee insight into stronger brands, better products and measurable growth. I also build the teams, systems and AI-enabled workflows that help organizations deliver.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="#work">Explore my work</a><a class="btn btn-secondary" href="#contact">Let’s talk</a></div>
+      {review('<p class="review">New copy for your review: headline, introduction and the “throughline” section below.</p>')}
+    </div>
+    <div class="collage" aria-label="Selected project work">
+      <figure class="c1">{img(root, C.PROJECTS['reuse-sf']['image'], eager=True)}</figure>
+      <figure class="c2">{img(root, C.PROJECTS['sf-climate-action']['image'], eager=True)}</figure>
+      <figure class="c3"><img src="{root}src/img/sfrecycles.jpg" alt="SF Recycles mobile web app" width="420" height="607" loading="eager" decoding="async"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="orgs" aria-labelledby="orgs-h">
+  <div class="wrap">
+    <h2 class="eyebrow" id="orgs-h">Organizations I’ve worked with</h2>
+    <ul>{orgs}</ul>
+    {review('<p class="review">Names are set in type rather than logos. Google and Microsoft in particular restrict logo use, so official logos need permission first. Columbia University is optional.</p>')}
+  </div>
+</section>
+
+<section class="section outcomes" aria-labelledby="outcomes-h">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Selected outcomes</p><h2 id="outcomes-h">Results across brand, product and people</h2></div>
+    <ul>{proofs}</ul>
+  </div>
+</section>
+
+<section class="section" id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">My work</p><h2 id="work-h">Choose an area to explore</h2></div>
+    <div class="cards">{''.join(cards)}</div>
+  </div>
+</section>
+
+<section class="section throughline" aria-labelledby="about-h">
+  <div class="wrap">
+    <h2 id="about-h">One throughline, four disciplines</h2>
+    <div class="copy">
+      <p class="lede">Whether the audience is a customer choosing a product, a resident deciding to act or an employee adopting a new tool, the work starts in the same place: understanding what drives people, then making the case clearly.</p>
+      <p>That’s why my career spans brand, product marketing, communications and operations. I’ve led these disciplines on their own and together, for global companies such as Microsoft and Delta Air Lines and as Head of Marketing, Product &amp; Community for San Francisco’s Environment Department, where I led a multidisciplinary team across 20+ services and technology products.</p>
+      <a class="arrow-link" href="{href(root, 'about/')}">See my experience and credentials</a>
+    </div>
+  </div>
+</section>"""
 
 
-def standalone(page):
-    split = page.index("</style>") + len("</style>")
-    return (
-        '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
-        '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
-        "<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>\n"
-        + page[:split] + "\n</head>\n<body>\n" + page[split:] + "\n</body>\n</html>\n"
-    )
+def specialty(root, key):
+    sp = C.SPECIALTIES[key]
+    caps = "".join(f"<li>{c}</li>" for c in sp["capabilities"])
+    featured = "".join(project(root, p, True) for p in sp["featured"])
+    supporting = "".join(project(root, p, False) for p in sp["supporting"])
+    related = "".join(
+        f'<a href="{href(root, o["slug"] + "/")}"><strong>{o["name"]}</strong><span>{o["card"]}</span></a>'
+        for k, o in C.SPECIALTIES.items() if k != key)
+    return f"""<section class="page-hero" aria-labelledby="page-h">
+  <div class="wrap">
+    <p class="crumbs"><a href="{href(root, '')}#work">Work</a> / {sp['name']}</p>
+    <h1 id="page-h">{sp['name']}</h1>
+    <p class="lede">{sp['intro']}</p>
+    <ul class="caps" aria-label="Capabilities">{caps}</ul>
+  </div>
+</section>
+
+<section class="section" style="padding-top:24px" aria-labelledby="featured-h">
+  <div class="wrap">
+    <div class="section-head"><h2 id="featured-h">Featured projects</h2></div>
+    <div class="featured">{featured}</div>
+    {review('<p class="review" style="margin-top:24px">“The challenge” and “My role” lines are new summaries of existing content; please check them. Years are shown only where confirmed. Please supply years for the San Francisco projects.</p>')}
+  </div>
+</section>
+
+<section class="section" style="padding-top:0" aria-labelledby="more-h">
+  <div class="wrap">
+    <div class="section-head"><h2 id="more-h">More {sp['name'].lower()} work</h2></div>
+    <div class="supporting">{supporting}</div>
+    {review('<p class="review" style="margin-top:24px">This brief restores “Feeling Gassy” and SF Emergency Ride Home, which the previous brief removed. Please confirm you want them back, and confirm your role on “Feeling Gassy”; the current line only describes the campaign.</p>')}
+  </div>
+</section>
+
+<section class="section" style="padding-top:0" aria-labelledby="related-h">
+  <div class="wrap">
+    <div class="section-head"><h2 id="related-h">Explore other work</h2></div>
+    <div class="related">{related}</div>
+  </div>
+</section>"""
 
 
-source = (ROOT / "src" / "page.html").read_text()
-final = REVIEW_BLOCK.sub("", source)
-assert "REVIEW" not in final, "unbalanced review markers"
+def stub(root, name):
+    return f"""<section class="stub" aria-labelledby="page-h">
+  <div class="wrap">
+    <p class="crumbs"><a href="{href(root, '')}">Home</a> / {name}</p>
+    <h1 id="page-h">{name}</h1>
+    <p class="lede">This page will be built once the homepage and Brand page designs are approved.</p>
+    <a class="arrow-link" href="{href(root, 'brand/')}">See the Brand page design</a>
+  </div>
+</section>"""
 
-has_resume = (ROOT / RESUME).exists()
-if not has_resume:
-    # Keep the published page free of a broken link until the PDF is added.
-    final = RESUME_BUTTON.sub("", final)
 
-(ROOT / "index.html").write_text(standalone(fill_images(final, inline=False)))
-(ROOT / "review.html").write_text(standalone(fill_images(source, inline=False)))
-(ROOT / "dist").mkdir(exist_ok=True)
-(ROOT / "dist" / "artifact.html").write_text(fill_images(source, inline=True))
+def write(path, html):
+    if not PREVIEW:
+        html = REVIEW_BLOCK.sub("", html)
+        assert "REVIEW" not in html, "unbalanced review markers"
+    target = OUT / path
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(html)
 
-print("Built index.html, review.html and dist/artifact.html")
-if not has_resume:
-    print(f"NOTE: {RESUME} is missing; the Download resume button is hidden in index.html until it is added.")
+
+if PREVIEW and OUT.exists():
+    shutil.rmtree(OUT)
+OUT.mkdir(parents=True, exist_ok=True)
+(OUT / "assets").mkdir(exist_ok=True)
+shutil.copy(ROOT / "src" / "site.css", OUT / "assets" / "site.css")
+shutil.copy(ROOT / "src" / "site.js", OUT / "assets" / "site.js")
+if PREVIEW:
+    shutil.copytree(ROOT / "src" / "img", OUT / "src" / "img")
+
+home_title = "A.M. Ward | Marketing, Communications & Organizational Leader"
+home_desc = ("A.M. Ward is a marketing and communications leader across brand, product marketing, "
+             "internal and executive communications, and leadership and operations.")
+write("index.html", document("", "home", home_title, home_desc, "", home("")))
+if PREVIEW:
+    # The artifact viewer wraps its main page in a document of its own.
+    preview_home = document("", "home", "A.M. Ward Redesign", home_desc, "", home(""), fragment=True)
+    write("artifact-home.html", preview_home)
+
+for key, sp in C.SPECIALTIES.items():
+    root = "../"
+    title = f"{sp['title'].capitalize()} | A.M. Ward"
+    if key in BUILT:
+        main = specialty(root, key)
+    else:
+        main = stub(root, sp["name"])
+    write(f"{key}/index.html", document(root, key, title, sp["description"], key + "/", main))
+write("about/index.html", document("../", "about", "About and experience | A.M. Ward",
+                                   "Experience, credentials and technology capabilities of A.M. Ward.",
+                                   "about/", stub("../", "About &amp; experience")))
+
+print(f"Built {'preview in dist/preview' if PREVIEW else 'site'}: home, {', '.join(BUILT)} (full); "
+      f"{', '.join(k for k in C.SPECIALTIES if k not in BUILT)}, about (placeholders)")
+if not (ROOT / RESUME).exists():
+    print(f"NOTE: {RESUME} is missing; the Download resume button is hidden.")
