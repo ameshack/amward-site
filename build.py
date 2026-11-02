@@ -44,7 +44,7 @@ def header(root, current):
         f'<a class="sub" href="{href(root, s["slug"] + "/")}">{s["name"]}</a>' for s in C.SPECIALTIES.values())
     about_current = ' aria-current="page"' if current == "about" else ""
     return f"""<a class="skip" href="#main">Skip to content</a>
-{review('<div class="review-bar"><div class="wrap review-bar-row"><span>Design review: the homepage and the Brand page are built.</span><span class="variant-switch" role="group" aria-label="Compare visual directions"><button type="button" data-variant="warm" aria-pressed="true">Warm editorial</button><button type="button" data-variant="crisp" aria-pressed="false">Crisp editorial</button></span></div></div>')}
+{review('<div class="review-bar"><div class="wrap">Design review: the homepage and the Brand page are built. The other pages follow once you approve the look.</div></div>')}
 <header class="site-header">
   <div class="wrap">
     <a class="wordmark" href="{href(root, '')}">A.M. Ward</a>
@@ -193,8 +193,6 @@ def home(root):
         if "img" in v:
             cls = "card-visual phone" if v.get("phone") else "card-visual"
             visual = f'<div class="{cls}"><img src="{root}src/img/{v["img"]}" alt="" loading="lazy" decoding="async"></div>'
-        else:
-            visual = f'<div class="card-visual stat {v.get("pattern", "")}" aria-hidden="true"><b>{v["figure"]}</b><span>{v["label"]}</span></div>'
         cards.append(f"""<a class="card" href="{href(root, sp['slug'] + '/')}">
   {visual}
   <div class="card-body"><h3>{sp['name']}</h3><p>{sp['card']}</p><span class="arrow-link">Explore {sp.get('short', sp['name'])}</span></div>
@@ -209,8 +207,8 @@ def home(root):
     </div>
     <div class="collage" aria-label="Selected project work">
       <figure class="c1">{img(root, C.PROJECTS['delta-campaign']['image'], eager=True)}</figure>
-      <figure class="c2">{img(root, C.PROJECTS['reuse-sf']['image'], eager=True)}</figure>
-      <figure class="c3"><img src="{root}src/img/sfrecycles.jpg" alt="SF Recycles mobile web app" width="420" height="607" loading="eager" decoding="async"></figure>
+      <figure class="c2">{img(root, C.PROJECTS['sf-climate-action']['image'], eager=True)}</figure>
+      <figure class="c3">{img(root, C.PROJECTS['delta-suitcase']['image'], eager=True)}</figure>
     </div>
   </div>
 </section>

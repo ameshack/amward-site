@@ -19,20 +19,6 @@
     }
   }
 
-  // Review copy only: switch between the two visual directions.
-  var switches = document.querySelectorAll('.variant-switch button');
-  function setVariant(v) {
-    if (v === 'crisp') body.setAttribute('data-variant', 'crisp'); else body.removeAttribute('data-variant');
-    switches.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-variant') === v ? 'true' : 'false'); });
-    try { localStorage.setItem('amward-variant', v); } catch (err) {}
-  }
-  if (switches.length) {
-    var saved = 'warm';
-    try { saved = localStorage.getItem('amward-variant') || 'warm'; } catch (err) {}
-    setVariant(saved);
-    switches.forEach(function (b) { b.addEventListener('click', function () { setVariant(b.getAttribute('data-variant')); }); });
-  }
-
   // Work dropdown (desktop)
   var workBtn = document.querySelector('.nav-work-btn');
   var workMenu = document.getElementById('work-menu');

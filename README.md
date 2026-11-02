@@ -11,6 +11,13 @@ Portfolio site for A.M. Ward: a homepage plus one page per specialty (Brand, Pro
 - Generated output: `index.html`, `brand/`, `product-marketing/`, `communications/`, `leadership/`, `about/`, `assets/`.
 - `AM_Ward_Resume.pdf` — the resume behind the **Download resume** button. Until it is added, the build leaves the button out.
 
+## Image sources
+
+Project images are the owner's own campaign and product materials. Two homepage card photos are stock images from Pexels, used under the Pexels license (free commercial use, no attribution required), until the owner supplies their own:
+
+- `src/img/communications.jpg` — Pexels photo 1181622
+- `src/img/leadership.jpg` — Pexels photo 3184296
+
 ## Editing
 
 1. Edit `src/content.py`, `src/site.css`, `src/site.js` or the templates in `build.py`.
