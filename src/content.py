@@ -48,7 +48,7 @@ SPECIALTIES = {
         "name": "Leadership &amp; Operations",
         "short": "Leadership",
         "card": "Team leadership, organizational strategy, resource allocation and operational excellence.",
-        "card_visual": {"img": "leadership.jpg", "alt": ""},
+        "card_visual": {"img": "strategic-plan.jpg", "alt": ""},
         "title": "Leadership and operations",
         "description": "Leadership and operations by A.M. Ward: executive partnership, team and agency leadership, and marketing operations.",
     },

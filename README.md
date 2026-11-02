@@ -13,10 +13,11 @@ Portfolio site for A.M. Ward: a homepage plus one page per specialty (Brand, Pro
 
 ## Image sources
 
-Project images are the owner's own campaign and product materials. Two homepage card photos are stock images from Pexels, used under the Pexels license (free commercial use, no attribution required), until the owner supplies their own:
+Project images are the owner's own campaign, product and published materials. `src/img/strategic-plan.jpg` is cropped from the cover of San Francisco Environment's published 2021–2023 Strategic Plan.
+
+The Communications card photo is a stock image from Pexels, used under the Pexels license (free commercial use, no attribution required), until the owner supplies their own:
 
 - `src/img/communications.jpg` — Pexels photo 1181622
-- `src/img/leadership.jpg` — Pexels photo 3184296
 
 ## Editing
 
