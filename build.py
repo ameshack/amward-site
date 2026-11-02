@@ -19,7 +19,6 @@ import content as C  # noqa: E402
 
 PREVIEW = "--preview" in sys.argv
 OUT = ROOT / "dist" / "preview" if PREVIEW else ROOT
-BUILT = ["brand"]  # specialty pages with full content; the rest get a placeholder
 REVIEW_BLOCK = re.compile(r"\s*<!--REVIEW-->.*?<!--/REVIEW-->", re.S)
 FONTS = ("https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800"
          "&family=Source+Sans+3:wght@400;600;700&display=swap")
@@ -44,7 +43,7 @@ def header(root, current):
         f'<a class="sub" href="{href(root, s["slug"] + "/")}">{s["name"]}</a>' for s in C.SPECIALTIES.values())
     about_current = ' aria-current="page"' if current == "about" else ""
     return f"""<a class="skip" href="#main">Skip to content</a>
-{review('<div class="review-bar"><div class="wrap">Design review: the homepage and the Brand page are built. The other pages follow once you approve the look.</div></div>')}
+{review('<div class="review-bar"><div class="wrap">Review version: owner-review notes appear in yellow boxes and are removed from the published site.</div></div>')}
 <header class="site-header">
   <div class="wrap">
     <a class="wordmark" href="{href(root, '')}">A.M. Ward</a>
@@ -154,29 +153,36 @@ def img(root, image, eager=False):
 
 
 def meta_line(p):
-    return p["org"]
+    return " · ".join(x for x in (p["org"], p.get("program")) if x)
 
 
-def project(root, pid, featured):
-    p = C.PROJECTS[pid]
+def outcome(p):
     figure, label = p["outcome"]
+    if figure:
+        return f'<p class="outcome"><b>{figure}</b><span>{label}</span></p>'
+    return f'<p class="outcome mandate"><span>{label}</span></p>'
+
+
+def project(root, pid):
+    p = C.PROJECTS[pid]
     details = "".join(f"<div><h4>{h}</h4>{body}</div>" for h, body in p["details"])
     links = "".join(f'<a class="ext" href="{u}" target="_blank" rel="noopener">{t}</a>' for t, u in p["links"])
     links = f'<div class="links">{links}</div>' if links else ""
-    more_label = "Explore the project" if featured else "See how I approached it"
-    kind = "project-featured" if featured else "project-compact"
-    return f"""<article class="project {kind}" id="{pid}">
-  <div class="project-media">{img(root, p["image"])}</div>
+    image = p.get("image")
+    layout = image.get("layout", "side") if image else "text"
+    media = f'<div class="project-media">{img(root, image)}</div>' if image else ""
+    return f"""<article class="project project-{layout}" id="{pid}">
+  {media}
   <div class="project-body">
     <p class="meta">{meta_line(p)}</p>
     <h3>{p["title"]}</h3>
-    <p class="outcome"><b>{figure}</b><span>{label}</span></p>
+    {outcome(p)}
     <dl class="summary">
       <div><dt>The challenge</dt><dd>{p["challenge"]}</dd></div>
       <div><dt>My role</dt><dd>{p["role"]}</dd></div>
     </dl>
     <details class="more">
-      <summary>{more_label}<span class="sr-only">: {p["title"]}</span></summary>
+      <summary>Explore the project<span class="sr-only">: {p["title"]}</span></summary>
       <div class="detail">{details}{links}</div>
     </details>
   </div>
@@ -190,10 +196,9 @@ def home(root):
     cards = []
     for sp in s.values():
         v = sp["card_visual"]
-        if "img" in v:
-            cls = "card-visual phone" if v.get("phone") else "card-visual"
-            style = f' style="object-position:{v["position"]}"' if v.get("position") else ""
-            visual = f'<div class="{cls}"><img src="{root}src/img/{v["img"]}" alt=""{style} loading="lazy" decoding="async"></div>'
+        cls = "card-visual phone" if v.get("phone") else "card-visual"
+        style = f' style="object-position:{v["position"]}"' if v.get("position") else ""
+        visual = f'<div class="{cls}"><img src="{root}src/img/{v["img"]}" alt=""{style} loading="lazy" decoding="async"></div>'
         cards.append(f"""<a class="card" href="{href(root, sp['slug'] + '/')}">
   {visual}
   <div class="card-body"><h3>{sp['name']}</h3><p>{sp['card']}</p><span class="arrow-link">Explore {sp.get('short', sp['name'])}</span></div>
@@ -209,7 +214,7 @@ def home(root):
     <div class="collage" aria-label="Selected project work">
       <figure class="c1">{img(root, C.PROJECTS['delta-campaign']['image'], eager=True)}</figure>
       <figure class="c2">{img(root, C.PROJECTS['sf-climate-action']['image'], eager=True)}</figure>
-      <figure class="c3"><img src="{root}src/img/reuse-group.jpg" alt="REUSE SF campaign photo: six people in colorful vintage fashion, one holding a REUSE San Francisco tote" width="800" height="1000" loading="eager" decoding="async"></figure>
+      <figure class="c3"><img src="{root}src/img/reuse-tote.jpg" alt="REUSE SF campaign photo: two people in vintage fashion holding a REUSE San Francisco tote and tumbler" width="800" height="999" loading="eager" decoding="async"></figure>
     </div>
   </div>
 </section>
@@ -247,20 +252,19 @@ def home(root):
 </section>"""
 
 
+def related(root, exclude):
+    return "".join(
+        f'<a href="{href(root, o["slug"] + "/")}"><strong>{o["name"]}</strong><span>{o["card"]}</span></a>'
+        for k, o in C.SPECIALTIES.items() if k != exclude)
+
+
 def specialty(root, key):
     sp = C.SPECIALTIES[key]
     caps = "".join(f"<li>{c}</li>" for c in sp["capabilities"])
-    featured = "".join(project(root, p, True) for p in sp["featured"])
-    supporting = "".join(project(root, p, False) for p in sp["supporting"])
-    more = f"""<section class="section" style="padding-top:0" aria-labelledby="more-h">
-  <div class="wrap">
-    <div class="section-head"><h2 id="more-h">More {sp['name'].lower()} work</h2></div>
-    <div class="supporting">{supporting}</div>
-  </div>
-</section>""" if supporting else ""
-    related = "".join(
-        f'<a href="{href(root, o["slug"] + "/")}"><strong>{o["name"]}</strong><span>{o["card"]}</span></a>'
-        for k, o in C.SPECIALTIES.items() if k != key)
+    projects = "".join(project(root, p) for p in sp["projects"])
+    note = ""
+    if key == "brand":
+        note = review('<p class="review" style="margin-top:24px">Across all four pages, “The challenge” and “My role” lines and the “Explore the project” details are new summaries drawn from your current site and master CV. Please check them.</p>')
     return f"""<section class="page-hero" aria-labelledby="page-h">
   <div class="wrap">
     <p class="crumbs"><a href="{href(root, '')}#work">Work</a> / {sp['name']}</p>
@@ -272,29 +276,72 @@ def specialty(root, key):
 
 <section class="section" style="padding-top:24px" aria-labelledby="featured-h">
   <div class="wrap">
-    <div class="section-head"><h2 id="featured-h">Featured projects</h2></div>
-    <div class="featured">{featured}</div>
-    {review('<p class="review" style="margin-top:24px">“The challenge” and “My role” lines are new summaries of existing content; please check them.</p>')}
+    <div class="section-head"><h2 id="featured-h">Selected projects</h2></div>
+    <div class="featured">{projects}</div>
+    {note}
   </div>
 </section>
-
-{more}
 
 <section class="section" style="padding-top:0" aria-labelledby="related-h">
   <div class="wrap">
     <div class="section-head"><h2 id="related-h">Explore other work</h2></div>
-    <div class="related">{related}</div>
+    <div class="related">{related(root, key)}</div>
   </div>
 </section>"""
 
 
-def stub(root, name):
-    return f"""<section class="stub" aria-labelledby="page-h">
+def about(root):
+    roles = []
+    for years, org, title, desc, slugs in C.EXPERIENCE:
+        rel = ""
+        if slugs:
+            rel = '<p class="role-links">Related work: ' + " · ".join(
+                f'<a href="{href(root, s + "/")}">{C.SPECIALTIES[s].get("short", C.SPECIALTIES[s]["name"])}</a>' for s in slugs) + "</p>"
+        roles.append(f'<li><span class="when">{years}</span><div class="role">{org}<span class="t">{title}</span><p>{desc}</p>{rel}</div></li>')
+    tech = "".join(f"<div><dt>{t}</dt><dd>{d}</dd></div>" for t, d in C.TECH_ROWS)
+    awards = "".join(f'<li><span class="yr">{y}</span>{n}<span>{w}</span></li>' for y, n, w in C.AWARDS)
+    edu = "".join(f"<li>{n}{f'<span>{d}</span>' if d else ''}</li>" for n, d in C.EDUCATION)
+    return f"""<section class="page-hero" aria-labelledby="page-h">
   <div class="wrap">
-    <p class="crumbs"><a href="{href(root, '')}">Home</a> / {name}</p>
-    <h1 id="page-h">{name}</h1>
-    <p class="lede">This page will be built once the homepage and Brand page designs are approved.</p>
-    <a class="arrow-link" href="{href(root, 'brand/')}">See the Brand page design</a>
+    <p class="crumbs"><a href="{href(root, '')}">Home</a> / About</p>
+    <h1 id="page-h">About &amp; experience</h1>
+    <p class="lede">{C.ABOUT_INTRO}</p>
+    {review('<p class="review">The introduction above is new copy for your review. Everything else on this page comes from your current site.</p>')}
+    <ul class="caps jump" aria-label="On this page"><li><a href="#experience">Experience</a></li><li><a href="#technology-ai">Technology &amp; AI</a></li><li><a href="#credentials">Recognition &amp; credentials</a></li></ul>
+  </div>
+</section>
+
+<section class="section split" id="experience" aria-labelledby="exp-h" style="padding-top:24px">
+  <div class="wrap">
+    <div class="split-head"><p class="eyebrow">Experience</p><h2 id="exp-h">Experience across industries and borders</h2><p>Global companies and mission-driven organizations, in the US and abroad.</p></div>
+    <ol class="roles">{''.join(roles)}</ol>
+  </div>
+</section>
+
+<section class="section split tech" id="technology-ai" aria-labelledby="tech-h">
+  <div class="wrap">
+    <div class="split-head"><p class="eyebrow">Technology &amp; AI</p><h2 id="tech-h">Technology &amp; AI capabilities</h2><p>{C.TECH_INTRO}</p></div>
+    <dl class="tech-rows">{tech}</dl>
+  </div>
+</section>
+
+<section class="section" id="credentials" aria-labelledby="cred-h">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Recognition &amp; credentials</p><h2 id="cred-h">Awards, education and languages</h2></div>
+    <div class="cred-grid">
+      <div><h3>Awards</h3><ul>{awards}</ul></div>
+      <div class="stack">
+        <div><h3>Education &amp; certification</h3><ul>{edu}</ul></div>
+        <div><h3>Languages</h3><ul><li>{C.LANGUAGES}</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0" aria-labelledby="related-h">
+  <div class="wrap">
+    <div class="section-head"><h2 id="related-h">Explore my work</h2></div>
+    <div class="related four">{related(root, None)}</div>
   </div>
 </section>"""
 
@@ -323,20 +370,14 @@ home_desc = ("A.M. Ward is a marketing and communications leader across brand, p
 write("index.html", document("", "home", home_title, home_desc, "", home("")))
 if PREVIEW:
     # The artifact viewer wraps its main page in a document of its own.
-    preview_home = document("", "home", "A.M. Ward Redesign", home_desc, "", home(""), fragment=True)
-    write("artifact-home.html", preview_home)
+    write("artifact-home.html", document("", "home", "A.M. Ward Redesign", home_desc, "", home(""), fragment=True))
 
 for key, sp in C.SPECIALTIES.items():
-    root = "../"
     title = f"{sp['title'].capitalize()} | A.M. Ward"
-    if key in BUILT:
-        main = specialty(root, key)
-    else:
-        main = stub(root, sp["name"])
-    write(f"{key}/index.html", document(root, key, title, sp["description"], key + "/", main))
+    write(f"{key}/index.html", document("../", key, title, sp["description"], key + "/", specialty("../", key)))
 write("about/index.html", document("../", "about", "About and experience | A.M. Ward",
-                                   "Experience, credentials and technology capabilities of A.M. Ward.",
-                                   "about/", stub("../", "About &amp; experience")))
+                                   "Experience, technology and AI capabilities, awards and education of A.M. Ward.",
+                                   "about/", about("../")))
 
-print(f"Built {'preview in dist/preview' if PREVIEW else 'site'}: home, {', '.join(BUILT)} (full); "
-      f"{', '.join(k for k in C.SPECIALTIES if k not in BUILT)}, about (placeholders)")
+print(f"Built {'preview in dist/preview' if PREVIEW else 'site'}: home, "
+      f"{', '.join(C.SPECIALTIES)}, about")
