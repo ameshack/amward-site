@@ -15,9 +15,7 @@ Portfolio site for A.M. Ward: a homepage plus one page per specialty (Brand, Pro
 
 Project images are the owner's own campaign, product and published materials. `src/img/strategic-plan.jpg` is cropped from the cover of San Francisco Environment's published 2021–2023 Strategic Plan.
 
-The Communications card photo is a stock image from Pexels, used under the Pexels license (free commercial use, no attribution required), until the owner supplies their own:
-
-- `src/img/communications.jpg` — Pexels photo 1181622
+`src/img/year-end-wrap-up.jpg` is a Microsoft year-end video title card, edited by the owner’s request to remove an executive’s name and an internal-use marking.
 
 ## Editing
 

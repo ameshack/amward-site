@@ -192,7 +192,8 @@ def home(root):
         v = sp["card_visual"]
         if "img" in v:
             cls = "card-visual phone" if v.get("phone") else "card-visual"
-            visual = f'<div class="{cls}"><img src="{root}src/img/{v["img"]}" alt="" loading="lazy" decoding="async"></div>'
+            style = f' style="object-position:{v["position"]}"' if v.get("position") else ""
+            visual = f'<div class="{cls}"><img src="{root}src/img/{v["img"]}" alt=""{style} loading="lazy" decoding="async"></div>'
         cards.append(f"""<a class="card" href="{href(root, sp['slug'] + '/')}">
   {visual}
   <div class="card-body"><h3>{sp['name']}</h3><p>{sp['card']}</p><span class="arrow-link">Explore {sp.get('short', sp['name'])}</span></div>
