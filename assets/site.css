@@ -70,13 +70,14 @@ p{margin:0}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
 .hero-copy{display:grid;gap:24px}
 .hero h1{font-size:clamp(34px,4.1vw,52px);line-height:1.08;font-weight:800;letter-spacing:-.025em}
-.collage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.collage{display:grid;grid-template-columns:2fr 1fr;gap:12px}
 .collage figure{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--stone)}
 .collage img{width:100%;height:100%;object-fit:cover}
 .collage .c1{grid-column:1/-1;aspect-ratio:1100/612}
-.collage .c2{grid-column:1/-1;aspect-ratio:1100/363}
-.collage .c3,.collage .c4{aspect-ratio:4/3}
-.collage .focus-left{object-position:left center}
+.collage .c2{aspect-ratio:3/2}
+.collage .c3{background:var(--white)}
+.collage .c3{position:relative;min-height:0}
+.collage .c3 img{position:absolute;inset:0;object-position:top}
 
 /* Organizations */
 .orgs{padding-block:28px;border-block:1px solid var(--line)}
@@ -102,9 +103,13 @@ p{margin:0}
 .card-visual img{width:100%;height:100%;object-fit:cover}
 .card-visual.phone{background:var(--sage)}
 .card-visual.phone img{width:46%;justify-self:center;object-position:top;border-radius:10px 10px 0 0;margin-top:22px;box-shadow:0 10px 30px -12px rgba(0,0,0,.35)}
-.card-visual.stat{background:var(--stone);padding:24px 28px;align-content:end;gap:6px}
-.card-visual.stat b{font:800 clamp(36px,4vw,52px)/1 var(--head);color:var(--teal);letter-spacing:-.03em}
-.card-visual.stat span{font-size:16px;color:var(--text);max-width:34ch}
+.card-visual.stat{background-color:var(--teal);padding:24px 28px;align-content:end;gap:8px;position:relative}
+.card-visual.stat.dots{background-image:radial-gradient(color-mix(in srgb,var(--sage) 38%,transparent) 1.6px,transparent 1.8px);background-size:18px 18px;background-position:right -6px top -6px}
+.card-visual.stat.lines{background-image:repeating-linear-gradient(135deg,color-mix(in srgb,var(--sage) 26%,transparent) 0 1.5px,transparent 1.5px 16px)}
+.card-visual.stat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--teal) 32%,transparent 78%)}
+.card-visual.stat b,.card-visual.stat span{position:relative;z-index:1}
+.card-visual.stat b{font:800 clamp(38px,4.2vw,56px)/1 var(--head);color:var(--white);letter-spacing:-.03em}
+.card-visual.stat span{font-size:16px;color:var(--ivory);max-width:36ch}
 .card-body{padding:24px 28px 28px;display:grid;gap:10px;align-content:start}
 .card-body h3{font-size:24px;line-height:1.2;font-weight:700}
 .card-body p{color:var(--muted)}

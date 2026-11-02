@@ -39,7 +39,7 @@ SPECIALTIES = {
         "name": "Internal &amp; Executive Communications",
         "short": "Communications",
         "card": "Executive communications, organizational change and employee engagement.",
-        "card_visual": {"figure": "+88%", "label": "year-over-year employee understanding of mission and values"},
+        "card_visual": {"figure": "+88%", "label": "year-over-year employee understanding of mission and values", "pattern": "dots"},
         "title": "Internal and executive communications",
         "description": "Internal and executive communications by A.M. Ward: executive voice, change and AI adoption, and employee engagement.",
     },
@@ -48,7 +48,7 @@ SPECIALTIES = {
         "name": "Leadership &amp; Operations",
         "short": "Leadership",
         "card": "Team leadership, organizational strategy, resource allocation and operational excellence.",
-        "card_visual": {"figure": "7 · 24 · 10+", "label": "direct reports, indirect contributors and agency relationships"},
+        "card_visual": {"figure": "7 · 24 · 10+", "label": "direct reports, indirect contributors and agency relationships", "pattern": "lines"},
         "title": "Leadership and operations",
         "description": "Leadership and operations by A.M. Ward: executive partnership, team and agency leadership, and marketing operations.",
     },
@@ -57,7 +57,6 @@ SPECIALTIES = {
 PROJECTS = {
     "delta-campaign": {
         "org": "Delta Air Lines",
-        "period": "2023–2024",
         "title": "National brand campaign",
         "image": {"src": "delta-ad.jpg", "w": 1100, "h": 612,
                   "alt": "Closing frame of the Delta ad: Keep Climbing, Delta and SkyTeam logos, Learn more at delta.com/sustainability"},
@@ -78,7 +77,6 @@ PROJECTS = {
     },
     "reuse-sf": {
         "org": "City &amp; County of San Francisco",
-        "period": "2022",
         "title": "REUSE SF",
         "image": {"src": "reuse.jpg", "w": 1100, "h": 558,
                   "alt": "REUSE SF campaign creative: a model in yellow reclining with a reusable tote of produce"},
@@ -98,7 +96,6 @@ PROJECTS = {
     },
     "greener-life": {
         "org": "Southern Company · Georgia Natural Gas",
-        "period": "2024",
         "title": "Subscription growth and lifecycle strategy",
         "image": {"src": "greener-life.jpg", "w": 1100, "h": 363,
                   "alt": "Georgia Natural Gas Greener Life banner: A greener Georgia is on our minds"},
@@ -110,7 +107,6 @@ PROJECTS = {
     },
     "delta-suitcase": {
         "org": "Delta Air Lines",
-        "period": "2023–2024",
         "title": "Consumer product positioning and commercialization",
         "image": {"src": "delta-suitcase.jpg", "w": 1110, "h": 419, "focus": "left",
                   "alt": "Delta web feature: Suitcases made from Delta jets, showing the aluminum suitcase prototype"},
@@ -122,7 +118,6 @@ PROJECTS = {
     },
     "sf-climate-action": {
         "org": "City &amp; County of San Francisco",
-        "period": "",
         "title": "SF Climate Action brand system",
         "image": {"src": "climate-action-month.jpg", "w": 714, "h": 720, "focus": "top",
                   "alt": "Climate Action Month creative: Be the change in climate change, over the Golden Gate Bridge in fog"},

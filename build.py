@@ -154,7 +154,7 @@ def img(root, image, eager=False):
 
 
 def meta_line(p):
-    return " · ".join(x for x in (p["org"], p["period"]) if x)
+    return p["org"]
 
 
 def project(root, pid, featured):
@@ -194,7 +194,7 @@ def home(root):
             cls = "card-visual phone" if v.get("phone") else "card-visual"
             visual = f'<div class="{cls}"><img src="{root}src/img/{v["img"]}" alt="" loading="lazy" decoding="async"></div>'
         else:
-            visual = f'<div class="card-visual stat" aria-hidden="true"><b>{v["figure"]}</b><span>{v["label"]}</span></div>'
+            visual = f'<div class="card-visual stat {v.get("pattern", "")}" aria-hidden="true"><b>{v["figure"]}</b><span>{v["label"]}</span></div>'
         cards.append(f"""<a class="card" href="{href(root, sp['slug'] + '/')}">
   {visual}
   <div class="card-body"><h3>{sp['name']}</h3><p>{sp['card']}</p><span class="arrow-link">Explore {sp.get('short', sp['name'])}</span></div>
@@ -209,9 +209,8 @@ def home(root):
     </div>
     <div class="collage" aria-label="Selected project work">
       <figure class="c1">{img(root, C.PROJECTS['delta-campaign']['image'], eager=True)}</figure>
-      <figure class="c2">{img(root, C.PROJECTS['greener-life']['image'], eager=True)}</figure>
-      <figure class="c3">{img(root, C.PROJECTS['reuse-sf']['image'], eager=True)}</figure>
-      <figure class="c4">{img(root, C.PROJECTS['delta-suitcase']['image'], eager=True)}</figure>
+      <figure class="c2">{img(root, C.PROJECTS['reuse-sf']['image'], eager=True)}</figure>
+      <figure class="c3"><img src="{root}src/img/sfrecycles.jpg" alt="SF Recycles mobile web app" width="420" height="607" loading="eager" decoding="async"></figure>
     </div>
   </div>
 </section>
@@ -276,7 +275,7 @@ def specialty(root, key):
   <div class="wrap">
     <div class="section-head"><h2 id="featured-h">Featured projects</h2></div>
     <div class="featured">{featured}</div>
-    {review('<p class="review" style="margin-top:24px">“The challenge” and “My role” lines are new summaries of existing content; please check them. SF Climate Action has no year yet: please supply one, or I can drop years from every project.</p>')}
+    {review('<p class="review" style="margin-top:24px">“The challenge” and “My role” lines are new summaries of existing content; please check them.</p>')}
   </div>
 </section>
 
