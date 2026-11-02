@@ -9,7 +9,7 @@ Portfolio site covering four focus areas: Brand, Product Marketing, Internal & E
 - `build.py` — fills the placeholders and writes the published files.
 - `index.html` — the published page served by GitHub Pages, with owner-review notes removed. Don't edit it by hand.
 - `review.html` — the same page with owner-review notes visible (notes are wrapped in `<!--REVIEW-->` … `<!--/REVIEW-->` in the source).
-- `AM_Ward_Resume.pdf` — the resume behind the **Download resume** button (to be added by the owner).
+- `AM_Ward_Resume.pdf` — the resume behind the **Download resume** button. Until it is added, the build hides that button on the published page.
 
 ## Editing
 

@@ -22,6 +22,7 @@ IMAGES = {
 }
 RESUME = "AM_Ward_Resume.pdf"
 REVIEW_BLOCK = re.compile(r"\s*<!--REVIEW-->.*?<!--/REVIEW-->", re.S)
+RESUME_BUTTON = re.compile(r"\s*<!--RESUME-->.*?<!--/RESUME-->", re.S)
 
 
 def fill_images(page, inline):
@@ -50,11 +51,16 @@ source = (ROOT / "src" / "page.html").read_text()
 final = REVIEW_BLOCK.sub("", source)
 assert "REVIEW" not in final, "unbalanced review markers"
 
+has_resume = (ROOT / RESUME).exists()
+if not has_resume:
+    # Keep the published page free of a broken link until the PDF is added.
+    final = RESUME_BUTTON.sub("", final)
+
 (ROOT / "index.html").write_text(standalone(fill_images(final, inline=False)))
 (ROOT / "review.html").write_text(standalone(fill_images(source, inline=False)))
 (ROOT / "dist").mkdir(exist_ok=True)
 (ROOT / "dist" / "artifact.html").write_text(fill_images(source, inline=True))
 
 print("Built index.html, review.html and dist/artifact.html")
-if not (ROOT / RESUME).exists():
-    print(f"WARNING: {RESUME} is missing; the Download resume button will not work until it is added.")
+if not has_resume:
+    print(f"NOTE: {RESUME} is missing; the Download resume button is hidden in index.html until it is added.")
