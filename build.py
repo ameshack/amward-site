@@ -6,7 +6,7 @@
 
 Sources: src/content.py (specialties and projects), src/site.css, src/site.js,
 src/img/. Text wrapped in <!--REVIEW--> ... <!--/REVIEW--> appears only in the
-preview. The Download resume button appears only when AM_Ward_Resume.pdf exists.
+preview.
 """
 import pathlib
 import re
@@ -19,7 +19,6 @@ import content as C  # noqa: E402
 
 PREVIEW = "--preview" in sys.argv
 OUT = ROOT / "dist" / "preview" if PREVIEW else ROOT
-RESUME = "AM_Ward_Resume.pdf"
 BUILT = ["brand"]  # specialty pages with full content; the rest get a placeholder
 REVIEW_BLOCK = re.compile(r"\s*<!--REVIEW-->.*?<!--/REVIEW-->", re.S)
 FONTS = ("https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800"
@@ -70,9 +69,6 @@ def header(root, current):
 
 
 def contact(root, heading="Interested in working together? Let’s talk."):
-    resume = ""
-    if (ROOT / RESUME).exists():
-        resume = f'<a class="btn btn-secondary" href="{root}{RESUME}" download aria-label="Download A.M. Ward’s resume (PDF)">Download resume</a>'
     return f"""<section class="section contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
     <h2 id="contact-h">{heading}</h2>
@@ -82,7 +78,6 @@ def contact(root, heading="Interested in working together? Let’s talk."):
       <span class="addr" id="email" hidden></span>
       <button class="btn btn-secondary" type="button" id="copy" hidden>Copy</button>
       <a class="btn btn-secondary ext" href="{C.LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>
-      {resume}
     </div>
     <p class="status" id="status" aria-live="polite"></p>
   </div>
@@ -191,7 +186,7 @@ def project(root, pid, featured):
 def home(root):
     s = C.SPECIALTIES
     proofs = "".join(f"<li><b>{f}</b><span>{l}</span><small>{w}</small></li>" for f, l, w in C.PROOF_POINTS)
-    orgs = "".join(f"<li>{o}</li>" for o in C.ORGANIZATIONS)
+    orgs = "".join(f"<li>{o}</li>" for o in C.RECENT_WORK)
     cards = []
     for sp in s.values():
         v = sp["card_visual"]
@@ -208,24 +203,23 @@ def home(root):
   <div class="wrap">
     <div class="hero-copy">
       <p class="eyebrow">A.M. Ward, MBA · Marketing, communications &amp; organizational leader</p>
-      <h1 id="hero-h">I connect strategy, people and ideas to make things happen.</h1>
-      <p class="lede">I’m a marketing and communications leader who turns customer and employee insight into stronger brands, better products and measurable growth. I also build the teams, systems and AI-enabled workflows that help organizations deliver.</p>
+      <h1 id="hero-h">I turn audience insight into stronger brands, product growth and organizational impact.</h1>
+      <p class="lede">I’m a marketing and communications leader who builds brands, brings products to market and drives measurable growth. Across consumer, enterprise and public-sector organizations, I’ve led the strategies, teams and operations that turn complex challenges into results.</p>
       <div class="btn-row"><a class="btn btn-primary" href="#work">Explore my work</a><a class="btn btn-secondary" href="#contact">Let’s talk</a></div>
-      {review('<p class="review">New copy for your review: headline, introduction and the “throughline” section below.</p>')}
     </div>
     <div class="collage" aria-label="Selected project work">
-      <figure class="c1">{img(root, C.PROJECTS['reuse-sf']['image'], eager=True)}</figure>
-      <figure class="c2">{img(root, C.PROJECTS['sf-climate-action']['image'], eager=True)}</figure>
-      <figure class="c3"><img src="{root}src/img/sfrecycles.jpg" alt="SF Recycles mobile web app" width="420" height="607" loading="eager" decoding="async"></figure>
+      <figure class="c1">{img(root, C.PROJECTS['delta-campaign']['image'], eager=True)}</figure>
+      <figure class="c2">{img(root, C.PROJECTS['greener-life']['image'], eager=True)}</figure>
+      <figure class="c3">{img(root, C.PROJECTS['reuse-sf']['image'], eager=True)}</figure>
+      <figure class="c4">{img(root, C.PROJECTS['delta-suitcase']['image'], eager=True)}</figure>
     </div>
   </div>
 </section>
 
 <section class="orgs" aria-labelledby="orgs-h">
   <div class="wrap">
-    <h2 class="eyebrow" id="orgs-h">Organizations I’ve worked with</h2>
+    <h2 class="eyebrow" id="orgs-h">Recent work for</h2>
     <ul>{orgs}</ul>
-    {review('<p class="review">Names are set in type rather than logos. Google and Microsoft in particular restrict logo use, so official logos need permission first. Columbia University is optional.</p>')}
   </div>
 </section>
 
@@ -247,8 +241,8 @@ def home(root):
   <div class="wrap">
     <h2 id="about-h">One throughline, four disciplines</h2>
     <div class="copy">
-      <p class="lede">Whether the audience is a customer choosing a product, a resident deciding to act or an employee adopting a new tool, the work starts in the same place: understanding what drives people, then making the case clearly.</p>
-      <p>That’s why my career spans brand, product marketing, communications and operations. I’ve led these disciplines on their own and together, for global companies such as Microsoft and Delta Air Lines and as Head of Marketing, Product &amp; Community for San Francisco’s Environment Department, where I led a multidisciplinary team across 20+ services and technology products.</p>
+      <p class="lede">Whether I’m building a brand, bringing a product to market or helping employees navigate change, my work starts with understanding people and translating that insight into strategies that drive action and measurable outcomes.</p>
+      <p>I’ve led brand, product marketing, communications and operations independently and together—from global companies like Microsoft and Delta Air Lines to San Francisco’s Environment Department, where I led a multidisciplinary team supporting 20+ services and technology products.</p>
       <a class="arrow-link" href="{href(root, 'about/')}">See my experience and credentials</a>
     </div>
   </div>
@@ -260,6 +254,12 @@ def specialty(root, key):
     caps = "".join(f"<li>{c}</li>" for c in sp["capabilities"])
     featured = "".join(project(root, p, True) for p in sp["featured"])
     supporting = "".join(project(root, p, False) for p in sp["supporting"])
+    more = f"""<section class="section" style="padding-top:0" aria-labelledby="more-h">
+  <div class="wrap">
+    <div class="section-head"><h2 id="more-h">More {sp['name'].lower()} work</h2></div>
+    <div class="supporting">{supporting}</div>
+  </div>
+</section>""" if supporting else ""
     related = "".join(
         f'<a href="{href(root, o["slug"] + "/")}"><strong>{o["name"]}</strong><span>{o["card"]}</span></a>'
         for k, o in C.SPECIALTIES.items() if k != key)
@@ -276,17 +276,11 @@ def specialty(root, key):
   <div class="wrap">
     <div class="section-head"><h2 id="featured-h">Featured projects</h2></div>
     <div class="featured">{featured}</div>
-    {review('<p class="review" style="margin-top:24px">“The challenge” and “My role” lines are new summaries of existing content; please check them. Years are shown only where confirmed. Please supply years for the San Francisco projects.</p>')}
+    {review('<p class="review" style="margin-top:24px">“The challenge” and “My role” lines are new summaries of existing content; please check them. SF Climate Action has no year yet: please supply one, or I can drop years from every project.</p>')}
   </div>
 </section>
 
-<section class="section" style="padding-top:0" aria-labelledby="more-h">
-  <div class="wrap">
-    <div class="section-head"><h2 id="more-h">More {sp['name'].lower()} work</h2></div>
-    <div class="supporting">{supporting}</div>
-    {review('<p class="review" style="margin-top:24px">This brief restores “Feeling Gassy” and SF Emergency Ride Home, which the previous brief removed. Please confirm you want them back, and confirm your role on “Feeling Gassy”; the current line only describes the campaign.</p>')}
-  </div>
-</section>
+{more}
 
 <section class="section" style="padding-top:0" aria-labelledby="related-h">
   <div class="wrap">
@@ -348,5 +342,3 @@ write("about/index.html", document("../", "about", "About and experience | A.M. 
 
 print(f"Built {'preview in dist/preview' if PREVIEW else 'site'}: home, {', '.join(BUILT)} (full); "
       f"{', '.join(k for k in C.SPECIALTIES if k not in BUILT)}, about (placeholders)")
-if not (ROOT / RESUME).exists():
-    print(f"NOTE: {RESUME} is missing; the Download resume button is hidden.")
