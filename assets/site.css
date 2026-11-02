@@ -76,7 +76,7 @@ p{margin:0}
 .collage img{width:100%;height:100%;object-fit:cover}
 .collage .c1{grid-column:1/-1;aspect-ratio:1100/612}
 .collage .c2,.collage .c3{aspect-ratio:1/1}
-.collage .c3 img{object-position:6% center}
+.collage .c3 img{object-position:center top}
 
 /* Organizations */
 .orgs{padding-block:28px;border-block:1px solid var(--line)}

@@ -39,7 +39,7 @@ SPECIALTIES = {
         "name": "Internal &amp; Executive Communications",
         "short": "Communications",
         "card": "Executive communications, organizational change and employee engagement.",
-        "card_visual": {"img": "year-end-wrap-up.jpg", "alt": "", "position": "center 58%"},
+        "card_visual": {"img": "year-end-wrap-up.jpg", "alt": "", "position": "center 52%"},
         "title": "Internal and executive communications",
         "description": "Internal and executive communications by A.M. Ward: executive voice, change and AI adoption, and employee engagement.",
     },

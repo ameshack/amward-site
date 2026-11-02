@@ -209,7 +209,7 @@ def home(root):
     <div class="collage" aria-label="Selected project work">
       <figure class="c1">{img(root, C.PROJECTS['delta-campaign']['image'], eager=True)}</figure>
       <figure class="c2">{img(root, C.PROJECTS['sf-climate-action']['image'], eager=True)}</figure>
-      <figure class="c3">{img(root, C.PROJECTS['delta-suitcase']['image'], eager=True)}</figure>
+      <figure class="c3"><img src="{root}src/img/reuse-group.jpg" alt="REUSE SF campaign photo: six people in colorful vintage fashion, one holding a REUSE San Francisco tote" width="800" height="1000" loading="eager" decoding="async"></figure>
     </div>
   </div>
 </section>
