@@ -44,7 +44,7 @@ def header(root, current):
         f'<a class="sub" href="{href(root, s["slug"] + "/")}">{s["name"]}</a>' for s in C.SPECIALTIES.values())
     about_current = ' aria-current="page"' if current == "about" else ""
     return f"""<a class="skip" href="#main">Skip to content</a>
-{review('<div class="review-bar"><div class="wrap">Design review: the homepage and the Brand page are built. The other pages follow once you approve the look.</div></div>')}
+{review('<div class="review-bar"><div class="wrap review-bar-row"><span>Design review: the homepage and the Brand page are built.</span><span class="variant-switch" role="group" aria-label="Compare visual directions"><button type="button" data-variant="warm" aria-pressed="true">Warm editorial</button><button type="button" data-variant="crisp" aria-pressed="false">Crisp editorial</button></span></div></div>')}
 <header class="site-header">
   <div class="wrap">
     <a class="wordmark" href="{href(root, '')}">A.M. Ward</a>
@@ -204,7 +204,7 @@ def home(root):
     <div class="hero-copy">
       <p class="eyebrow">A.M. Ward, MBA · Marketing, communications &amp; organizational leader</p>
       <h1 id="hero-h">I turn audience insight into stronger brands, product growth and organizational impact.</h1>
-      <p class="lede">I’m a marketing and communications leader who builds brands, brings products to market and drives measurable growth. Across consumer, enterprise and public-sector organizations, I’ve led the strategies, teams and operations that turn complex challenges into results.</p>
+      <p class="lede">I’m a marketing and communications leader who builds brands, brings products to market and drives measurable growth. Across consumer, enterprise and public-sector organizations, I’ve led strategies, teams and operations that deliver results, while building AI-enabled capabilities that improve how work gets done.</p>
       <div class="btn-row"><a class="btn btn-primary" href="#work">Explore my work</a><a class="btn btn-secondary" href="#contact">Let’s talk</a></div>
     </div>
     <div class="collage" aria-label="Selected project work">
@@ -241,7 +241,7 @@ def home(root):
     <h2 id="about-h">One throughline, four disciplines</h2>
     <div class="copy">
       <p class="lede">Whether I’m building a brand, bringing a product to market or helping employees navigate change, my work starts with understanding people and translating that insight into strategies that drive action and measurable outcomes.</p>
-      <p>I’ve led brand, product marketing, communications and operations independently and together—from global companies like Microsoft and Delta Air Lines to San Francisco’s Environment Department, where I led a multidisciplinary team supporting 20+ services and technology products.</p>
+      <p>I’ve led brand, product marketing, communications and operations independently and together—from global companies like Microsoft and Delta Air Lines to the City &amp; County of San Francisco, where I led a multidisciplinary team supporting 20+ services and technology products.</p>
       <a class="arrow-link" href="{href(root, 'about/')}">See my experience and credentials</a>
     </div>
   </div>
