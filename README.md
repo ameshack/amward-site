@@ -15,7 +15,9 @@ Portfolio site for Asia Meshack: a homepage plus one page per specialty (Brand, 
 
 Project images are the owner's own campaign, product and published materials. `src/img/strategic-plan.jpg` is cropped from the cover of San Francisco Environment's published 2021–2023 Strategic Plan.
 
-`src/img/year-end-wrap-up.jpg` is a Microsoft year-end video title card, edited by the owner’s request to remove an executive’s name and an internal-use marking.
+`src/img/year-end-wrap-up.jpg` is a Microsoft year-end video title card, edited at the owner’s request to remove an executive’s name, an internal-use marking and the Microsoft logo. `src/img/year-end-wrap-up-logo.jpg` keeps the logo; point `card_visual` and the `microsoft-exec` image at it to swap it back.
+
+The Holiday Gratitude Campaign project (`microsoft-holiday` in `src/content.py`) is kept in reserve and not published; add its id to a specialty's `projects` list to show it.
 
 ## Editing
 
