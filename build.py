@@ -1,4 +1,4 @@
-"""Build the A.M. Ward site.
+"""Build the Asia Meshack site.
 
     python3 build.py            published site, written to the repository root
     python3 build.py --preview  review copy in dist/preview/ (owner notes visible,
@@ -46,7 +46,7 @@ def header(root, current):
 {review('<div class="review-bar"><div class="wrap">Review version: owner-review notes appear in yellow boxes and are removed from the published site.</div></div>')}
 <header class="site-header">
   <div class="wrap">
-    <a class="wordmark" href="{href(root, '')}">A.M. Ward</a>
+    <a class="wordmark" href="{href(root, '')}">Asia Meshack, MBA</a>
     <nav class="nav" aria-label="Main">
       <div class="nav-work">
         <button class="nav-work-btn" type="button" aria-expanded="false" aria-controls="work-menu">Work</button>
@@ -88,10 +88,10 @@ def footer(root):
     return f"""<footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
-      <a class="wordmark" href="{href(root, '')}">A.M. Ward</a>
+      <a class="wordmark" href="{href(root, '')}">Asia Meshack</a>
       <nav aria-label="Footer"><ul>{links}<li><a href="{href(root, 'about/')}">About</a></li><li><a class="ext" href="{C.LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="#contact">Let’s talk</a></li></ul></nav>
     </div>
-    <small>A.M. Ward · Atlanta, Georgia · Remote, USA</small>
+    <small>Asia Meshack · Atlanta, Georgia · Remote, USA</small>
   </div>
 </footer>"""
 
@@ -103,7 +103,7 @@ def head(title, description, path):
 <meta name="description" content="{description}">
 <link rel="canonical" href="{url}">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="A.M. Ward">
+<meta property="og:site_name" content="Asia Meshack">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:url" content="{url}">
@@ -206,7 +206,7 @@ def home(root):
     return f"""<section class="hero" aria-labelledby="hero-h">
   <div class="wrap">
     <div class="hero-copy">
-      <p class="eyebrow">A.M. Ward, MBA · Marketing, communications &amp; organizational leader</p>
+      <p class="eyebrow">Marketing, communications &amp; organizational leader</p>
       <h1 id="hero-h">I turn audience insight into stronger brands, product growth and organizational impact.</h1>
       <p class="lede">I’m a marketing and communications leader who builds brands, brings products to market and drives measurable growth. Across consumer, enterprise and public-sector organizations, I’ve led strategies, teams and operations that deliver results, while building AI-enabled capabilities that improve how work gets done.</p>
       <div class="btn-row"><a class="btn btn-primary" href="#work">Explore my work</a><a class="btn btn-secondary" href="#contact">Let’s talk</a></div>
@@ -364,19 +364,19 @@ shutil.copy(ROOT / "src" / "site.js", OUT / "assets" / "site.js")
 if PREVIEW:
     shutil.copytree(ROOT / "src" / "img", OUT / "src" / "img")
 
-home_title = "A.M. Ward | Marketing, Communications & Organizational Leader"
-home_desc = ("A.M. Ward is a marketing and communications leader across brand, product marketing, "
+home_title = "Asia Meshack | Marketing, Communications & Organizational Leader"
+home_desc = ("Asia Meshack is a marketing and communications leader across brand, product marketing, "
              "internal and executive communications, and leadership and operations.")
 write("index.html", document("", "home", home_title, home_desc, "", home("")))
 if PREVIEW:
     # The artifact viewer wraps its main page in a document of its own.
-    write("artifact-home.html", document("", "home", "A.M. Ward Redesign", home_desc, "", home(""), fragment=True))
+    write("artifact-home.html", document("", "home", "Asia Meshack Redesign", home_desc, "", home(""), fragment=True))
 
 for key, sp in C.SPECIALTIES.items():
-    title = f"{sp['title'].capitalize()} | A.M. Ward"
+    title = f"{sp['title'].capitalize()} | Asia Meshack"
     write(f"{key}/index.html", document("../", key, title, sp["description"], key + "/", specialty("../", key)))
-write("about/index.html", document("../", "about", "About and experience | A.M. Ward",
-                                   "Experience, technology and AI capabilities, awards and education of A.M. Ward.",
+write("about/index.html", document("../", "about", "About and experience | Asia Meshack",
+                                   "Experience, technology and AI capabilities, awards and education of Asia Meshack.",
                                    "about/", about("../")))
 
 print(f"Built {'preview in dist/preview' if PREVIEW else 'site'}: home, "

@@ -28,7 +28,7 @@ SPECIALTIES = {
         "projects": ["delta-campaign", "reuse-sf", "sf-climate-action"],
         "card_visual": {"img": "reuse.jpg"},
         "title": "Brand strategy and campaigns",
-        "description": "Brand strategy, customer research, integrated campaigns and creative direction by A.M. Ward, with work for Delta Air Lines and the City & County of San Francisco.",
+        "description": "Brand strategy, customer research, integrated campaigns and creative direction by Asia Meshack, with work for Delta Air Lines and the City & County of San Francisco.",
     },
     "product-marketing": {
         "slug": "product-marketing",
@@ -43,7 +43,7 @@ SPECIALTIES = {
         "projects": ["sf-recycles", "greener-life", "delta-suitcase", "rethink-disposable"],
         "card_visual": {"img": "sfrecycles.jpg", "phone": True},
         "title": "Product marketing",
-        "description": "Product marketing by A.M. Ward: positioning, go-to-market strategy, product adoption and growth, with work for Southern Company, Delta Air Lines and the City & County of San Francisco.",
+        "description": "Product marketing by Asia Meshack: positioning, go-to-market strategy, product adoption and growth, with work for Southern Company, Delta Air Lines and the City & County of San Francisco.",
     },
     "communications": {
         "slug": "communications",
@@ -59,7 +59,7 @@ SPECIALTIES = {
         "projects": ["microsoft-exec", "microsoft-holiday", "sf-internal-comms"],
         "card_visual": {"img": "year-end-wrap-up.jpg", "position": "center 52%"},
         "title": "Internal and executive communications",
-        "description": "Internal and executive communications by A.M. Ward: executive voice, change and AI adoption, and employee engagement, with work for Microsoft and the City & County of San Francisco.",
+        "description": "Internal and executive communications by Asia Meshack: executive voice, change and AI adoption, and employee engagement, with work for Microsoft and the City & County of San Francisco.",
     },
     "leadership": {
         "slug": "leadership",
@@ -76,7 +76,7 @@ SPECIALTIES = {
         "projects": ["executive-partnership", "team-leadership", "salesforce"],
         "card_visual": {"img": "strategic-plan.jpg"},
         "title": "Leadership and operations",
-        "description": "Leadership and operations by A.M. Ward: executive partnership and planning, team and agency leadership, and marketing operations.",
+        "description": "Leadership and operations by Asia Meshack: executive partnership and planning, team and agency leadership, and marketing operations.",
     },
 }
 

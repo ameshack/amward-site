@@ -1,6 +1,6 @@
-# A.M. Ward — personal site
+# Asia Meshack — personal site
 
-Portfolio site for A.M. Ward: a homepage plus one page per specialty (Brand, Product Marketing, Internal & Executive Communications, Leadership & Operations) and an About page.
+Portfolio site for Asia Meshack: a homepage plus one page per specialty (Brand, Product Marketing, Internal & Executive Communications, Leadership & Operations) and an About page.
 
 ## Structure
 
