@@ -128,18 +128,20 @@ PROJECTS = {
     "sf-climate-action": {
         "org": SF, "program": "SF Climate Action",
         "title": "Brand architecture and governance",
-        "image": {"src": "climate-action-month.jpg", "w": 714, "h": 720, "focus": "top",
-                  "alt": "Climate Action Month creative: Be the change in climate change, over the Golden Gate Bridge in fog"},
+        "image": {"src": "climate-action-booth.jpg", "w": 1100, "h": 937,
+                  "alt": "San Francisco Environment staff at a community outreach table branded with the San Francisco Climate Action 0 80 100 Roots identity"},
         "outcome": ("", "A unified climate brand system, and the citywide initiative built on it"),
         "challenge": "Bring the city’s environmental services and climate goals together under one coherent brand.",
-        "role": "Expanded the city’s climate identity into a brand system and created Climate Action Month.",
+        "role": "Expanded the city’s climate identity into a brand system, set its governance and created Climate Action Month to extend it.",
         "details": [
             ("Strategy and my role",
              "<p>Expanded the city’s “0/80/100/Roots” climate identity into a brand system connecting program identities, digital experiences, community outreach and executive communications. Established naming and messaging governance for new products and citywide initiatives.</p>"),
-            ("Climate Action Month",
-             "<p>Created Climate Action Month, an annual citywide initiative that extended the brand through an integrated partner strategy.</p>"),
-            ("Results",
-             "<p>Web visits increased 51% year over year during the fourth annual Climate Action Month.</p>"),
+            ("Extending the brand",
+             "<p>Created Climate Action Month, an annual citywide initiative that carried the brand to residents through an integrated partner strategy and a multilingual event-discovery experience.</p>"),
+            ("Citywide context",
+             "<ul><li>San Francisco was named to the CDP (formerly Carbon Disclosure Project) Cities A List for the fourth consecutive year in 2022, recognizing global leadership in environmental transparency and climate action</li>"
+             "<li>The city reduced its carbon emissions while its population and economy grew, supported by the San Francisco Climate Action Plan and community engagement</li></ul>"
+             "<p class=\"fine\">City-level results that the brand system and public engagement supported; they reflect the work of many departments and partners.</p>"),
         ],
         "links": [],
     },
@@ -352,6 +354,10 @@ PROOF_POINTS = [
     ("+495%", "year-over-year monthly active users for a civic app", "City &amp; County of San Francisco"),
     ("+88%", "year-over-year employee understanding of mission and values (relative increase, annual survey)", "City &amp; County of San Francisco"),
 ]
+
+# Homepage collage tile (kept separate from the SF Climate Action project image)
+COLLAGE_CAM = {"src": "climate-action-month.jpg", "w": 714, "h": 720, "focus": "top",
+               "alt": "Climate Action Month creative: Be the change in climate change, over the Golden Gate Bridge in fog"}
 
 RECENT_WORK = ["Google", "Microsoft", "Delta Air Lines", "Southern Company"]
 

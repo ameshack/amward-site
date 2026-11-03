@@ -143,6 +143,8 @@ p{margin:0}
 .featured{display:grid;gap:40px}
 .project{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .project-side{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr)}
+.project-side .project-media{align-self:start;min-height:0;background:transparent}
+.project-side .project-media img{height:auto}
 .project-phone{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr)}
 .project-phone .project-media{background:var(--sage);display:grid;justify-items:center;align-content:end;padding-top:36px;min-height:0}
 .project-phone .project-media img{width:62%;max-width:300px;height:auto;aspect-ratio:9/14;object-fit:cover;object-position:top;border-radius:14px 14px 0 0;box-shadow:0 14px 34px -16px rgba(0,0,0,.4)}

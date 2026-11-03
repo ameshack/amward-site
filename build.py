@@ -213,7 +213,7 @@ def home(root):
     </div>
     <div class="collage" aria-label="Selected project work">
       <figure class="c1">{img(root, C.PROJECTS['delta-campaign']['image'], eager=True)}</figure>
-      <figure class="c2">{img(root, C.PROJECTS['sf-climate-action']['image'], eager=True)}</figure>
+      <figure class="c2">{img(root, C.COLLAGE_CAM, eager=True)}</figure>
       <figure class="c3"><img src="{root}src/img/reuse-tote.jpg" alt="REUSE SF campaign photo: two people in vintage fashion holding a REUSE San Francisco tote and tumbler" width="800" height="999" loading="eager" decoding="async"></figure>
     </div>
   </div>
