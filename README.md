@@ -17,7 +17,7 @@ Project images are the owner's own campaign, product and published materials. `s
 
 `src/img/year-end-wrap-up.jpg` is a Microsoft year-end video title card, edited at the owner’s request to remove an executive’s name, an internal-use marking and the Microsoft logo. `src/img/year-end-wrap-up-logo.jpg` keeps the logo; point `card_visual` and the `microsoft-exec` image at it to swap it back.
 
-The Holiday Gratitude Campaign project (`microsoft-holiday` in `src/content.py`) is kept in reserve and not published; add its id to a specialty's `projects` list to show it.
+Projects kept in reserve (defined in `src/content.py` but not published): `microsoft-holiday` (Holiday Gratitude Campaign) and `rethink-disposable` (ReThink Disposable small-business enrollment). Add an id to a specialty's `projects` list to show it.
 
 ## Editing
 
