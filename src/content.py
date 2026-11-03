@@ -2,7 +2,8 @@
 
 Projects are defined once and listed by id on each specialty page, so a
 project can appear under more than one specialty without duplicated text.
-Text fields may contain inline HTML. Wrap owner-review notes in
+Text fields may contain inline HTML; link to another page with
+href="@slug/#anchor" and the build fills in the right relative path. Wrap owner-review notes in
 <!--REVIEW--> ... <!--/REVIEW--> so the published build drops them.
 
 Project fields: org, program (optional), title, image (optional; "layout":
@@ -137,7 +138,7 @@ PROJECTS = {
             ("Strategy and my role",
              "<p>Expanded the city’s “0/80/100/Roots” climate identity into a brand system connecting program identities, digital experiences, community outreach and executive communications. Established naming and messaging governance for new products and citywide initiatives.</p>"),
             ("Extending the brand",
-             "<p>Created Climate Action Month, an annual citywide initiative that carried the brand to residents through an integrated partner strategy and a multilingual event-discovery experience.</p>"),
+             "<p>Created <a href=\"@product-marketing/#cam-portal\">Climate Action Month</a>, an annual citywide initiative that carried the brand to residents through an integrated partner strategy and a multilingual event-discovery experience.</p>"),
             ("Citywide context",
              "<ul><li>San Francisco was named to the CDP (formerly Carbon Disclosure Project) Cities A List for the fourth consecutive year in 2022, recognizing global leadership in environmental transparency and climate action</li>"
              "<li>The city reduced its carbon emissions while its population and economy grew, supported by the San Francisco Climate Action Plan and community engagement</li></ul>"
@@ -165,7 +166,7 @@ PROJECTS = {
     "cam-portal": {
         "org": SF, "program": "Climate Action Month",
         "title": "Digital experience strategy and development",
-        "image": {"src": "climate-action-month-portal.jpg", "w": 1000, "h": 951, "focus": "top",
+        "image": {"src": "climate-action-month-portal.jpg", "w": 1000, "h": 852,
                   "alt": "April is Climate Action Month web page: Be the change in climate change banner, date and event-type filters, and event listings"},
         "outcome": ("+51%", "year-over-year page visits"),
         "challenge": "Make a citywide calendar of climate events and activities easy for residents to discover, navigate and explore.",

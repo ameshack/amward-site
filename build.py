@@ -166,6 +166,8 @@ def outcome(p):
 def project(root, pid):
     p = C.PROJECTS[pid]
     details = "".join(f"<div><h4>{h}</h4>{body}</div>" for h, body in p["details"])
+    details = re.sub(r'href="@([^"#]*)(#[^"]*)?"',
+                     lambda m: f'href="{href(root, m.group(1))}{m.group(2) or ""}"', details)
     links = "".join(f'<a class="ext" href="{u}" target="_blank" rel="noopener">{t}</a>' for t, u in p["links"])
     links = f'<div class="links">{links}</div>' if links else ""
     image = p.get("image")
