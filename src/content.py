@@ -35,7 +35,7 @@ SPECIALTIES = {
         "slug": "product-marketing",
         "name": "Product Marketing",
         "card": "Positioning, go-to-market strategy, product adoption and commercial growth.",
-        "intro": "I use customer and competitive insight to define positioning, guide commercialization and improve acquisition, adoption and retention.",
+        "intro": "I turn customer and competitive insight into product positioning, go-to-market strategies and scalable marketing capabilities that drive acquisition, adoption and growth.",
         "capabilities": [
             "Customer &amp; competitive insight",
             "Positioning &amp; go to market",
@@ -175,7 +175,7 @@ PROJECTS = {
             ("Strategy and my role",
              "<p>Led the concept, requirements, design direction and development of a citywide event-discovery portal with web, UX and technical teams. Used audience research and feedback to guide navigation, filtering and multilingual access, while establishing standardized event-submission processes, content templates and editorial requirements.</p>"),
             ("Results",
-             "<ul><li>+51% year-over-year page visits during the fourth annual Climate Action Month</li><li>Established reusable event-submission processes, templates and editorial standards to support content from community partners</li><li>Delivered a centralized, multilingual digital experience enabling residents to discover activities by date and event type</li></ul>"),
+             "<ul><li>+51% year-over-year page visits during the fourth annual Climate Action Month</li><li>Delivered a multilingual event-discovery portal with research-informed navigation and activity filtering</li><li>Established reusable event-submission templates and editorial workflows supporting contributions from community partners</li></ul>"),
         ],
         "links": [],
     },
@@ -191,7 +191,7 @@ PROJECTS = {
             ("Strategy and my role",
              "<p>Set vision, strategy and goals for a subscription product and co-developed an integrated acquisition campaign tied to a new feature and milestone.</p>"),
             ("Lifecycle and retention",
-             "<p>Developed analysis-backed recommendations connecting customer needs, competitive intelligence and attrition findings to retention, customer experience and profitability.</p>"),
+             "<p>Analyzed customer needs, competitive offerings and attrition drivers to identify acquisition and retention opportunities. Developed prioritized recommendations for customer journeys, messaging, product experience and loyalty initiatives.</p>"),
             ("Results",
              "<ul><li>+11% subscribers in three months</li><li>$1.7M in projected customer lifetime value from the subscriber gain</li></ul>"
              "<p class=\"fine\">Lifetime value is projected, not booked revenue.</p>"),
@@ -266,7 +266,8 @@ PROJECTS = {
     "sf-internal-comms": {
         "org": SF, "program": "Environment Department",
         "title": "Building an internal communications function",
-        "image": None,
+        "image": {"src": "our-values.png", "w": 1620, "h": 418, "layout": "wide",
+                  "alt": "Our Values: Credibility, Innovation, Collaboration, Equity and Impact, each with an icon"},
         "outcome": ("+88%", "year-over-year employee understanding of mission and values"),
         "challenge": "Give employees a shared understanding of the department’s mission and how their work connects to it.",
         "role": "Created the department’s first internal communications function and an executive-sponsored mission-and-values strategy.",
