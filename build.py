@@ -220,8 +220,8 @@ def home(root):
     </div>
     <div class="collage" aria-label="Selected project work">
       <figure class="c1">{img(root, C.PROJECTS['delta-campaign']['image'], eager=True)}</figure>
-      <figure class="c2">{img(root, C.COLLAGE_CAM, eager=True)}</figure>
-      <figure class="c3"><img src="{root}src/img/reuse-tote.jpg" alt="REUSE SF campaign photo: two people in vintage fashion holding a REUSE San Francisco tote and tumbler" width="800" height="999" loading="eager" decoding="async"></figure>
+      <figure class="c2"><img src="{root}src/img/greener-life-logo.jpg" alt="Georgia Natural Gas Greener Life logo with green leaf shapes" width="766" height="556" loading="eager" decoding="async"></figure>
+      <figure class="c3"><img src="{root}src/img/ms-top-of-mind.jpg" alt="Microsoft FY26 Top of Mind leadership communications banner" width="900" height="421" loading="eager" decoding="async"></figure>
     </div>
   </div>
 </section>

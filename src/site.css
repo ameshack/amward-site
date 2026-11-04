@@ -71,12 +71,12 @@ p{margin:0}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
 .hero-copy{display:grid;gap:24px}
 .hero h1{font-size:clamp(34px,4.1vw,52px);line-height:1.08;font-weight:800;letter-spacing:-.025em}
-.collage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.collage{display:grid;grid-template-columns:766fr 1206fr;gap:12px}
 .collage figure{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--stone)}
 .collage img{width:100%;height:100%;object-fit:cover}
 .collage .c1{grid-column:1/-1;aspect-ratio:1100/612}
-.collage .c2,.collage .c3{aspect-ratio:1/1}
-.collage .c3 img{object-position:center 45%}
+.collage .c2{aspect-ratio:766/556;background:#fff}
+.collage .c3{aspect-ratio:900/421}
 
 /* Organizations */
 .orgs{padding-block:28px;border-block:1px solid var(--line)}

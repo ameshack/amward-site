@@ -389,10 +389,6 @@ PROOF_POINTS = [
     ("+88%", "year-over-year employee understanding of mission and values (relative increase, annual survey)", "City &amp; County of San Francisco"),
 ]
 
-# Homepage collage tile (kept separate from the SF Climate Action project image)
-COLLAGE_CAM = {"src": "climate-action-month.jpg", "w": 714, "h": 720, "focus": "top",
-               "alt": "Climate Action Month creative: Be the change in climate change, over the Golden Gate Bridge in fog"}
-
 RECENT_WORK = ["Google", "Microsoft", "Delta Air Lines", "Southern Company"]
 
 # ---------- About page
