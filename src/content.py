@@ -182,8 +182,8 @@ PROJECTS = {
     "greener-life": {
         "org": "Southern Company", "program": "Georgia Natural Gas Greener Life®",
         "title": "Subscription growth and lifecycle strategy",
-        "image": {"src": "greener-life-landing.jpg", "w": 1100, "h": 921, "layout": "wide",
-                  "alt": "Georgia Natural Gas Greener Life landing page: hero banner, product benefits, a free-for-a-year sign-up offer and a carbon counter"},
+        "image": {"src": "greener-life-offer.jpg", "w": 1100, "h": 738,
+                  "alt": "Greener Life offer card: Get Greener Life free for a year and save, with Sign up for service and Add to my plan buttons"},
         "outcome": ("+11%", "subscribers in three months"),
         "challenge": "Grow a consumer subscription product in a competitive energy market.",
         "role": "Set vision, strategy and goals for the product and co-developed an integrated acquisition campaign.",

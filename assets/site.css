@@ -154,7 +154,6 @@ p{margin:0}
 .project-media{background:var(--stone);min-height:100%}
 .project-media img{width:100%;height:100%;object-fit:cover}
 .project-wide .project-media img{max-height:560px}
-.project-wide .project-media img[src$="greener-life-landing.jpg"]{max-height:none}
 .project-media img.focus-top{object-position:top}
 .project-media img.focus-left{object-position:left center}
 .project-body{padding:32px 36px 34px;display:grid;gap:16px;align-content:start}
@@ -235,7 +234,6 @@ details.more[open] > summary::after{content:"–"}
   .hero .wrap,.throughline .wrap{grid-template-columns:minmax(0,1fr);gap:40px}
   .outcomes ul{grid-template-columns:repeat(2,minmax(0,1fr))}
   .project-side,.project-phone{grid-template-columns:minmax(0,1fr)}
-  .project-side .project-media{aspect-ratio:16/9}
   .project-phone .project-media{padding-top:28px}
   .project-phone .project-media img{width:46%;max-height:420px}
   .related,.related.four{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
