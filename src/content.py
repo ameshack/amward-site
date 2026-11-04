@@ -178,8 +178,8 @@ PROJECTS = {
         "title": "Digital experience strategy and development",
         "image": {"src": "climate-action-month-banner.jpg", "w": 1000, "h": 765,
                   "alt": "Climate Action Month web page: Be the change in climate change banner, Español and Chinese language links, date and event-type filters, and event listings"},
-        "outcome": ("100+", "event submissions from organizers"),
-        "secondary": ("+51%", "year-over-year website visits during Climate Action Month"),
+        "outcome": ("100+", "event submissions from organizers for the fourth annual Climate Action Month"),
+        "secondary": ("+51%", "year-over-year website visits during the same event"),
         "challenge": "Make a citywide calendar of climate events and activities easy for residents to discover, navigate and explore.",
         "role_label": "My ownership",
         "role": "Led the portal from concept through launch, owning requirements and UX direction and partnering with web and design colleagues to develop a multilingual event-discovery experience informed by user research and behavior.",
@@ -192,7 +192,7 @@ PROJECTS = {
             ("Execution and collaboration",
              "<p>Defined the concept and product requirements, set design and UX direction, and coordinated development with web, UX and technical colleagues. Established event-submission processes, content templates and editorial requirements so community partners could contribute listings consistently.</p>"),
             ("Results",
-             "<ul><li>100+ event submissions from event organizers</li>"
+             "<ul><li>100+ event submissions from event organizers for the fourth annual Climate Action Month</li>"
              "<li>+51% year-over-year website visits during the fourth annual Climate Action Month</li></ul>"),
         ],
         "links": [],
@@ -312,7 +312,8 @@ PROJECTS = {
     "new-resource-bank": {
         "org": "New Resource Bank", "program": "Executive, investor &amp; impact communications",
         "title": "Executive and investor communications",
-        "image": None,
+        "image": {"src": "nrb-impact-report.jpg", "w": 900, "h": 902,
+                  "alt": "Cover of the New Resource Bank Impact Report: Well-being for people and the planet through banking"},
         "outcome": ("", "Executive, investor and impact communications for a B Corp “Best for the World” bank"),
         "challenge": "Keep marketing and communications running during a leadership gap while explaining a core-system change to customers.",
         "role": "As Interim Marketing Director, developed executive and investor messaging and led the annual Impact Report.",
