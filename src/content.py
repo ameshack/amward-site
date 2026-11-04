@@ -9,7 +9,10 @@ href="@slug/#anchor" and the build fills in the right relative path. Wrap owner-
 Project fields: org, program (optional), title, image (optional; "layout":
 "wide" stacks it above the text, "phone" frames a tall screenshot),
 outcome (figure, label; an empty figure shows the label as a mandate),
-challenge, role, details [(heading, html)], links [(label, url)].
+secondary (optional second metric), challenge, role_label ("My ownership"
+where the owner had direct accountability, otherwise "My role"), role,
+approach (optional strategic approach), details [(heading, html)],
+links [(label, url)].
 """
 
 SITE_URL = "https://ameshack.github.io/amward-site/"
@@ -114,6 +117,7 @@ PROJECTS = {
                   "alt": "REUSE SF campaign creative: a model in yellow reclining with a reusable tote of produce"},
         "outcome": ("+51%", "intent to reuse, reported by the agency partner"),
         "challenge": "Persuade residents to choose reusable bags, cups and utensils over disposable ones.",
+        "role_label": "My ownership",
         "role": "Commissioned and directed the campaign, leading the agency, creative vendors and contractors.",
         "details": [
             ("Strategy and my role",
@@ -133,6 +137,7 @@ PROJECTS = {
                   "alt": "San Francisco Environment staff at a community outreach table branded with the San Francisco Climate Action 0 80 100 Roots identity"},
         "outcome": ("", "A unified climate brand system, and the citywide initiative built on it"),
         "challenge": "Bring the city’s environmental services and climate goals together under one coherent brand.",
+        "role_label": "My ownership",
         "role": "Expanded the city’s climate identity into a brand system, set its governance and created Climate Action Month to extend it.",
         "details": [
             ("Strategy and my role",
@@ -154,12 +159,17 @@ PROJECTS = {
                   "alt": "SF Recycles mobile web app: search box, popular searches, and recycle, compost and landfill bin guides"},
         "outcome": ("+495%", "year-over-year monthly active users"),
         "challenge": "Help residents of a city of 850,000 find the right way to recycle or dispose of everyday items.",
-        "role": "As in-house product owner, directed customer research and agency delivery, and led go-to-market.",
+        "role_label": "My ownership",
+        "role": "As in-house product owner, led the transformation of static recycling guidance into a trilingual web application, directing user research, product development and go-to-market strategy.",
+        "approach": "Used customer research to replace static lists with a searchable, item-by-item experience in English, Chinese and Spanish, and launched it with a companion outreach campaign.",
         "details": [
-            ("Strategy and my role",
-             "<p>As in-house product owner, directed customer research and agency delivery to turn static guidance into a trilingual web application. Led go-to-market with product managers, engineers and UX.</p>"),
+            ("Execution and collaboration",
+             "<p>Directed customer research and digital agency delivery, and worked with product managers, engineers and UX to define and build a first-in-kind, mobile-accessible web application.</p>"),
             ("Results",
-             "<ul><li>+495% year-over-year monthly active users</li><li>The app and companion campaign contributed to 27% year-over-year growth in compliant use of an affiliated service</li><li>2018 Data &amp; Innovation Awards, first place, Users First</li></ul>"),
+             "<ul><li>+495% year-over-year monthly active users</li>"
+             "<li>Together with its companion campaign, the app contributed to 27% year-over-year growth in compliant use of an affiliated waste service</li>"
+             "<li>2018 Data &amp; Innovation Awards, first place, Users First</li></ul>"
+             "<p class=\"fine\">The 27% reflects the app and campaign together, not the app alone.</p>"),
         ],
         "links": [],
     },
@@ -167,15 +177,23 @@ PROJECTS = {
         "org": SF, "program": "Climate Action Month",
         "title": "Digital experience strategy and development",
         "image": {"src": "climate-action-month-banner.jpg", "w": 1000, "h": 765,
-                  "alt": "April is Climate Action Month web page: Be the change in climate change banner, date and event-type filters, and event listings"},
-        "outcome": ("+51%", "year-over-year page visits"),
+                  "alt": "Climate Action Month web page: Be the change in climate change banner, Español and Chinese language links, date and event-type filters, and event listings"},
+        "outcome": ("100+", "event submissions from organizers"),
+        "secondary": ("+51%", "year-over-year website visits during Climate Action Month"),
         "challenge": "Make a citywide calendar of climate events and activities easy for residents to discover, navigate and explore.",
-        "role": "Owned the digital experience from concept through launch, directing product requirements, UX, development and scalable content workflows.",
+        "role_label": "My ownership",
+        "role": "Led the portal from concept through launch, owning requirements and UX direction and partnering with web and design colleagues to develop a multilingual event-discovery experience informed by user research and behavior.",
+        "approach": "Let audience research, behavior and feedback decide how residents find events: browsing by date and event type, multilingual presentation, and standard submissions so partner listings stayed consistent.",
         "details": [
-            ("Strategy and my role",
-             "<p>Led the concept, requirements, design direction and development of a citywide event-discovery portal with web, UX and technical teams. Used audience research and feedback to guide navigation, filtering and multilingual access, while establishing standardized event-submission processes, content templates and editorial requirements.</p>"),
+            ("Context",
+             "<p>Climate Action Month, an annual citywide initiative, gathered events and activities from community partners across San Francisco. The portal had to collect those listings and present them in one place.</p>"),
+            ("Strategic decisions",
+             "<p>Treated the calendar as a product rather than a list of links. Research, behavior and feedback on how residents browsed shaped the navigation, filters and event presentation, and Spanish and Chinese versions extended it beyond English speakers.</p>"),
+            ("Execution and collaboration",
+             "<p>Defined the concept and product requirements, set design and UX direction, and coordinated development with web, UX and technical colleagues. Established event-submission processes, content templates and editorial requirements so community partners could contribute listings consistently.</p>"),
             ("Results",
-             "<ul><li>+51% year-over-year page visits during the fourth annual Climate Action Month</li><li>Delivered a multilingual event-discovery portal with research-informed navigation and activity filtering</li><li>Established reusable event-submission templates and editorial workflows supporting contributions from community partners</li></ul>"),
+             "<ul><li>100+ event submissions from event organizers</li>"
+             "<li>+51% year-over-year website visits during the fourth annual Climate Action Month</li></ul>"),
         ],
         "links": [],
     },
@@ -184,16 +202,22 @@ PROJECTS = {
         "title": "Subscription growth and lifecycle strategy",
         "image": {"src": "greener-life-offer.jpg", "w": 1100, "h": 738,
                   "alt": "Greener Life offer card: Get Greener Life free for a year and save, with Sign up for service and Add to my plan buttons"},
-        "outcome": ("+11%", "subscribers in three months"),
+        "outcome": ("+11%", "Greener Life® subscriptions in three months"),
+        "secondary": ("$1.7M", "projected customer lifetime value"),
         "challenge": "Grow a consumer subscription product in a competitive energy market.",
-        "role": "Set vision, strategy and goals for the product and co-developed an integrated acquisition campaign.",
+        "role_label": "My role",
+        "role": "Set the product vision, strategy and growth objectives, and co-developed an integrated acquisition campaign that helped increase subscriptions by 11% in three months.",
+        "approach": "Grounded positioning in customer and competitive research, and timed an integrated acquisition campaign to a new product feature and milestone.",
         "details": [
-            ("Strategy and my role",
-             "<p>Set vision, strategy and goals for a subscription product and co-developed an integrated acquisition campaign tied to a new feature and milestone.</p>"),
+            ("Strategic insight",
+             "<p>Assessed competing carbon-offset and sustainability offerings, and managed the research agency behind the brand-health tracker, to sharpen positioning, messaging and product priorities.</p>"),
+            ("Execution and collaboration",
+             "<p>Co-developed the acquisition campaign across paid, owned and earned channels with internal teams and agency partners. Launched web personalization, weekly optimization sprints and A/B and format tests; recommendations for homepage placement and landing-page social proof were adopted. Authored sales and customer-service enablement materials.</p>"),
             ("Lifecycle and retention",
-             "<p>Analyzed customer needs, competitive offerings and attrition drivers to identify acquisition and retention opportunities. Developed prioritized recommendations for customer journeys, messaging, product experience and loyalty initiatives.</p>"),
+             "<p>Analyzed customer needs, competitive offerings and attrition drivers to identify acquisition and retention opportunities. Developed prioritized recommendations for customer journeys, messaging, product experience and loyalty initiatives.</p>"
+             "<p class=\"fine\">Retention ideas such as a points-based loyalty concept and a cancellation-offer funnel were recommendations; no implemented retention result is claimed.</p>"),
             ("Results",
-             "<ul><li>+11% subscribers in three months</li><li>$1.7M in projected customer lifetime value from the subscriber gain</li></ul>"
+             "<ul><li>+11% Greener Life® subscriptions in three months</li><li>$1.7M in projected customer lifetime value from the subscriber gain</li></ul>"
              "<p class=\"fine\">Lifetime value is projected, not booked revenue.</p>"),
         ],
         "links": [],
@@ -205,12 +229,16 @@ PROJECTS = {
                   "alt": "Delta web feature: Suitcases made from Delta jets, showing the aluminum suitcase prototype"},
         "outcome": ("", "First-in-kind consumer product strategy and go-to-market planning"),
         "challenge": "Turn retired aircraft into a consumer product that strengthens the Delta brand and loyalty proposition.",
-        "role": "Co-led product strategy and go-to-market planning with cross-functional teams and external partners.",
+        "role_label": "My role",
+        "role": "Co-led development and commercialization planning for a first-in-kind Delta consumer product, including product features, positioning, partner selection, business case and go-to-market strategy.",
+        "approach": "Built the proposition around product innovation, Delta SkyMiles objectives and brand credibility, and aligned product, loyalty, customer experience and external partners behind it.",
         "details": [
-            ("Strategy and my role",
-             "<p>Co-led development of a first-in-kind consumer product, an upcycled suitcase made from retired aircraft skin, including positioning, feature identification, partner selection, business case development and go-to-market planning with cross-functional teams and external partners.</p>"),
+            ("Product development",
+             "<p>Shaped the value proposition, positioning and feature recommendations for an upcycled aluminum suitcase made from retired Delta aircraft skin, and developed the business case.</p>"),
+            ("Partners and go-to-market",
+             "<p>Evaluated and recommended brand and manufacturing partners, and built go-to-market plans with cross-functional teams.</p>"),
             ("Status",
-             "<p>Delta introduced the suitcase publicly while it was still in development.</p>"),
+             "<p>This work covered development and prelaunch commercialization planning. Delta introduced the suitcase publicly while it was still in development.</p>"),
         ],
         "links": [],
     },
@@ -270,6 +298,7 @@ PROJECTS = {
                   "alt": "Our Values: Credibility, Innovation, Collaboration, Equity and Impact, each with an icon"},
         "outcome": ("+88%", "year-over-year employee understanding of mission and values"),
         "challenge": "Give employees a shared understanding of the department’s mission and how their work connects to it.",
+        "role_label": "My ownership",
         "role": "Created the department’s first internal communications function and an executive-sponsored mission-and-values strategy.",
         "details": [
             ("What I built",
@@ -324,6 +353,7 @@ PROJECTS = {
         "image": None,
         "outcome": ("", "Up to 7 direct reports, 24 indirect contributors and 10+ agency relationships"),
         "challenge": "Build a team able to serve a portfolio of 20+ services and technology products.",
+        "role_label": "My ownership",
         "role": "Restructured a team spanning marketing, content, community engagement, UX, web development, design and data.",
         "details": [
             ("What I changed",
@@ -339,6 +369,7 @@ PROJECTS = {
         "image": None,
         "outcome": ("", "Organization-wide CRM implementation and change leadership"),
         "challenge": "Give teams across the department a shared system for contacts, data and reporting.",
+        "role_label": "My ownership",
         "role": "Held accountability for the rollout and managed the project manager who delivered it.",
         "details": [
             ("Strategy and my role",
@@ -371,9 +402,9 @@ ABOUT_INTRO = ("I’ve led brand, product marketing, communications and operatio
 EXPERIENCE = [
     # (years, organization html, title, description, related specialty slugs)
     ("2026–now", "<b>Google</b>", "Strategic Marketing Consultant, AI",
-     "Partner with engineering teams to translate expert marketing judgment into guidance, prompts and evaluation frameworks for reasoning in enterprise AI systems.", []),
+     "Consulting engagement via Uber AI Solutions. Partner with engineering teams to translate senior marketing judgment into AI evaluation frameworks, developing rubrics, prompts and exemplar responses across customer insights, segmentation, positioning and go-to-market strategy.", []),
     ("2025", "<b>Microsoft</b>", "Senior Communications Consultant",
-     "Executive, employee and AI adoption communications for the global Customer Success organization. Built AI agents and workflows for drafting, editing and summarization while preserving executive voice and tone.",
+     "Executive, employee and AI adoption communications for the global Customer Success organization. Separately, created AI agents and workflow automations that made repeatable drafting, editing and summarization work faster and more consistent while preserving executive voice and tone.",
      ["communications"]),
     ("2024", "<b>Southern Company</b>", "Senior Consultant, Brand &amp; Product Marketing",
      "Brand and product marketing for Georgia Natural Gas and its Greener Life® subscription product.", ["product-marketing"]),
@@ -391,6 +422,8 @@ EXPERIENCE = [
 ]
 
 TECH_INTRO = "I connect strategic judgment with practical AI capabilities to improve how teams research, develop ideas, solve problems and execute work."
+TECH_CAPABILITY = ("Develop AI evaluation frameworks that translate senior marketing judgment into structured criteria, prompts and exemplar responses. "
+                   "Build AI agents, automations and workflows that improve how teams develop content, evaluate work and execute repeatable processes.")
 TECH_ROWS = [
     ("AI &amp; agentic capabilities", "Agent design &amp; optimization · AI workflow development &amp; automation · Prompt design · AI evaluation frameworks · AI-assisted prototyping &amp; application development"),
     ("Select platforms &amp; models", "ChatGPT · Claude · Gemini · Gemini Notebook · Copilot"),

@@ -162,6 +162,11 @@ p{margin:0}
 .outcome{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-block:1px solid var(--line)}
 .outcome b{font:800 clamp(34px,3.6vw,44px)/1 var(--head);color:var(--teal);letter-spacing:-.03em;flex:none}
 .outcome span{font-size:17px;line-height:1.4}
+.outcomes-pair{display:grid;border-block:1px solid var(--line)}
+.outcomes-pair .outcome{border-block:0}
+.outcome-2{display:flex;gap:12px;align-items:baseline;padding:0 0 14px;margin-top:-4px}
+.outcome-2 b{font:800 clamp(22px,2.2vw,26px)/1 var(--head);color:var(--teal);letter-spacing:-.02em;flex:none}
+.outcome-2 span{font-size:16px;line-height:1.4;color:var(--muted)}
 .outcome.mandate span{font:600 clamp(19px,1.9vw,22px)/1.35 var(--head);color:var(--teal)}
 .summary{margin:0;display:grid;gap:12px}
 .summary div{display:grid;gap:2px}
@@ -207,6 +212,10 @@ details.more[open] > summary::after{content:"–"}
 .tech-rows div:last-child{border-bottom:1px solid var(--line)}
 .tech-rows dt{font:700 16px/1.4 var(--head);color:var(--teal)}
 .tech-rows dd{margin:0}
+.tech-body{display:grid;gap:24px;min-width:0}
+.tech-capability{font:600 clamp(19px,1.9vw,22px)/1.45 var(--head);color:var(--teal);max-width:60ch}
+.tech-rows .tool dt{font-size:14px;color:var(--muted)}
+.tech-rows .tool dd{font-size:15px;color:var(--muted)}
 .cred-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}
 .cred-grid h3{font:700 13px/1.3 var(--head);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:4px}
 .cred-grid ul{list-style:none;margin:0;padding:0}

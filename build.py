@@ -158,13 +158,18 @@ def meta_line(p):
 
 def outcome(p):
     figure, label = p["outcome"]
-    if figure:
-        return f'<p class="outcome"><b>{figure}</b><span>{label}</span></p>'
-    return f'<p class="outcome mandate"><span>{label}</span></p>'
+    if not figure:
+        return f'<p class="outcome mandate"><span>{label}</span></p>'
+    second = ""
+    if p.get("secondary"):
+        f2, l2 = p["secondary"]
+        second = f'<p class="outcome-2"><b>{f2}</b><span>{l2}</span></p>'
+    return f'<div class="outcomes-pair"><p class="outcome"><b>{figure}</b><span>{label}</span></p>{second}</div>'
 
 
 def project(root, pid):
     p = C.PROJECTS[pid]
+    approach = f'\n      <div><dt>Strategic approach</dt><dd>{p["approach"]}</dd></div>' if p.get("approach") else ""
     details = "".join(f"<div><h4>{h}</h4>{body}</div>" for h, body in p["details"])
     details = re.sub(r'href="@([^"#]*)(#[^"]*)?"',
                      lambda m: f'href="{href(root, m.group(1))}{m.group(2) or ""}"', details)
@@ -181,7 +186,7 @@ def project(root, pid):
     {outcome(p)}
     <dl class="summary">
       <div><dt>The challenge</dt><dd>{p["challenge"]}</dd></div>
-      <div><dt>My role</dt><dd>{p["role"]}</dd></div>
+      <div><dt>{p.get("role_label", "My role")}</dt><dd>{p["role"]}</dd></div>{approach}
     </dl>
     <details class="more">
       <summary>Explore the project<span class="sr-only">: {p["title"]}</span></summary>
@@ -300,7 +305,9 @@ def about(root):
             rel = '<p class="role-links">Related work: ' + " · ".join(
                 f'<a href="{href(root, s + "/")}">{C.SPECIALTIES[s].get("short", C.SPECIALTIES[s]["name"])}</a>' for s in slugs) + "</p>"
         roles.append(f'<li><span class="when">{years}</span><div class="role">{org}<span class="t">{title}</span><p>{desc}</p>{rel}</div></li>')
-    tech = "".join(f"<div><dt>{t}</dt><dd>{d}</dd></div>" for t, d in C.TECH_ROWS)
+    # Capabilities lead; tool lists are set smaller so they read as supporting detail.
+    tech = "".join(f'<div{"" if i == 0 else " class=\"tool\""}><dt>{t}</dt><dd>{d}</dd></div>'
+                   for i, (t, d) in enumerate(C.TECH_ROWS))
     awards = "".join(f'<li><span class="yr">{y}</span>{n}<span>{w}</span></li>' for y, n, w in C.AWARDS)
     edu = "".join(f"<li>{n}{f'<span>{d}</span>' if d else ''}</li>" for n, d in C.EDUCATION)
     return f"""<section class="page-hero" aria-labelledby="page-h">
@@ -323,7 +330,7 @@ def about(root):
 <section class="section split tech" id="technology-ai" aria-labelledby="tech-h">
   <div class="wrap">
     <div class="split-head"><p class="eyebrow">Technology &amp; AI</p><h2 id="tech-h">Technology &amp; AI capabilities</h2><p>{C.TECH_INTRO}</p></div>
-    <dl class="tech-rows">{tech}</dl>
+    <div class="tech-body"><p class="tech-capability">{C.TECH_CAPABILITY}</p><dl class="tech-rows">{tech}</dl></div>
   </div>
 </section>
 
