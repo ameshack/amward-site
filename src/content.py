@@ -166,7 +166,7 @@ PROJECTS = {
     "cam-portal": {
         "org": SF, "program": "Climate Action Month",
         "title": "Digital experience strategy and development",
-        "image": {"src": "climate-action-month-portal.jpg", "w": 1000, "h": 765,
+        "image": {"src": "climate-action-month-banner.jpg", "w": 1000, "h": 765,
                   "alt": "April is Climate Action Month web page: Be the change in climate change banner, date and event-type filters, and event listings"},
         "outcome": ("+51%", "year-over-year page visits"),
         "challenge": "Make a citywide calendar of climate events and activities easy for residents to discover, navigate and explore.",
