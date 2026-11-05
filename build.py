@@ -167,18 +167,46 @@ def outcome(p):
     return f'<div class="outcomes-pair"><p class="outcome"><b>{figure}</b><span>{label}</span></p>{second}</div>'
 
 
+def media_cards(root, p):
+    """Coverage and examples shown under a project's summary (title, outlet, date, role)."""
+    cards = []
+    for m in p.get("media", []):
+        thumb = ""
+        if m.get("img"):
+            thumb = (f'<img src="{root}src/img/{m["img"]}" alt="{m["alt"]}" width="640" height="360" '
+                     'loading="lazy" decoding="async">')
+        source = " · ".join(x for x in (m.get("outlet"), m.get("date")) if x)
+        headline = m["headline"]
+        if m.get("url"):
+            headline = f'<a class="ext" href="{m["url"]}" target="_blank" rel="noopener">{headline}</a>'
+        extra = ""
+        if m.get("extra"):
+            label, url = m["extra"]
+            extra = f'<p class="media-extra"><a class="ext" href="{url}" target="_blank" rel="noopener">{label}</a></p>'
+        kind = " media-text" if not thumb else ""
+        cards.append(f"""<li class="media-card{kind}">{thumb}<div class="media-body">
+        <p class="media-label">{m["label"]}</p>
+        <p class="media-source">{source}</p>
+        <p class="media-headline">{headline}</p>
+        <p class="media-role">{m["text"]}</p>{extra}
+      </div></li>""")
+    return f'\n    <ul class="media-grid" aria-label="Examples">{"".join(cards)}</ul>' if cards else ""
+
+
 def project(root, pid):
     p = C.PROJECTS[pid]
     approach = f'\n      <div><dt>Strategic approach</dt><dd>{p["approach"]}</dd></div>' if p.get("approach") else ""
     details = "".join(f"<div><h4>{h}</h4>{body}</div>" for h, body in p["details"])
     details = re.sub(r'href="@([^"#]*)(#[^"]*)?"',
                      lambda m: f'href="{href(root, m.group(1))}{m.group(2) or ""}"', details)
+    details = details.replace('src="@img/', f'src="{root}src/img/')
     links = "".join(f'<a class="ext" href="{u}" target="_blank" rel="noopener">{t}</a>' for t, u in p["links"])
     links = f'<div class="links">{links}</div>' if links else ""
     image = p.get("image")
     layout = image.get("layout", "side") if image else "text"
     media = f'<div class="project-media">{img(root, image)}</div>' if image else ""
-    return f"""<article class="project project-{layout}" id="{pid}">
+    size = " project-compact" if p.get("compact") else ""
+    return f"""<article class="project project-{layout}{size}" id="{pid}">
   {media}
   <div class="project-body">
     <p class="meta">{meta_line(p)}</p>
@@ -187,7 +215,7 @@ def project(root, pid):
     <dl class="summary">
       <div><dt>The challenge</dt><dd>{p["challenge"]}</dd></div>
       <div><dt>{p.get("role_label", "My role")}</dt><dd>{p["role"]}</dd></div>{approach}
-    </dl>
+    </dl>{media_cards(root, p)}
     <details class="more">
       <summary>Explore the project<span class="sr-only">: {p["title"]}</span></summary>
       <div class="detail">{details}{links}</div>

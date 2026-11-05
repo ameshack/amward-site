@@ -193,6 +193,34 @@ details.more[open] > summary::after{content:"–"}
 .related span{color:var(--muted);font-size:16px}
 .related.four{grid-template-columns:repeat(4,minmax(0,1fr))}
 
+/* Media cards (coverage and examples under a project summary) */
+.media-grid{list-style:none;margin:4px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.media-card{display:grid;grid-template-rows:auto 1fr;background:var(--ivory);border:1px solid var(--line);border-radius:8px;overflow:hidden;min-width:0}
+.media-card img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.media-card.media-text{grid-column:1/-1;grid-template-rows:1fr}
+.media-body{padding:14px 16px 16px;display:grid;gap:6px;align-content:start}
+.media-label{font:700 12.5px/1.35 var(--head);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.media-source{font-size:14px;color:var(--muted)}
+.media-headline{font:700 17px/1.35 var(--head);color:var(--teal)}
+.media-headline a{color:inherit}
+.media-role{font-size:16px;line-height:1.5}
+.media-extra{font-size:15px}
+
+/* Compact supporting projects */
+.project-compact .project-body{padding:26px 30px 28px;gap:14px}
+.project-compact h3{font-size:clamp(21px,2vw,24px)}
+.project-compact .outcome b{font-size:clamp(28px,3vw,36px)}
+.project-compact.project-side{grid-template-columns:minmax(0,3fr) minmax(0,8fr)}
+
+/* Social post samples inside project details */
+.detail figure.post{margin:14px 0 0;max-width:420px}
+.detail figure.post img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+.detail figure.post figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+details.more-samples{margin-top:12px}
+details.more-samples > summary{cursor:pointer;font:700 15px/1.3 var(--head);color:var(--teal);min-height:44px;display:inline-flex;align-items:center}
+.post-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.post-grid figure.post{max-width:none}
+
 /* About page */
 .caps.jump a{text-decoration:none;color:inherit}
 .split .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px;align-items:start}
@@ -243,7 +271,7 @@ details.more[open] > summary::after{content:"–"}
   .site-header .wrap{position:relative}
   .hero .wrap,.throughline .wrap{grid-template-columns:minmax(0,1fr);gap:40px}
   .outcomes ul{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .project-side,.project-phone{grid-template-columns:minmax(0,1fr)}
+  .project-side,.project-phone,.project-compact.project-side{grid-template-columns:minmax(0,1fr)}
   .project-phone .project-media{padding-top:28px}
   .project-phone .project-media img{width:46%;max-height:420px}
   .related,.related.four{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
@@ -256,6 +284,8 @@ details.more[open] > summary::after{content:"–"}
   .hero{padding-block:44px 48px}
   .lede{font-size:19px}
   .cards,.related,.related.four{grid-template-columns:minmax(0,1fr)}
+  .media-grid,.post-grid{grid-template-columns:minmax(0,1fr)}
+  .project-compact .project-body{padding:22px 22px 24px}
   .roles li,.tech-rows div{grid-template-columns:minmax(0,1fr);gap:4px}
   .project-phone .project-media img{width:62%}
   .outcomes ul{grid-template-columns:minmax(0,1fr);gap:24px}
