@@ -331,7 +331,7 @@ def about(root):
 <section class="section split tech" id="technology-ai" aria-labelledby="tech-h">
   <div class="wrap">
     <div class="split-head"><p class="eyebrow">Technology &amp; AI</p><h2 id="tech-h">Technology &amp; AI capabilities</h2><p>{C.TECH_INTRO}</p></div>
-    <div class="tech-body"><div class="tech-cap"><h3>{C.TECH_CAPABILITY_HEAD}</h3><p class="tech-capability">{C.TECH_CAPABILITY}</p></div><dl class="tech-rows">{tech}</dl></div>
+    <div class="tech-body"><p class="tech-capability">{C.TECH_CAPABILITY}</p><dl class="tech-rows">{tech}</dl></div>
   </div>
 </section>
 

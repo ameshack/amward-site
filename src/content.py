@@ -434,7 +434,6 @@ EXPERIENCE = [
 ]
 
 TECH_INTRO = "I connect strategic judgment with practical AI capabilities to improve how teams research, develop ideas, solve problems and execute work."
-TECH_CAPABILITY_HEAD = "AI &amp; Workflow Development"
 TECH_CAPABILITY = ("I build AI-enabled workflows, agents and practical tools that improve marketing and communications processes, streamline execution and make specialized expertise more scalable. "
                    "My experience spans hands-on development, workflow automation and collaboration with engineering teams to translate business requirements into AI capabilities.")
 TECH_ROWS = [
