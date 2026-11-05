@@ -95,18 +95,22 @@ PROJECTS = {
         "title": "National brand campaign",
         "image": {"src": "delta-ad.jpg", "w": 1100, "h": 612, "layout": "wide",
                   "alt": "Closing frame of the Delta ad: Keep Climbing, Delta and SkyTeam logos, Learn more at delta.com/sustainability"},
-        "outcome": ("#1", "Delta ad for brand difference and affinity"),
+        "outcome": ("#1", "tested Delta ad for driving consumer brand difference and affinity"),
+        "secondary": ("Lift", "statistically significant lift in association with Delta’s net-zero-by-2050 commitment"),
         "challenge": "Stand out with consumers nationally and deepen their affinity for the Delta brand.",
-        "role": "Led strategy and execution, from consumer research through agency direction, paid media and measurement.",
+        "role": "Led strategy and execution for a national omnichannel campaign, from consumer research and creative briefs through agency direction, paid media and measurement.",
+        "approach": "Turned consumer research into creative briefs that spotlighted tangible changes to Delta’s operations, rather than distant climate goals.",
         "details": [
-            ("Strategy and my role",
-             "<p>Led strategy and execution for a national omnichannel campaign, translating consumer research into creative briefs and agency direction.</p>"),
-            ("Research",
-             "<p>Led multiphase qualitative and quantitative consumer research and competitive analysis informing messaging, creative briefs and content strategy.</p>"),
-            ("Execution",
-             "<p>Directed agency coordination, paid-media investment, measurement and reporting.</p>"),
-            ("Result",
-             "<p>The #1 Delta ad for brand difference and affinity.</p>"),
+            ("Strategic insight",
+             "<p>Consumer research reinforced the value of concrete, informative sustainability claims in building brand differentiation and affinity. By spotlighting tangible changes to Delta’s operations, the campaign made progress toward its long-term climate commitments more relatable, credible and memorable.</p>"),
+            ("Research and execution",
+             "<p>Led multiphase qualitative and quantitative consumer research and competitive analysis, translated the findings into creative briefs and agency direction, and oversaw paid-media investment, measurement and reporting.</p>"),
+            ("Results",
+             "<ul><li>The #1 tested Delta ad for driving consumer brand difference and affinity, in the emotive-testing phase of Delta consumer research</li>"
+             "<li>Statistically significant lift in association with the message “We are committed to net zero carbon emissions by 2050,” per the media agency’s mid-campaign report</li></ul>"
+             "<p class=\"fine\">Message association measures what viewers linked to Delta, not progress on emissions.</p>"),
+            ("Ongoing content strategy",
+             "<p>Separately, developed a research-backed evergreen content strategy built on four principles: spotlight current progress over distant commitments, feature the employees and partners behind it, connect progress to customer benefits, and share setbacks as openly as gains. It guided ongoing content planning, not the campaign ad.</p>"),
         ],
         "links": [("Watch the Delta ad", "https://www.facebook.com/watch/?v=248379818072591")],
     },
@@ -115,17 +119,19 @@ PROJECTS = {
         "title": "Integrated brand campaign and audience engagement",
         "image": {"src": "reuse.jpg", "w": 1100, "h": 558, "layout": "wide",
                   "alt": "REUSE SF campaign creative: a model in yellow reclining with a reusable tote of produce"},
-        "outcome": ("+51%", "intent to reuse, reported by the agency partner"),
+        "outcome": ("+51%", "reported increase in intent to reuse, per the agency partner"),
+        "secondary": ("7×", "video engagement relative to benchmark"),
         "challenge": "Persuade residents to choose reusable bags, cups and utensils over disposable ones.",
         "role_label": "My ownership",
         "role": "Commissioned and directed the campaign, leading the agency, creative vendors and contractors.",
+        "approach": "Framed reuse through fashion-inspired creative and invited residents to take part, through photo pop-ups, giveaways and a pledge, rather than only see ads.",
         "details": [
-            ("Strategy and my role",
-             "<p>Commissioned and directed a fashion-inspired campaign encouraging residents to choose reusable bags, cups and utensils over disposable alternatives. Led the agency, creative vendors and contractors across integrated advertising and community activations.</p>"),
-            ("Execution",
-             "<p>Combined advertising, professional-photo pop-ups, reusable giveaways, a pledge website and geotargeted digital promotion that drove attendance at neighborhood activations. Culturally relevant creative reached Spanish- and Chinese-speaking, lower-income and older residents.</p>"),
+            ("Strategy and execution",
+             "<p>Led integrated advertising, community activations, a pledge website and geotargeted digital promotion that drove attendance at neighborhood activations. User-generated-style video and culturally relevant creative reached Spanish- and Chinese-speaking, lower-income and older residents.</p>"),
             ("Results",
-             "<ul><li>+51% intent to reuse</li><li>Video engagement at 7× benchmark</li><li>Thousands of pledges and 4,000+ participant photos shared on social media</li><li>2022 ADDY Award, Public Service Campaign</li></ul>"
+             "<ul><li>+51% reported increase in intent to reuse</li><li>Video engagement at 7× benchmark, driven by the user-generated-style creative</li>"
+             "<li>Thousands of pledges and 4,000+ participant photos shared on social media, carrying the campaign into residents’ own channels</li>"
+             "<li>2022 ADDY Award, Public Service Campaign</li></ul>"
              "<p class=\"fine\">Campaign-level results reported by the agency partner. The 51% measures intent to reuse, not verified behavior.</p>"),
         ],
         "links": [("View the REUSE SF campaign", "https://www.reuse-sf.org/")],
@@ -135,19 +141,22 @@ PROJECTS = {
         "title": "Brand architecture and governance",
         "image": {"src": "climate-action-booth.jpg", "w": 1100, "h": 937,
                   "alt": "San Francisco Environment staff at a community outreach table branded with the San Francisco Climate Action 0 80 100 Roots identity"},
-        "outcome": ("", "A unified climate brand system, and the citywide initiative built on it"),
+        "outcome": ("+51%", "year-over-year website visits during the fourth annual Climate Action Month"),
         "challenge": "Bring the city’s environmental services and climate goals together under one coherent brand.",
         "role_label": "My ownership",
-        "role": "Expanded the city’s climate identity into a brand system, set its governance and created Climate Action Month to extend it.",
+        "role": "Developed and governed the San Francisco Climate Action brand system, establishing shared identity, messaging and editorial standards across public-facing programs, campaigns and digital experiences.",
+        "approach": "Extended the brand into Climate Action Month, a recurring citywide initiative, so residents met one consistent identity across programs, campaigns and events.",
         "details": [
-            ("Strategy and my role",
-             "<p>Expanded the city’s “0/80/100/Roots” climate identity into a brand system connecting program identities, digital experiences, community outreach and executive communications. Established naming and messaging governance for new products and citywide initiatives.</p>"),
+            ("Brand system and governance",
+             "<p>Expanded the city’s “0/80/100/Roots” climate identity into a brand system for city programs and public-facing communications, with naming, content strategy and governance for new products and citywide initiatives, coordinated across teams.</p>"),
             ("Extending the brand",
-             "<p>Created <a href=\"@product-marketing/#cam-portal\">Climate Action Month</a>, an annual citywide initiative that carried the brand to residents through an integrated partner strategy and a multilingual event-discovery experience.</p>"),
-            ("Citywide context",
+             "<p>Created Climate Action Month, an annual citywide initiative that brought the brand to residents through an integrated partner strategy. Its <a href=\"@product-marketing/#cam-portal\">event-discovery portal</a> is covered under Product Marketing.</p>"),
+            ("Results",
+             "<p>Website visits rose 51% year over year during the fourth annual Climate Action Month, reflecting the broader marketing and digital program rather than the brand system alone.</p>"),
+            ("Broader context",
              "<ul><li>San Francisco was named to the CDP (formerly Carbon Disclosure Project) Cities A List for the fourth consecutive year in 2022, recognizing global leadership in environmental transparency and climate action</li>"
              "<li>The city reduced its carbon emissions while its population and economy grew, supported by the San Francisco Climate Action Plan and community engagement</li></ul>"
-             "<p class=\"fine\">City-level results that the brand system and public engagement supported; they reflect the work of many departments and partners.</p>"),
+             "<p class=\"fine\">These citywide achievements show the public mission the communications supported; they aren’t outcomes of the brand system.</p>"),
         ],
         "links": [],
     },
@@ -383,13 +392,19 @@ PROJECTS = {
 }
 
 PROOF_POINTS = [
-    ("#1", "Delta Air Lines ad for brand difference and affinity", "Delta Air Lines"),
+    ("#1", "tested Delta Air Lines ad for driving brand difference and affinity", "Delta Air Lines"),
     ("+11%", "subscribers in three months; $1.7M projected customer lifetime value", "Southern Company"),
     ("+495%", "year-over-year monthly active users for a civic app", "City &amp; County of San Francisco"),
     ("+88%", "year-over-year employee understanding of mission and values (relative increase, annual survey)", "City &amp; County of San Francisco"),
 ]
 
-RECENT_WORK = ["Google", "Microsoft", "Delta Air Lines", "Southern Company"]
+# Official logos from Wikimedia Commons; height in px balances their visual weight.
+RECENT_WORK = [
+    ("Google", "google.svg", 30),
+    ("Microsoft", "microsoft.svg", 30),
+    ("Delta Air Lines", "delta.svg", 24),
+    ("Southern Company", "southern-company.svg", 42),
+]
 
 # ---------- About page
 ABOUT_INTRO = ("I’ve led brand, product marketing, communications and operations for global companies, "

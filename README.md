@@ -19,6 +19,8 @@ Project images are the owner's own campaign, product and published materials. `s
 
 Projects kept in reserve (defined in `src/content.py` but not published): `microsoft-holiday` (Holiday Gratitude Campaign) and `rethink-disposable` (ReThink Disposable small-business enrollment). Add an id to a specialty's `projects` list to show it.
 
+Company logos in `src/img/logos/` (Google, Microsoft, Delta Air Lines, Southern Company) are the official marks as published on Wikimedia Commons, used only to identify organizations the owner has worked for. They remain trademarks of their owners.
+
 ## Editing
 
 1. Edit `src/content.py`, `src/site.css`, `src/site.js` or the templates in `build.py`.

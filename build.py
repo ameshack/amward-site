@@ -199,7 +199,8 @@ def project(root, pid):
 def home(root):
     s = C.SPECIALTIES
     proofs = "".join(f"<li><b>{f}</b><span>{l}</span><small>{w}</small></li>" for f, l, w in C.PROOF_POINTS)
-    orgs = "".join(f"<li>{o}</li>" for o in C.RECENT_WORK)
+    orgs = "".join(f'<li><img src="{root}src/img/logos/{f}" alt="{n}" style="height:{h}px" decoding="async"></li>'
+                   for n, f, h in C.RECENT_WORK)
     cards = []
     for sp in s.values():
         v = sp["card_visual"]

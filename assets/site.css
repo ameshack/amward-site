@@ -81,8 +81,9 @@ p{margin:0}
 /* Organizations */
 .orgs{padding-block:28px;border-block:1px solid var(--line)}
 .orgs .wrap{display:grid;gap:14px}
-.orgs ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline}
-.orgs li{font:700 clamp(17px,1.7vw,21px)/1.2 var(--head);color:var(--teal);letter-spacing:-.01em}
+.orgs ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:20px 56px;align-items:center}
+.orgs li{display:flex;align-items:center;min-height:44px}
+.orgs img{width:auto;max-width:100%}
 
 /* Outcomes band */
 .outcomes{background:var(--teal);color:var(--ivory)}
