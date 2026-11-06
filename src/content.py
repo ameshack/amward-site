@@ -473,7 +473,7 @@ ABOUT_INTRO = ("I’ve led brand, product marketing, communications and operatio
 EXPERIENCE = [
     # (years, organization html, title, description, related specialty slugs)
     ("2026–now", "<b>Google</b>", "Strategic Marketing Consultant, AI",
-     "Advise on strategic marketing and communications quality for Gemini, partnering with engineering to develop evaluation frameworks, expert judgment standards and AI agents across brand, positioning and go-to-market strategy.", []),
+     "Advise on strategic marketing and communications quality for Google AI, partnering with engineering to develop evaluation frameworks, expert judgment standards and AI agents across brand, positioning and go-to-market strategy.", []),
     ("2025", "<b>Microsoft</b>", "Senior Communications Consultant",
      "Executive, employee and AI adoption communications for the global Customer Success organization. Separately, created AI agents and workflow automations that made repeatable drafting, editing and summarization work faster and more consistent while preserving executive voice and tone.",
      ["communications"]),
