@@ -62,7 +62,7 @@ SPECIALTIES = {
             "Employee engagement &amp; measurement",
             "Media strategy &amp; issues management",
         ],
-        "projects": ["microsoft-exec", "microsoft-editorial", "sf-internal-comms", "external-comms", "new-resource-bank"],
+        "projects": ["external-comms", "sf-internal-comms", "microsoft-exec", "new-resource-bank"],
         "card_visual": {"img": "year-end-wrap-up.jpg", "position": "center 52%"},
         "title": "Strategic communications",
         "description": "Strategic communications by Asia Meshack: executive counsel, employee engagement, organizational change, external communications and issues management, with work for Microsoft, the City & County of San Francisco, Columbia University and New Resource Bank.",
@@ -269,20 +269,21 @@ PROJECTS = {
     # ---------- Strategic Communications
     "microsoft-exec": {
         "org": "Microsoft", "program": "Customer Success",
-        "title": "Executive communications and organizational change",
+        "title": "Executive communications, organizational change and employee engagement",
         "image": {"src": "year-end-wrap-up.jpg", "w": 1100, "h": 618, "layout": "wide",
                   "alt": "Title card from a year-end leadership video: Year-End Wrap-Up"},
-        "outcome": ("", "Executive and employee communications for a 4,500+ person global organization"),
-        "challenge": "Help leaders communicate priorities, organizational change and emerging AI capabilities clearly and consistently across a global Customer Success organization of more than 4,500 employees.",
-        "role": "Developed executive messaging and a recurring leadership communications program, translating organizational priorities, change initiatives and AI adoption into clear employee-facing communications.",
-        "approach": "Partnered with senior leaders to clarify strategic intent, establish consistent executive messaging and coordinate communications across video, email, presentations and internal digital channels.",
+        "outcome": ("+61%", "average internal content views per post within Customer Success"),
+        "secondary": ("4,500+", "employees in the global Customer Success organization"),
+        "challenge": "Support leadership alignment, organizational change and employee engagement across a global Customer Success organization of more than 4,500 employees.",
+        "role": "Developed executive messaging and leadership communications, led editorial planning and channel optimization, and built employee engagement initiatives that strengthened the reach and relevance of organizational communications.",
+        "approach": "Connected leadership priorities with employee information needs through coordinated executive messaging, recurring communications programs, editorial governance and performance measurement.",
         "details": [
-            ("Executive partnership",
-             "<p>Worked directly with senior leaders, including the Corporate Vice President of Customer Success, to clarify strategic intent during organizational transformation. Developed the CVP’s monthly leadership video, from scripting and editorial development through planning and distribution, and authored and ghostwrote executive emails, scripts, presentations and posts. Advised leaders on framing sensitive messages so they stayed clear and responsive to employee concerns.</p>"),
-            ("Change and AI adoption",
-             "<p>Translated AI capabilities and leadership priorities into practical communications across newsletters, presentations, video, email and digital channels, connecting what leaders were prioritizing to what employees needed to know and do.</p>"),
-            ("Editorial governance and measurement",
-             "<p>Established communications KPIs, operating plans and editorial processes that improved planning, performance visibility and consistency across internal channels.</p>"),
+            ("Executive communications and organizational change",
+             "<p>Worked directly with senior leaders, including the Corporate Vice President of Customer Success, to clarify strategic intent during organizational transformation. Developed the CVP’s monthly leadership video, from scripting and editorial development through planning and distribution, and authored and ghostwrote executive emails, scripts, presentations and posts. Advised leaders on framing sensitive messages, and translated AI capabilities and leadership priorities into practical communications so employees knew what was changing and what to do. Established communications KPIs, operating plans and editorial processes across internal channels.</p>"),
+            ("Employee engagement and editorial strategy",
+             "<p>Led employee communications planning, editorial calendars and prioritization, channel optimization and performance measurement, raising average internal content views per post by 61%.</p>"
+             "<p>Supporting initiative: developed and activated the Holiday Gratitude Campaign, a multichannel year-end employee recognition campaign combining executive messaging, a dedicated SharePoint experience and interactive Viva Engage content to encourage recognition, connection and participation.</p>"
+             "<p class=\"fine\">Measured across internal content within Customer Success, where average views per post rose from about 3,100 to about 5,000. The 61% reflects the editorial program as a whole, not the campaign alone.</p>"),
             ("Executive thought leadership and customer storytelling",
              "<p>Served as lead editor of customer success narratives for Microsoft’s Corporate Vice President of Customer Success, refining executive LinkedIn posts and stories about Microsoft Cloud and AI adoption to communicate customer outcomes, solution value and business impact.</p>"
              "<figure class=\"post\"><img src=\"@img/li-st-lukes.jpg\" alt=\"LinkedIn post from Microsoft’s Corporate Vice President of Customer Success about St. Luke’s University Health Network using Security Copilot agents\" width=\"664\" height=\"1200\" loading=\"lazy\" decoding=\"async\"><figcaption>Published LinkedIn post: St. Luke’s University Health Network and Security Copilot.</figcaption></figure>"
@@ -290,27 +291,8 @@ PROJECTS = {
              "<figure class=\"post\"><img src=\"@img/li-dc-cfsa.jpg\" alt=\"LinkedIn post about Washington, DC Child and Family Services Agency modernizing with Microsoft Dynamics 365 and AI\" width=\"760\" height=\"1004\" loading=\"lazy\" decoding=\"async\"><figcaption>Washington, DC Child and Family Services Agency.</figcaption></figure>"
              "<figure class=\"post\"><img src=\"@img/li-project-cure.jpg\" alt=\"LinkedIn post about Project C.U.R.E. using Microsoft Dynamics 365, Power Platform, Power BI and Teams\" width=\"760\" height=\"1135\" loading=\"lazy\" decoding=\"async\"><figcaption>Project C.U.R.E.</figcaption></figure>"
              "</div></details>"),
-            ("Supporting capability: AI workflows",
+            ("AI-enabled communications workflows",
              "<p>Created AI agents and workflow automations for drafting, editing and summarization that made editorial work faster and more consistent while preserving executive voice and tone.</p>"),
-        ],
-        "links": [],
-    },
-    "microsoft-editorial": {
-        "org": "Microsoft", "program": "Customer Success",
-        "title": "Employee engagement and editorial strategy",
-        "image": None,
-        "compact": True,
-        "outcome": ("+61%", "average internal content views per post within Customer Success"),
-        "challenge": "Strengthen the relevance, consistency and reach of employee communications across a large, globally distributed Customer Success organization.",
-        "role": "Led editorial planning, channel optimization and performance measurement for employee communications, developing repeatable processes and content strategies that improved visibility and engagement.",
-        "approach": "Connected communications priorities to employee information needs, used performance data to refine editorial decisions and coordinated content across internal communications channels.",
-        "details": [
-            ("Results",
-             "<p>Increased average internal content views per post by 61% through editorial planning, channel optimization and performance measurement.</p>"
-             "<p class=\"fine\">Measured across internal content within the Customer Success organization, where average views per post rose from about 3,100 to about 5,000.</p>"),
-            ("Holiday Gratitude Campaign",
-             "<p>Developed and activated a multichannel year-end employee recognition campaign, combining executive messaging, a dedicated SharePoint experience and interactive Viva Engage content to encourage recognition, connection and participation. Owned its integrated strategy, editorial planning and channel governance.</p>"
-             "<p class=\"fine\">The campaign was one part of the editorial program; the 61% reflects the program as a whole, not the campaign alone.</p>"),
         ],
         "links": [],
     },
@@ -341,21 +323,21 @@ PROJECTS = {
     "external-comms": {
         "org": SF + " · Columbia University",
         "title": "External communications, media strategy and issues management",
-        "image": None,
+        "image": {"layout": "wide", "pair": [
+            {"src": "abc7-battery.jpg", "w": 640, "h": 360, "alt": "ABC7 studio segment on battery recycling with a red battery collection bucket"},
+            {"src": "abc7-bottlebank.jpg", "w": 640, "h": 360, "alt": "BottleBank mobile recycling tent and table in San Francisco, as shown in ABC7 coverage"}]},
         "outcome": ("", "Proactive earned media, issues response and sensitive institutional communications"),
         "challenge": "Navigate external communications needs ranging from public-awareness campaigns to media scrutiny and sensitive institutional incidents, balancing organizational priorities, public accountability and reputational considerations.",
         "role": "Directed proactive media strategy, supervised PR contributors, developed institutional messaging and coordinated external responses with program leaders, executive stakeholders and communications colleagues.",
         "approach": "Tailored communications strategies to the situation—from proactive storytelling and earned-media outreach to coordinated institutional responses requiring discretion, accuracy and message discipline.",
         "media": [
-            {"img": "abc7-battery.jpg", "alt": "ABC7 studio segment on battery recycling with a red battery collection bucket",
-             "label": "Proactive media · Bucket or Bin Top",
+            {"label": "Proactive media · Bucket or Bin Top",
              "outlet": "ABC7 San Francisco", "date": "May 2018",
              "headline": "San Francisco official on how to dispose of old batteries",
              "url": "https://abc7news.com/post/sf-official-on-how-to-dispose-of-old-batteries/3421103/",
              "text": "Led communications strategy for the Bucket or Bin Top battery recycling campaign, establishing messaging and directing PR outreach that secured local ABC7 television coverage.",
              "extra": ("Department press release", "https://www.sfenvironment.org/press/beat-battery-waste-department-environment-launches-new-bucket-or-bin-top-recycling-campaign")},
-            {"img": "abc7-bottlebank.jpg", "alt": "BottleBank mobile recycling tent and table in San Francisco, as shown in ABC7 coverage",
-             "label": "Issues response · BottleBank",
+            {"label": "Issues response · BottleBank",
              "outlet": "ABC7 San Francisco", "date": "February 2022",
              "headline": "San Francisco launches anticipated mobile recycling service, but not everyone is happy",
              "url": "https://abc7news.com/post/sf-bottlebank-mobile-recycling-service-san-francisco-app/11538522/",
@@ -378,7 +360,7 @@ PROJECTS = {
     "new-resource-bank": {
         "org": "New Resource Bank", "program": "Corporate communications",
         "title": "Executive and investor communications during organizational transition",
-        "image": {"src": "nrb-impact-report.jpg", "w": 900, "h": 902,
+        "image": {"src": "nrb-impact-report.jpg", "w": 900, "h": 902, "layout": "wide", "fit": "contain",
                   "alt": "Cover of the New Resource Bank Impact Report: Well-being for people and the planet through banking"},
         "compact": True,
         "outcome": ("", "Executive, investor and impact communications for a B Corp “Best for the World” bank"),
@@ -458,6 +440,9 @@ PROOF_POINTS = [
 ]
 
 # Official logos from Wikimedia Commons; height in px balances their visual weight.
+# Order of the specialty cards on the homepage (navigation keeps SPECIALTIES order).
+HOME_CARD_ORDER = ["communications", "leadership", "brand", "product-marketing"]
+
 RECENT_WORK = [
     ("Google", "google.svg", 30),
     ("Microsoft", "microsoft.svg", 30),

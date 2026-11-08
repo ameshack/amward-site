@@ -193,6 +193,11 @@ details.more[open] > summary::after{content:"–"}
 .related span{color:var(--muted);font-size:16px}
 .related.four{grid-template-columns:repeat(4,minmax(0,1fr))}
 
+/* Primary visuals in a consistent top frame */
+.media-pair{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--stone)}
+.media-pair img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.project-wide .project-media img.fit-contain{object-fit:contain;max-height:420px;width:100%;background:var(--stone);padding:20px 0}
+
 /* Media cards (coverage and examples under a project summary) */
 .media-grid{list-style:none;margin:4px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .media-card{display:grid;grid-template-rows:auto 1fr;background:var(--ivory);border:1px solid var(--line);border-radius:8px;overflow:hidden;min-width:0}

@@ -147,7 +147,10 @@ def document(root, page_id, title, description, path, main, fragment=False):
 
 def img(root, image, eager=False):
     loading = "eager" if eager else "lazy"
-    cls = f' class="focus-{image["focus"]}"' if image.get("focus") else ""
+    classes = [f"focus-{image['focus']}"] if image.get("focus") else []
+    if image.get("fit") == "contain":
+        classes.append("fit-contain")
+    cls = f' class="{" ".join(classes)}"' if classes else ""
     return (f'<img{cls} src="{root}src/img/{image["src"]}" alt="{image["alt"]}" '
             f'width="{image["w"]}" height="{image["h"]}" loading="{loading}" decoding="async">')
 
@@ -204,7 +207,11 @@ def project(root, pid):
     links = f'<div class="links">{links}</div>' if links else ""
     image = p.get("image")
     layout = image.get("layout", "side") if image else "text"
-    media = f'<div class="project-media">{img(root, image)}</div>' if image else ""
+    if image and image.get("pair"):
+        # Two images shown side by side as the project's primary visual
+        media = '<div class="project-media media-pair">' + "".join(img(root, im) for im in image["pair"]) + "</div>"
+    else:
+        media = f'<div class="project-media">{img(root, image)}</div>' if image else ""
     size = " project-compact" if p.get("compact") else ""
     return f"""<article class="project project-{layout}{size}" id="{pid}">
   {media}
@@ -230,7 +237,7 @@ def home(root):
     orgs = "".join(f'<li><img src="{root}src/img/logos/{f}" alt="{n}" style="height:{h}px" decoding="async"></li>'
                    for n, f, h in C.RECENT_WORK)
     cards = []
-    for sp in s.values():
+    for sp in (s[k] for k in C.HOME_CARD_ORDER):
         v = sp["card_visual"]
         cls = "card-visual phone" if v.get("phone") else "card-visual"
         style = f' style="object-position:{v["position"]}"' if v.get("position") else ""

@@ -17,7 +17,9 @@ Edit the sources, run both builds and commit the source together with the regene
 
 ### Project fields (`src/content.py`)
 
-`org`, `program`, `title`, `image` (`layout`: side by default, `wide`, `phone`), `outcome` (a figure and label; an empty figure turns the label into a mandate line), optional `secondary` metric, `challenge`, `role_label` ("My ownership" only where she had final accountability, otherwise "My role"), `role`, `approach` (shown as "Strategic approach"), `details` [(heading, html)], optional `media` cards, `links`, optional `compact`.
+`org`, `program`, `title`, `image` (`layout`: side by default, `wide`, `phone`; `pair` for two images side by side; `fit: "contain"` to frame without cropping), `outcome` (a figure and label; an empty figure turns the label into a mandate line), optional `secondary` metric, `challenge`, `role_label` ("My ownership" only where she had final accountability, otherwise "My role"), `role`, `approach` (shown as "Strategic approach"), `details` [(heading, html)], optional `media` cards, `links`, optional `compact`.
+
+Homepage card order is `HOME_CARD_ORDER`; navigation and footer follow `SPECIALTIES` order. When a project id is retired, add it to `aliases` in `site.js` so shared links still land.
 
 Inside detail HTML, write `href="@slug/#anchor"` for links between pages and `src="@img/file.jpg"` for images; the build fills in the paths. Text wrapped in `<!--REVIEW-->…<!--/REVIEW-->` appears only in the preview build.
 

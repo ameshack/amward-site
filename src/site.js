@@ -58,10 +58,16 @@
   });
 
   // Open a project's details when its link is followed (brand/#reuse-sf).
+  // Project ids that were merged into another project
+  var aliases = { 'microsoft-editorial': 'microsoft-exec' };
   function openFromHash() {
-    var el = location.hash && document.getElementById(location.hash.slice(1));
+    var id = location.hash.slice(1);
+    var redirected = Boolean(aliases[id]);
+    if (redirected) { id = aliases[id]; history.replaceState(null, '', '#' + id); }
+    var el = id && document.getElementById(id);
     var details = el && el.querySelector('details.more');
     if (details) details.open = true;
+    if (el && redirected) el.scrollIntoView();
   }
   openFromHash();
   window.addEventListener('hashchange', openFromHash);
