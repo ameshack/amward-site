@@ -213,6 +213,9 @@ def project(root, pid):
     else:
         media = f'<div class="project-media">{img(root, image)}</div>' if image else ""
     size = " project-compact" if p.get("compact") else ""
+    media_section = ""
+    if p.get("media_heading"):
+        media_section = f'<div><h4>{p["media_heading"]}</h4>{media_cards(root, p)}</div>'
     return f"""<article class="project project-{layout}{size}" id="{pid}">
   {media}
   <div class="project-body">
@@ -222,10 +225,10 @@ def project(root, pid):
     <dl class="summary">
       <div><dt>The challenge</dt><dd>{p["challenge"]}</dd></div>
       <div><dt>{p.get("role_label", "My role")}</dt><dd>{p["role"]}</dd></div>{approach}
-    </dl>{media_cards(root, p)}
+    </dl>{"" if p.get("media_heading") else media_cards(root, p)}
     <details class="more">
       <summary>Explore the project<span class="sr-only">: {p["title"]}</span></summary>
-      <div class="detail">{details}{links}</div>
+      <div class="detail">{media_section}{details}{links}</div>
     </details>
   </div>
 </article>"""

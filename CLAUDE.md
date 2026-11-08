@@ -17,7 +17,7 @@ Edit the sources, run both builds and commit the source together with the regene
 
 ### Project fields (`src/content.py`)
 
-`org`, `program`, `title`, `image` (`layout`: side by default, `wide`, `phone`; `pair` for two images side by side; `fit: "contain"` to frame without cropping), `outcome` (a figure and label; an empty figure turns the label into a mandate line), optional `secondary` metric, `challenge`, `role_label` ("My ownership" only where she had final accountability, otherwise "My role"), `role`, `approach` (shown as "Strategic approach"), `details` [(heading, html)], optional `media` cards, `links`, optional `compact`.
+`org`, `program`, `title`, `image` (`layout`: side by default, `wide`, `phone`; `pair` for two images side by side; `fit: "contain"` to frame without cropping), `outcome` (a figure and label; an empty figure turns the label into a mandate line), optional `secondary` metric, `challenge`, `role_label` ("My ownership" only where she had final accountability, otherwise "My role"), `role`, `approach` (shown as "Strategic approach"), `details` [(heading, html)], optional `media` cards (shown under the summary, or inside "Explore the project" under a heading when `media_heading` is set), `links`, optional `compact`.
 
 Homepage card order is `HOME_CARD_ORDER`; navigation and footer follow `SPECIALTIES` order. When a project id is retired, add it to `aliases` in `site.js` so shared links still land.
 
@@ -59,7 +59,7 @@ Open items from recent rounds:
 
 - Holiday Gratitude Campaign: needs a cleared, public visual (only internal screenshots exist).
 - Strategic Communications: optionally add a San Francisco employee-communications artifact, such as a newsletter or leadership email.
-- Strategic approach lines for the Leadership & Operations projects; Brand, Product Marketing and Communications already have them.
+- Leadership & Operations: primary images for the strategic planning, team leadership and digital platforms case studies (deferred; review with the owner first).
 - Delta brand campaign: decide whether to restore "multilingual" (Spanish-language creative existed).
 - The site address still uses "amward-site": rename the repository or connect a custom domain.
 - Optional analytics, if wanted (lightweight, no paid tools).

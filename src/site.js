@@ -59,7 +59,7 @@
 
   // Open a project's details when its link is followed (brand/#reuse-sf).
   // Project ids that were merged into another project
-  var aliases = { 'microsoft-editorial': 'microsoft-exec' };
+  var aliases = { 'microsoft-editorial': 'microsoft-exec', 'salesforce': 'digital-platforms' };
   function openFromHash() {
     var id = location.hash.slice(1);
     var redirected = Boolean(aliases[id]);
