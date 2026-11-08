@@ -323,8 +323,9 @@ PROJECTS = {
     "external-comms": {
         "org": SF + " · Columbia University",
         "title": "External communications, media strategy and issues management",
-        "image": {"src": "abc7-battery-lead.jpg", "w": 1200, "h": 675, "layout": "wide",
-                  "alt": "ABC7 studio segment on battery recycling with a red battery collection bucket"},
+        "image": {"layout": "wide", "pair": [
+            {"src": "abc7-battery.jpg", "w": 640, "h": 360, "alt": "ABC7 studio segment on battery recycling with a red battery collection bucket"},
+            {"src": "abc7-bottlebank.jpg", "w": 640, "h": 360, "alt": "BottleBank mobile recycling tent and table in San Francisco, as shown in ABC7 coverage"}]},
         "outcome": ("", "Proactive earned media, issues response and sensitive institutional communications"),
         "challenge": "Navigate external communications needs ranging from public-awareness campaigns to media scrutiny and sensitive institutional incidents, balancing organizational priorities, public accountability and reputational considerations.",
         "role": "Directed proactive media strategy, supervised PR contributors, developed institutional messaging and coordinated external responses with program leaders, executive stakeholders and communications colleagues.",
