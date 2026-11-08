@@ -323,9 +323,8 @@ PROJECTS = {
     "external-comms": {
         "org": SF + " · Columbia University",
         "title": "External communications, media strategy and issues management",
-        "image": {"layout": "wide", "pair": [
-            {"src": "abc7-battery.jpg", "w": 640, "h": 360, "alt": "ABC7 studio segment on battery recycling with a red battery collection bucket"},
-            {"src": "abc7-bottlebank.jpg", "w": 640, "h": 360, "alt": "BottleBank mobile recycling tent and table in San Francisco, as shown in ABC7 coverage"}]},
+        "image": {"src": "abc7-battery-lead.jpg", "w": 1200, "h": 675, "layout": "wide",
+                  "alt": "ABC7 studio segment on battery recycling with a red battery collection bucket"},
         "outcome": ("", "Proactive earned media, issues response and sensitive institutional communications"),
         "challenge": "Navigate external communications needs ranging from public-awareness campaigns to media scrutiny and sensitive institutional incidents, balancing organizational priorities, public accountability and reputational considerations.",
         "role": "Directed proactive media strategy, supervised PR contributors, developed institutional messaging and coordinated external responses with program leaders, executive stakeholders and communications colleagues.",
@@ -360,7 +359,7 @@ PROJECTS = {
     "new-resource-bank": {
         "org": "New Resource Bank", "program": "Corporate communications",
         "title": "Executive and investor communications during organizational transition",
-        "image": {"src": "nrb-impact-report.jpg", "w": 900, "h": 902, "layout": "wide", "fit": "contain",
+        "image": {"src": "nrb-impact-report.jpg", "w": 900, "h": 902,
                   "alt": "Cover of the New Resource Bank Impact Report: Well-being for people and the planet through banking"},
         "compact": True,
         "outcome": ("", "Executive, investor and impact communications for a B Corp “Best for the World” bank"),
