@@ -424,8 +424,7 @@ PROJECTS = {
             ("2021–2023 departmental Strategic Plan: development leadership",
              "<p>Led development of the San Francisco Department of the Environment’s 2021–2023 Strategic Plan, coordinating with program-area leaders and department leadership to identify priorities, align objectives and establish a shared direction. Managed the cross-functional planning process, synthesizing input across departmental programs and translating leadership priorities into a coherent strategic framework.</p>"),
         ],
-        "links": [("Commission on the Environment meeting, November 28, 2017",
-                   "https://www.sfenvironment.org/events/november-28-2017-commission-environment-meeting")],
+        "links": [],
     },
     "team-leadership": {
         "org": SF, "program": "Communications center of excellence",
@@ -460,7 +459,7 @@ PROJECTS = {
             ("San Francisco Environment: departmental website transformation",
              "<p>Led the overhaul of the department’s primary website, bringing together digital experience priorities, content requirements and cross-functional coordination to modernize a central public-facing service and information platform. Worked with internal stakeholders and technical contributors to align the website experience with departmental needs and public audiences, applying audience research and user-centered thinking to planning and development.</p>"),
             ("Salesforce: implementation and organizational adoption",
-             "<p>Oversaw the implementation of Salesforce to strengthen contact management, shared information and operational reporting across the organization. Worked with the implementation team and internal stakeholders to align business requirements, workflows, training and adoption needs with the system’s operational purpose, and supported organizational change and staff adoption to establish it as a shared platform for stakeholder information and related processes.</p>"
+             "<p>Oversaw the implementation of Salesforce to strengthen contact management, shared information and operational reporting across the organization. Worked with the implementation team and internal stakeholders to align business requirements, workflows, training and adoption needs with the system’s operational purpose, and led organizational change and staff adoption to establish it as a shared platform for stakeholder information and related processes.</p>"
              "<p class=\"fine\">Held implementation oversight and organizational accountability; the project manager and implementation team carried out technical delivery.</p>"),
             ("Cross-organizational digital leadership",
              "<p>Led or supported website development and digital experience initiatives across consumer, higher education, public-sector and enterprise environments: website development leadership at Putumayo World Music, two website development initiatives at Columbia University, and website development and modernization support at Georgia Natural Gas. Related digital product work, including the <a href=\"@product-marketing/#sf-recycles\">SF Recycles app</a> and the <a href=\"@product-marketing/#cam-portal\">Climate Action Month portal</a>, is covered under Product Marketing.</p>"),
