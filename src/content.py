@@ -406,7 +406,7 @@ PROJECTS = {
         "org": SF, "program": "Strategic planning",
         "title": "Strategic planning and community-informed decision-making",
         "image": None,
-        "outcome": ("", "Community-informed revisions to the 2016–2020 Strategic Plan"),
+        "outcome": ("", "Research-driven strategy &amp; organizational alignment"),
         "challenge": "Develop organizational strategies that reflect community priorities while aligning department leadership, program teams and resources around a coherent direction.",
         "role_label": "My ownership",
         "role": "Led strategic planning and stakeholder engagement initiatives, including research design, community dialogues, consultant oversight, qualitative synthesis and departmental strategic-plan development.",
