@@ -42,7 +42,7 @@ SPECIALTIES = {
         "capabilities": [
             "Customer &amp; competitive insight",
             "Positioning &amp; go to market",
-            "Acquisition, lifecycle &amp; enablement",
+            "Acquisition, adoption &amp; lifecycle",
         ],
         "projects": ["sf-recycles", "cam-portal", "greener-life", "delta-suitcase"],
         # In reserve; add back to "projects" to publish: "rethink-disposable"
@@ -58,7 +58,7 @@ SPECIALTIES = {
         "intro": "I develop communications strategies that connect organizational priorities with the people they affect—from employees and executives to customers, partners and the public. My work spans executive counsel, employee engagement, organizational change, external communications and issues management, with an emphasis on clarity, credibility and measurable outcomes.",
         "capabilities": [
             "Executive voice &amp; counsel",
-            "Change &amp; AI adoption",
+            "Organizational change &amp; transformation",
             "Employee engagement &amp; measurement",
             "Media strategy &amp; issues management",
         ],
@@ -530,9 +530,9 @@ EXPERIENCE = [
 
 TECH_INTRO = "I connect strategic judgment with practical AI capabilities to improve how teams research, develop ideas, solve problems and execute work."
 TECH_CAPABILITY = ("I build AI-enabled workflows, agents and practical tools that improve marketing and communications processes, streamline execution and make specialized expertise more scalable. "
-                   "My experience spans hands-on development, workflow automation and collaboration with engineering teams to translate business requirements into AI capabilities.")
+                   "My experience spans AI-assisted application development and prototyping, workflow automation and collaboration with engineering teams to translate business requirements into AI capabilities.")
 TECH_ROWS = [
-    ("AI &amp; agentic capabilities", "Agent design &amp; optimization · AI workflow development &amp; automation · Prompt design · AI evaluation frameworks · AI-assisted prototyping &amp; application development"),
+    ("AI &amp; agentic capabilities", "Agent design &amp; optimization · AI workflow development &amp; automation · Prompt design · AI-assisted prototyping &amp; application development"),
     ("Select platforms &amp; models", "ChatGPT · Claude · Gemini · Gemini Notebook · Copilot"),
     ("Application development &amp; deployment", "Codex · GitHub · Vercel"),
 ]
