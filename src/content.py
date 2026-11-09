@@ -322,6 +322,7 @@ PROJECTS = {
         "links": [],
     },
     "external-comms": {
+        "details_label": "Explore examples",
         "org": SF + " · Columbia University",
         "title": "External communications, media strategy and issues management",
         "image": {"src": "abc7-battery-hero.jpg", "w": 1200, "h": 675, "layout": "wide",

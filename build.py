@@ -198,6 +198,7 @@ def media_cards(root, p):
 
 def project(root, pid, label="Explore the project"):
     p = C.PROJECTS[pid]
+    label = p.get("details_label", label)
     approach = f'\n      <div><dt>Strategic approach</dt><dd>{p["approach"]}</dd></div>' if p.get("approach") else ""
     details = "".join(f"<div><h4>{h}</h4>{body}</div>" for h, body in p["details"])
     details = re.sub(r'href="@([^"#]*)(#[^"]*)?"',
