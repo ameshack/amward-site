@@ -201,6 +201,10 @@ details.more[open] > summary::after{content:"–"}
 .pair-label{position:absolute;left:10px;top:10px;margin:0;background:var(--teal);color:var(--white);font:700 12px/1 var(--head);letter-spacing:.08em;text-transform:uppercase;padding:6px 9px;border-radius:4px}
 .project-wide .project-media img.fit-contain{object-fit:contain;max-height:420px;width:100%;background:var(--stone);padding:20px 0}
 
+.zoom{display:block;position:relative}
+.zoom-hint{display:block;text-align:right;padding:8px 14px 0;font:700 14px/1.3 var(--head);color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.zoom-hint::after{content:" ↗"}
+
 /* Media cards (coverage and examples under a project summary) */
 .media-grid{list-style:none;margin:4px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .media-card{display:grid;grid-template-rows:auto 1fr;background:var(--ivory);border:1px solid var(--line);border-radius:8px;overflow:hidden;min-width:0}

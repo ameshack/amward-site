@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<defs>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="8" flood-color="#223D3B" flood-opacity="0.07"/></filter>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#6A8B80"/></marker>
+</defs>
+<style>
+  text{font-family:Inter,Arial,sans-serif;}
+  .eyebrow{font-size:15px;font-weight:700;letter-spacing:2px;fill:#65847A;}
+  .heading{font-size:34px;font-weight:700;fill:#233B3B;}
+  .sub{font-size:18px;fill:#58706B;}
+  .h{font-size:21px;font-weight:700;fill:#233B3B;}
+  .body{font-size:17px;fill:#425B55;}
+  .small{font-size:15px;fill:#506963;}
+  .whiteH{font-size:21px;font-weight:700;fill:white;}
+  .whiteB{font-size:17px;fill:#EBF2ED;}
+</style>
+<rect x="0" y="0" width="1200" height="675" fill="#F5F3EE"/>
+<rect x="34" y="34" width="1132" height="607" rx="20" fill="#F9F8F4" stroke="#E0E2D9"/>
+
+<title id="title">Leadership scope and team structure</title>
+<desc id="desc">One cohesive marketing and communications function led by the portfolio owner. Typically four direct reports, temporarily up to seven during leadership vacancies, and 24 indirect reports. Separately, oversight of more than ten agency relationships. Figures describe scope across the tenure and are not necessarily concurrent.</desc>
+<text x="78" y="90" class="eyebrow">MULTIDISCIPLINARY TEAM &amp; AGENCY LEADERSHIP</text>
+<text x="78" y="142" class="heading">Leadership scope &amp; team structure</text>
+<text x="78" y="177" class="sub">One cohesive function, with direct people management and external partner oversight</text>
+<!-- central leader -->
+<rect x="358" y="215" width="484" height="80" rx="14" fill="#233B3B" filter="url(#shadow)"/>
+<text x="600" y="249" font-size="22" font-weight="700" text-anchor="middle" fill="#FFFFFF">Marketing &amp; communications leadership</text>
+<text x="600" y="276" font-size="16" text-anchor="middle" fill="#E5F0E9">Single integrated departmental function</text>
+<!-- connectors -->
+<path d="M600 295 V325 H350 V346" fill="none" stroke="#6A8B80" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M600 325 H950 V346" fill="none" stroke="#92AAA1" stroke-dasharray="7 7" stroke-width="3" marker-end="url(#arrow)"/>
+<!-- internal branch -->
+<rect x="138" y="346" width="424" height="92" rx="14" fill="#E6EEE8" stroke="#B0C9B9" filter="url(#shadow)"/>
+<text x="350" y="382" font-size="27" font-weight="700" text-anchor="middle" fill="#233B3B">4 direct reports</text>
+<text x="350" y="410" font-size="17" text-anchor="middle" fill="#425B55">Typical, fully staffed leadership team</text>
+<text x="350" y="430" font-size="15" text-anchor="middle" fill="#60786C">Up to 7 during leadership vacancies</text>
+<path d="M350 438 V468" fill="none" stroke="#6A8B80" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="138" y="471" width="424" height="90" rx="14" fill="#FFFFFF" stroke="#C4D2C6" filter="url(#shadow)"/>
+<text x="350" y="512" font-size="31" font-weight="700" text-anchor="middle" fill="#233B3B">24 indirect reports</text>
+<text x="350" y="539" font-size="16" text-anchor="middle" fill="#597065">Reporting through the management layer</text>
+<!-- partners branch not reports -->
+<rect x="738" y="346" width="424" height="215" rx="14" fill="#F0F0E8" stroke="#CDD2C6" filter="url(#shadow)"/>
+<text x="950" y="391" font-size="31" font-weight="700" text-anchor="middle" fill="#233B3B">10+ agency relationships</text>
+<text x="950" y="421" font-size="17" text-anchor="middle" fill="#425B55">External specialist partners</text>
+<line x1="800" y1="443" x2="1100" y2="443" stroke="#CBD4C8"/>
+<text x="950" y="480" font-size="19" font-weight="700" text-anchor="middle" fill="#233B3B">Oversight &amp; coordination</text>
+<text x="950" y="508" font-size="16" text-anchor="middle" fill="#597065">Agency scope, deliverables</text>
+<text x="950" y="532" font-size="16" text-anchor="middle" fill="#597065">and partner resources</text>
+<line x1="143" y1="590" x2="179" y2="590" stroke="#6A8B80" stroke-width="3"/>
+<text x="189" y="596" font-size="14" fill="#506963">Reporting relationship</text>
+<line x1="383" y1="590" x2="419" y2="590" stroke="#92AAA1" stroke-width="3" stroke-dasharray="7 6"/>
+<text x="430" y="596" font-size="14" fill="#506963">External partner oversight</text>
+<text x="80" y="618" font-size="13" fill="#6D8078">Illustrative scope across tenure; figures not necessarily simultaneous. Temporary direct-report increases reflect vacancies.</text>
+</svg>

@@ -214,6 +214,10 @@ def project(root, pid):
             for im in image["pair"]) + "</div>"
     else:
         media = f'<div class="project-media">{img(root, image)}</div>' if image else ""
+        if image and image.get("zoom"):
+            # Diagrams: open the full-size file so small text stays readable on phones
+            media = (f'<div class="project-media"><a class="zoom" href="{root}src/img/{image["src"]}" target="_blank" rel="noopener">'
+                     f'{img(root, image)}<span class="zoom-hint">View full size</span></a></div>')
     size = " project-compact" if p.get("compact") else ""
     media_section = ""
     if p.get("media_heading"):

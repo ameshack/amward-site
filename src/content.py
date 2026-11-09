@@ -382,8 +382,8 @@ PROJECTS = {
     "executive-partnership": {
         "org": SF, "program": "Executive leadership team",
         "title": "Executive operating partnership",
-        "image": {"src": "strategic-plan.jpg", "w": 1100, "h": 481, "layout": "wide",
-                  "alt": "Cover of the San Francisco Environment Department Strategic Plan 2021–2023"},
+        "image": {"src": "executive-portfolio-allocation.svg", "w": 1200, "h": 675, "layout": "wide", "zoom": True,
+                  "alt": "Annual portfolio planning process: program-lead consultations, assessment of needs and capacity, final decisions on staff, agency and budget allocation, then deployment across more than 20 services and technology products; with in-year reprioritization."},
         "outcome": ("20+", "services and technology products"),
         "challenge": "Align marketing and communications resources with departmental priorities across more than 20 public services and technology products, balancing organizational objectives, operational capacity and competing program needs.",
         "role_label": "My ownership",
@@ -430,7 +430,8 @@ PROJECTS = {
     "team-leadership": {
         "org": SF, "program": "Communications center of excellence",
         "title": "Multidisciplinary team and agency leadership",
-        "image": None,
+        "image": {"src": "team-agency-leadership-scope.svg", "w": 1200, "h": 675, "layout": "wide", "zoom": True,
+                  "alt": "Integrated marketing and communications function: typically four direct reports, temporarily up to seven during leadership vacancies, 24 indirect reports, and oversight of more than ten external agency relationships."},
         "outcome": ("", "Up to 7 direct reports · 24 indirect contributors · 10+ agency relationships"),
         "challenge": "Build and manage a multidisciplinary marketing and communications function capable of supporting diverse services, products and organizational priorities.",
         "role_label": "My ownership",
