@@ -496,7 +496,7 @@ RECENT_WORK = [
     ("Microsoft", "microsoft.svg", 30),
     ("Delta Air Lines", "delta.svg", 24),
     ("Southern Company", "southern-company.svg", 42),
-    ("City &amp; County of San Francisco", "san-francisco-seal.svg", 52),
+    ("City &amp; County of San Francisco", "san-francisco-seal.png", 52),
 ]
 
 # ---------- About page
