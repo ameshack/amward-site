@@ -432,7 +432,7 @@ PROJECTS = {
         "title": "Multidisciplinary team and agency leadership",
         "image": {"src": "team-agency-leadership-scope.svg", "w": 1200, "h": 675, "layout": "wide", "zoom": True,
                   "alt": "Integrated marketing and communications function: typically four direct reports, temporarily up to seven during leadership vacancies, 24 indirect reports, and oversight of more than ten external agency relationships."},
-        "outcome": ("", "Up to 7 direct reports · 24 indirect contributors · 10+ agency relationships"),
+        "outcome": ("", "Up to 7 direct reports · 24 indirect reports · 10+ agency relationships"),
         "challenge": "Build and manage a multidisciplinary marketing and communications function capable of supporting diverse services, products and organizational priorities.",
         "role_label": "My ownership",
         "role": "Built and restructured teams, managed staff and agency resources, and directed the organizational capacity required to deliver marketing, communications and digital initiatives.",
