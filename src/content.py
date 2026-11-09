@@ -404,7 +404,8 @@ PROJECTS = {
     "strategic-planning": {
         "org": SF, "program": "Strategic planning",
         "title": "Strategic planning and community-informed decision-making",
-        "image": None,
+        "image": {"src": "workshop-innovators.jpg", "w": 1400, "h": 933, "layout": "wide",
+                          "alt": "Participants seated around tables at a facilitated community workshop for the department’s strategic plan"},
         "outcome": ("", "Research-driven strategy &amp; organizational alignment"),
         "challenge": "Develop organizational strategies that reflect community priorities while aligning department leadership, program teams and resources around a coherent direction.",
         "role_label": "My ownership",
@@ -415,6 +416,7 @@ PROJECTS = {
              "<p>Designed and led a citywide stakeholder engagement initiative to understand how diverse communities viewed San Francisco’s environmental priorities and what they expected from the department.</p>"
              "<p>Organized structured dialogues with representatives of Asian American, Black, small-business, youth, environmental and other community constituencies. Developed interactive exercises and facilitated discussion formats that encouraged participants to express their values, priorities and recommendations.</p>"
              "<p>Established an approach for analyzing and synthesizing qualitative findings, translated the results into strategic recommendations and helped incorporate community perspectives into revisions of the department’s 2016–2020 Strategic Plan.</p>"
+             "<figure class=\"post\"><img src=\"@img/workshop-small-business.jpg\" alt=\"A small-business participant completing a written engagement exercise during a community workshop\" width=\"1400\" height=\"934\" loading=\"lazy\" decoding=\"async\"><figcaption>Small-business workshop exercise.</figcaption></figure>"
              "<p>Presented findings and strategic implications to the Commission on the Environment, connecting community perspectives with departmental priorities and future program direction.</p>"),
             ("2021 Climate Action Plan: community engagement oversight",
              "<p>Directed the planning and oversight of community engagement supporting San Francisco’s 2021 Climate Action Plan, including engagement priorities, project scope, budget development and consultant selection.</p>"
@@ -423,7 +425,7 @@ PROJECTS = {
             ("2021–2023 departmental Strategic Plan: development leadership",
              "<p>Led development of the San Francisco Department of the Environment’s 2021–2023 Strategic Plan, coordinating with program-area leaders and department leadership to identify priorities, align objectives and establish a shared direction. Managed the cross-functional planning process, synthesizing input across departmental programs and translating leadership priorities into a coherent strategic framework.</p>"),
         ],
-        "links": [],
+        "links": [("Strategic Plan Community Meetings presentation", "https://www.sfenvironment.org/media/9896")],
     },
     "team-leadership": {
         "org": SF, "program": "Communications center of excellence",
@@ -449,22 +451,33 @@ PROJECTS = {
     "digital-platforms": {
         "org": SF, "program": "Website and CRM",
         "title": "Digital platforms and operational transformation",
-        "image": None,
-        "outcome": ("", "Public-facing website modernization and internal CRM implementation"),
+        "image": {"layout": "wide", "pair": [
+            {"src": "sfe-site-before.jpg", "w": 1200, "h": 670, "label": "Before",
+             "alt": "The San Francisco Environment Department website before the redesign: green header, topic navigation and a rotating banner"},
+            {"src": "sfe-site-after.jpg", "w": 1200, "h": 671, "label": "After",
+             "alt": "The redesigned San Francisco Environment Department website: simplified navigation, resident, business and city staff paths, and a full-width photo"}]},
+        "outcome": ("", "Research-led website modernization &amp; CRM transformation"),
         "challenge": "Modernize public-facing digital experiences and internal operating systems to better support organizational services, audiences and teams.",
-        "role": "Led website development and modernization initiatives and oversaw the introduction of operational technology, connecting user needs, business requirements and technical delivery.",
-        "approach": "Worked across communications, operations and technical functions to define priorities, guide development and support the adoption of digital platforms and improved workflows.",
+        "role": "Led website development and modernization initiatives and oversaw operational technology implementation, connecting audience research, organizational requirements and technical delivery.",
+        "approach": "Commissioned user research, translated findings into digital experience priorities and worked across communications, operations and technical teams to guide platform development and organizational adoption.",
         "details": [
-            ("San Francisco Environment: departmental website transformation",
-             "<p>Led the overhaul of the department’s primary website, bringing together digital experience priorities, content requirements and cross-functional coordination to modernize a central public-facing service and information platform. Worked with internal stakeholders and technical contributors to align the website experience with departmental needs and public audiences, applying audience research and user-centered thinking to planning and development.</p>"),
+            ("San Francisco Environment: website transformation",
+             "<p><strong>The challenge:</strong> modernize the department’s primary website to make public information and services easier to find, navigate and use.</p>"
+             "<p><strong>My ownership:</strong> led the department’s website transformation, commissioning an audience insights agency, defining the research brief and overseeing user research to establish priorities for the new digital experience.</p>"
+             "<p><strong>Strategic approach:</strong> directed a mixed-method research process that combined website surveys, navigation analysis, live usability testing and one-on-one interviews. Used findings about visitor behavior, information needs and navigation challenges to inform website strategy, content organization and experience-design requirements.</p>"
+             "<p><strong>Implementation:</strong> worked with departmental stakeholders and technical contributors to translate research findings and organizational needs into the website’s redevelopment.</p>"
+             "<p><strong>Result:</strong> a modernized public-facing digital platform informed by direct user feedback, observed behavior and departmental service priorities.</p>"
+             "<p class=\"fine\">The research agency conducted the usability tests and interviews; I commissioned, scoped and oversaw the research.</p>"
+             "<figure class=\"post\"><img src=\"@img/sfe-site-after-lower.jpg\" alt=\"Lower section of the redesigned website with a What we do summary and The latest news cards\" width=\"1200\" height=\"544\" loading=\"lazy\" decoding=\"async\"><figcaption>Lower section of the redesigned homepage.</figcaption></figure>"),
             ("Salesforce: implementation and organizational adoption",
              "<p>Oversaw the implementation of Salesforce to strengthen contact management, shared information and operational reporting across the organization. Worked with the implementation team and internal stakeholders to align business requirements, workflows, training and adoption needs with the system’s operational purpose, and led organizational change and staff adoption to establish it as a shared platform for stakeholder information and related processes.</p>"
              "<p class=\"fine\">Held implementation oversight and organizational accountability; the project manager and implementation team carried out technical delivery.</p>"),
             ("Cross-organizational digital leadership",
-             "<p>Led or supported website development and digital experience initiatives across consumer, higher education, public-sector and enterprise environments: website development leadership at Putumayo World Music, two website development initiatives at Columbia University, and website development and modernization support at Georgia Natural Gas. Related digital product work, including the <a href=\"@product-marketing/#sf-recycles\">SF Recycles app</a> and the <a href=\"@product-marketing/#cam-portal\">Climate Action Month portal</a>, is covered under Product Marketing.</p>"),
+             "<p>Led or supported website development and digital experience initiatives across consumer, higher education, public-sector and enterprise environments: website development leadership at Putumayo World Music, two website development projects at Columbia University, and website development and modernization support at Georgia Natural Gas. Related digital product work, including the <a href=\"@product-marketing/#sf-recycles\">SF Recycles app</a> and the <a href=\"@product-marketing/#cam-portal\">Climate Action Month portal</a>, is covered under Product Marketing.</p>"),
         ],
         "links": [],
     },
+
 }
 
 PROOF_POINTS = [
@@ -483,6 +496,7 @@ RECENT_WORK = [
     ("Microsoft", "microsoft.svg", 30),
     ("Delta Air Lines", "delta.svg", 24),
     ("Southern Company", "southern-company.svg", 42),
+    ("City &amp; County of San Francisco", "san-francisco-seal.svg", 52),
 ]
 
 # ---------- About page

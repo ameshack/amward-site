@@ -209,7 +209,9 @@ def project(root, pid):
     layout = image.get("layout", "side") if image else "text"
     if image and image.get("pair"):
         # Two images shown side by side as the project's primary visual
-        media = '<div class="project-media media-pair">' + "".join(img(root, im) for im in image["pair"]) + "</div>"
+        media = '<div class="project-media media-pair">' + "".join(
+            f'<figure>{img(root, im)}<figcaption class="pair-label">{im["label"]}</figcaption></figure>' if im.get("label") else img(root, im)
+            for im in image["pair"]) + "</div>"
     else:
         media = f'<div class="project-media">{img(root, image)}</div>' if image else ""
     size = " project-compact" if p.get("compact") else ""
@@ -238,7 +240,7 @@ def home(root):
     s = C.SPECIALTIES
     proofs = "".join(f"<li><b>{f}</b><span>{l}</span><small>{w}</small></li>" for f, l, w in C.PROOF_POINTS)
     orgs = "".join(f'<li><img src="{root}src/img/logos/{f}" alt="{n}" style="height:{h}px" decoding="async"></li>'
-                   for n, f, h in C.RECENT_WORK)
+                   for n, f, h in C.RECENT_WORK if (ROOT / "src" / "img" / "logos" / f).exists())
     cards = []
     for sp in (s[k] for k in C.HOME_CARD_ORDER):
         v = sp["card_visual"]
@@ -267,7 +269,7 @@ def home(root):
 
 <section class="orgs" aria-labelledby="orgs-h">
   <div class="wrap">
-    <h2 class="eyebrow" id="orgs-h">Recent work for</h2>
+    <h2 class="eyebrow" id="orgs-h">Where I’ve made an impact</h2>
     <ul>{orgs}</ul>
   </div>
 </section>

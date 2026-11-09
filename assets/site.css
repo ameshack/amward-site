@@ -196,6 +196,9 @@ details.more[open] > summary::after{content:"–"}
 /* Primary visuals in a consistent top frame */
 .media-pair{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--stone)}
 .media-pair img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.media-pair figure{margin:0;position:relative;min-width:0}
+.media-pair figure img{aspect-ratio:auto;object-fit:contain;border:0;border-radius:0}
+.pair-label{position:absolute;left:10px;top:10px;margin:0;background:var(--teal);color:var(--white);font:700 12px/1 var(--head);letter-spacing:.08em;text-transform:uppercase;padding:6px 9px;border-radius:4px}
 .project-wide .project-media img.fit-contain{object-fit:contain;max-height:420px;width:100%;background:var(--stone);padding:20px 0}
 
 /* Media cards (coverage and examples under a project summary) */
