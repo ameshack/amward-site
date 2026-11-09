@@ -196,7 +196,7 @@ def media_cards(root, p):
     return f'\n    <ul class="media-grid" aria-label="Examples">{"".join(cards)}</ul>' if cards else ""
 
 
-def project(root, pid):
+def project(root, pid, label="Explore the project"):
     p = C.PROJECTS[pid]
     approach = f'\n      <div><dt>Strategic approach</dt><dd>{p["approach"]}</dd></div>' if p.get("approach") else ""
     details = "".join(f"<div><h4>{h}</h4>{body}</div>" for h, body in p["details"])
@@ -233,7 +233,7 @@ def project(root, pid):
       <div><dt>{p.get("role_label", "My role")}</dt><dd>{p["role"]}</dd></div>{approach}
     </dl>{"" if p.get("media_heading") else media_cards(root, p)}
     <details class="more">
-      <summary>Explore the project<span class="sr-only">: {p["title"]}</span></summary>
+      <summary>{label}<span class="sr-only">: {p["title"]}</span></summary>
       <div class="detail">{media_section}{details}{links}</div>
     </details>
   </div>
@@ -313,7 +313,7 @@ def related(root, exclude):
 def specialty(root, key):
     sp = C.SPECIALTIES[key]
     caps = "".join(f"<li>{c}</li>" for c in sp["capabilities"])
-    projects = "".join(project(root, p) for p in sp["projects"])
+    projects = "".join(project(root, p, sp.get("details_label", "Explore the project")) for p in sp["projects"])
     note = ""
     if key == "brand":
         note = review('<p class="review" style="margin-top:24px">Across all four pages, “The challenge” and “My role” lines and the “Explore the project” details are new summaries drawn from your current site and master CV. Please check them.</p>')

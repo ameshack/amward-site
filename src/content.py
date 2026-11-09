@@ -80,6 +80,7 @@ SPECIALTIES = {
             "AI integration &amp; workflow development",
         ],
         "projects": ["executive-partnership", "strategic-planning", "team-leadership", "digital-platforms"],
+        "details_label": "Explore examples",
         "card_visual": {"img": "strategic-plan.jpg"},
         "title": "Leadership and operations",
         "description": "Leadership and operations by Asia Meshack: executive partnership, strategic planning, multidisciplinary team and agency leadership, and digital transformation.",
@@ -382,8 +383,7 @@ PROJECTS = {
     "executive-partnership": {
         "org": SF, "program": "Executive leadership team",
         "title": "Executive operating partnership",
-        "image": {"src": "executive-portfolio-allocation.svg", "w": 1200, "h": 675, "layout": "wide", "zoom": True,
-                  "alt": "Annual portfolio planning process: program-lead consultations, assessment of needs and capacity, final decisions on staff, agency and budget allocation, then deployment across more than 20 services and technology products; with in-year reprioritization."},
+        "image": None,  # text-first pending owner choice of a new visual
         "outcome": ("20+", "services and technology products"),
         "challenge": "Align marketing and communications resources with departmental priorities across more than 20 public services and technology products, balancing organizational objectives, operational capacity and competing program needs.",
         "role_label": "My ownership",
@@ -417,7 +417,8 @@ PROJECTS = {
              "<p>Organized structured dialogues with representatives of Asian American, Black, small-business, youth, environmental and other community constituencies. Developed interactive exercises and facilitated discussion formats that encouraged participants to express their values, priorities and recommendations.</p>"
              "<p>Established an approach for analyzing and synthesizing qualitative findings, translated the results into strategic recommendations and helped incorporate community perspectives into revisions of the department’s 2016–2020 Strategic Plan.</p>"
              "<figure class=\"post\"><img src=\"@img/workshop-small-business.jpg\" alt=\"A small-business participant completing a written engagement exercise during a community workshop\" width=\"1400\" height=\"934\" loading=\"lazy\" decoding=\"async\"><figcaption>Small-business workshop exercise.</figcaption></figure>"
-             "<p>Presented findings and strategic implications to the Commission on the Environment, connecting community perspectives with departmental priorities and future program direction.</p>"),
+             "<p>Presented findings and strategic implications to the Commission on the Environment, connecting community perspectives with departmental priorities and future program direction.</p>"
+             "<div class=\"links\"><a class=\"ext\" href=\"https://www.sfenvironment.org/media/9896\" target=\"_blank\" rel=\"noopener\">Strategic Plan Community Meetings presentation deck</a></div>"),
             ("2021 Climate Action Plan: community engagement oversight",
              "<p>Directed the planning and oversight of community engagement supporting San Francisco’s 2021 Climate Action Plan, including engagement priorities, project scope, budget development and consultant selection.</p>"
              "<p>Partnered with the selected consulting team to oversee research design and engagement activities, drawing on qualitative and quantitative input from diverse community constituencies to inform the planning process, and helped ensure the engagement approach connected community values and priorities with the city’s climate-planning objectives.</p>"
@@ -425,13 +426,12 @@ PROJECTS = {
             ("2021–2023 departmental Strategic Plan: development leadership",
              "<p>Led development of the San Francisco Department of the Environment’s 2021–2023 Strategic Plan, coordinating with program-area leaders and department leadership to identify priorities, align objectives and establish a shared direction. Managed the cross-functional planning process, synthesizing input across departmental programs and translating leadership priorities into a coherent strategic framework.</p>"),
         ],
-        "links": [("Strategic Plan Community Meetings presentation", "https://www.sfenvironment.org/media/9896")],
+        "links": [],
     },
     "team-leadership": {
         "org": SF, "program": "Communications center of excellence",
         "title": "Multidisciplinary team and agency leadership",
-        "image": {"src": "team-agency-leadership-scope.svg", "w": 1200, "h": 675, "layout": "wide", "zoom": True,
-                  "alt": "Integrated marketing and communications function: typically four direct reports, temporarily up to seven during leadership vacancies, 24 indirect reports, and oversight of more than ten external agency relationships."},
+        "image": None,  # text-first pending owner choice of a new visual
         "outcome": ("", "Up to 7 direct reports · 24 indirect reports · 10+ agency relationships"),
         "challenge": "Build and manage a multidisciplinary marketing and communications function capable of supporting diverse services, products and organizational priorities.",
         "role_label": "My ownership",
@@ -439,7 +439,8 @@ PROJECTS = {
         "approach": "Aligned staffing, specialist capabilities, agency support and operational processes with changing priorities while maintaining accountability for execution and employee development.",
         "details": [
             ("Organizational design and team leadership",
-             "<p>Built, organized and restructured a multidisciplinary marketing and communications operation, aligning specialized functions and staffing with departmental priorities and available resources.</p>"),
+             "<p>Restructured marketing and communications support across multiple departmental programs, creating a more cohesive operating model aligned with program priorities and resource needs.</p>"
+             "<p>Led an assessment of departmental data and reporting needs that informed the creation of a new data analyst position supporting Salesforce training, onboarding and broader organizational data requirements.</p>"),
             ("Direct people management",
              "<p>Managed and developed staff through direct supervision, coaching, performance reviews, work planning and prioritization. Adjusted team structures and responsibilities as organizational needs evolved.</p>"),
             ("Agency and contractor oversight",
@@ -474,7 +475,7 @@ PROJECTS = {
              "<p>Oversaw the implementation of Salesforce to strengthen contact management, shared information and operational reporting across the organization. Worked with the implementation team and internal stakeholders to align business requirements, workflows, training and adoption needs with the system’s operational purpose, and led organizational change and staff adoption to establish it as a shared platform for stakeholder information and related processes.</p>"
              "<p class=\"fine\">Held implementation oversight and organizational accountability; the project manager and implementation team carried out technical delivery.</p>"),
             ("Cross-organizational digital leadership",
-             "<p>Led or supported website development and digital experience initiatives across consumer, higher education, public-sector and enterprise environments: website development leadership at Putumayo World Music, two website development projects at Columbia University, and website development and modernization support at Georgia Natural Gas. Related digital product work, including the <a href=\"@product-marketing/#sf-recycles\">SF Recycles app</a> and the <a href=\"@product-marketing/#cam-portal\">Climate Action Month portal</a>, is covered under Product Marketing.</p>"),
+             "<p>Led or supported website development and digital experience initiatives across consumer, higher education, public-sector and enterprise environments: website development leadership at Putumayo World Music and two website development projects at Columbia University. Supported development of Georgia Natural Gas’s customer-facing transactional website, including service enrollment, bill payment, product and package information, and related customer journeys. Related digital product work, including the <a href=\"@product-marketing/#sf-recycles\">SF Recycles app</a> and the <a href=\"@product-marketing/#cam-portal\">Climate Action Month portal</a>, is covered under Product Marketing.</p>"),
         ],
         "links": [],
     },
