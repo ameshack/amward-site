@@ -383,7 +383,7 @@ PROJECTS = {
     "executive-partnership": {
         "org": SF, "program": "Executive leadership team",
         "title": "Executive operating partnership",
-        "image": None,  # text-first pending owner choice of a new visual
+        "image": {"src": "accent-portfolio.svg", "w": 800, "h": 640, "layout": "accent", "alt": ""},  # decorative
         "outcome": ("20+", "services and technology products"),
         "challenge": "Align marketing and communications resources with departmental priorities across more than 20 public services and technology products, balancing organizational objectives, operational capacity and competing program needs.",
         "role_label": "My ownership",
@@ -431,7 +431,7 @@ PROJECTS = {
     "team-leadership": {
         "org": SF, "program": "Communications center of excellence",
         "title": "Multidisciplinary team and agency leadership",
-        "image": None,  # text-first pending owner choice of a new visual
+        "image": {"src": "accent-team-structure.svg", "w": 800, "h": 640, "layout": "accent", "alt": ""},  # decorative
         "outcome": ("", "Up to 7 direct reports · 24 indirect reports · 10+ agency relationships"),
         "challenge": "Build and manage a multidisciplinary marketing and communications function capable of supporting diverse services, products and organizational priorities.",
         "role_label": "My ownership",

@@ -222,6 +222,9 @@ def project(root, pid, label="Explore the project"):
     media_section = ""
     if p.get("media_heading"):
         media_section = f'<div><h4>{p["media_heading"]}</h4>{media_cards(root, p)}</div>'
+    if layout == "accent":
+        # Small abstract visual beside the copy, secondary to the text
+        layout = "side project-accent"
     return f"""<article class="project project-{layout}{size}" id="{pid}">
   {media}
   <div class="project-body">
