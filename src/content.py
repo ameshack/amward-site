@@ -461,7 +461,7 @@ PROJECTS = {
         "role": "Led website development and modernization initiatives and oversaw operational technology implementation, connecting audience research, organizational requirements and technical delivery.",
         "approach": "Commissioned user research, translated findings into digital experience priorities and worked across communications, operations and technical teams to guide platform development and organizational adoption.",
         "details": [
-            ("San Francisco Environment: website transformation",
+            ("San Francisco Environment Department: website transformation",
              "<p><strong>The challenge:</strong> modernize the department’s primary website to make public information and services easier to find, navigate and use.</p>"
              "<p><strong>My ownership:</strong> led the department’s website transformation, commissioning an audience insights agency, defining the research brief and overseeing user research to establish priorities for the new digital experience.</p>"
              "<p><strong>Strategic approach:</strong> directed a mixed-method research process that combined website surveys, navigation analysis, live usability testing and one-on-one interviews. Used findings about visitor behavior, information needs and navigation challenges to inform website strategy, content organization and experience-design requirements.</p>"
