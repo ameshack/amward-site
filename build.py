@@ -364,7 +364,7 @@ def about(root):
     <h1 id="page-h">About &amp; experience</h1>
     <p class="lede">{C.ABOUT_INTRO}</p>
     {review('<p class="review">The introduction above is new copy for your review. Everything else on this page comes from your current site.</p>')}
-    <ul class="caps jump" aria-label="On this page"><li><a href="#experience">Experience</a></li><li><a href="#technology-ai">Technology &amp; AI</a></li><li><a href="#credentials">Recognition &amp; credentials</a></li></ul>
+    <ul class="caps jump" aria-label="On this page"><li><a href="#experience">Experience</a></li><li><a href="#technology-ai">AI capabilities</a></li><li><a href="#credentials">Recognition &amp; credentials</a></li></ul>
   </div>
 </section>
 
@@ -377,7 +377,7 @@ def about(root):
 
 <section class="section split tech" id="technology-ai" aria-labelledby="tech-h">
   <div class="wrap">
-    <div class="split-head"><p class="eyebrow">Technology &amp; AI</p><h2 id="tech-h">Technology &amp; AI capabilities</h2><p>{C.TECH_INTRO}</p></div>
+    <div class="split-head"><h2 id="tech-h">AI capabilities</h2><p>{C.TECH_INTRO}</p></div>
     <div class="tech-body"><p class="tech-capability">{C.TECH_CAPABILITY}</p><dl class="tech-rows">{tech}</dl></div>
   </div>
 </section>
