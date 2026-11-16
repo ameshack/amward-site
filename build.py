@@ -219,7 +219,13 @@ def project(root, pid, label="Explore the project"):
             # Diagrams: open the full-size file so small text stays readable on phones
             media = (f'<div class="project-media"><a class="zoom" href="{root}src/img/{image["src"]}" target="_blank" rel="noopener">'
                      f'{img(root, image)}<span class="zoom-hint">View full size</span></a></div>')
-    size = " project-compact" if p.get("compact") else ""
+        if image and image.get("video"):
+            # Video in place of the image; the image stays as its poster frame and as the homepage card visual
+            v = image["video"]
+            media = (f'<div class="project-media"><video controls playsinline preload="none" '
+                     f'poster="{root}src/img/{image["src"]}" width="{v["w"]}" height="{v["h"]}" aria-label="{v["label"]}">'
+                     f'<source src="{root}src/video/{v["src"]}" type="video/mp4"></video></div>')
+    size =" project-compact" if p.get("compact") else ""
     media_section = ""
     if p.get("media_heading"):
         media_section = f'<div><h4>{p["media_heading"]}</h4>{media_cards(root, p)}</div>'
