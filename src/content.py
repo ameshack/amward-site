@@ -394,7 +394,7 @@ PROJECTS = {
         "approach": "Established planning and prioritization processes that connected departmental objectives with audience needs, team capacity, agency resources and available funding.",
         "details": [
             ("Executive partnership and organizational priorities",
-             "<p>Partnered with the department Director and senior leadership to translate organizational priorities into marketing and communications plans, coordinate cross-functional initiatives and determine where resources would have the greatest impact.</p>"),
+             "<p>Partnered with the department Director and fellow senior leaders to translate organizational priorities into marketing and communications plans, coordinate cross-functional initiatives and determine where resources would have the greatest impact.</p>"),
             ("Portfolio and resource-allocation authority",
              "<p>Had final decision-making authority over which products and programs received marketing support, the level and type of support provided, and the resources assigned to competing priorities.</p>"),
             ("Budget and operating responsibility",
@@ -416,7 +416,7 @@ PROJECTS = {
         "approach": "Designed and oversaw participatory research processes, translated stakeholder findings into strategic recommendations and worked with organizational leaders to incorporate insights into formal plans and priorities.",
         "details": [
             ("2017 Community Dialogues: 2016–2020 Strategic Plan",
-             "<p>Designed and led a citywide stakeholder engagement initiative to understand how diverse communities viewed San Francisco’s environmental priorities and what they expected from the department.</p>"
+             "<p>Designed and led a citywide stakeholder engagement initiative to understand how diverse communities viewed San Francisco’s environmental priorities and what they expected from the City.</p>"
              "<p>Organized structured dialogues with representatives of Asian American, Black, small-business, youth, environmental and other community constituencies. Developed interactive exercises and facilitated discussion formats that encouraged participants to express their values, priorities and recommendations.</p>"
              "<p>Established an approach for analyzing and synthesizing qualitative findings, translated the results into strategic recommendations and helped incorporate community perspectives into revisions of the department’s 2016–2020 Strategic Plan.</p>"
              "<figure class=\"post\"><img src=\"@img/workshop-small-business.jpg\" alt=\"A small-business participant completing a written engagement exercise during a community workshop\" width=\"1400\" height=\"934\" loading=\"lazy\" decoding=\"async\"><figcaption>Small-business workshop exercise.</figcaption></figure>"
@@ -447,7 +447,7 @@ PROJECTS = {
             ("Direct people management",
              "<p>Managed and developed staff through direct supervision, coaching, performance reviews, work planning and prioritization. Adjusted team structures and responsibilities as organizational needs evolved.</p>"),
             ("Agency and contractor oversight",
-             "<p>Directed relationships with more than ten agency and external-service partners, coordinating specialist capabilities, budgets and deliverables across the department’s portfolio.</p>"),
+             "<p>Directed relationships with more than ten agency and external-service partners, coordinating specialist capabilities, RFPs, budgets and deliverables across the department’s portfolio.</p>"),
             ("Operational leadership",
              "<p>Established processes for prioritizing work, assigning resources, coordinating contributors and maintaining execution quality across concurrent initiatives.</p>"),
         ],
